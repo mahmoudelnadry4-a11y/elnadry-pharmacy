@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صيدلية النادري - متجر الأدوية ومستحضرات التجميل</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>صيدلية النادري</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans text-right" dir="rtl">
+    <header class="bg-emerald-800 text-white p-4 text-center">
+        <h1 class="text-2xl font-bold">صيدلية النادري</h1>
+        <p class="text-sm">صحتك جوهرة.. نرعاها بأمان</p>
+    </header>
+    <main class="p-8 text-center">
+        <h2 class="text-xl font-bold mb-4">مرحباً بك في متجر صيدلية النادري أونلاين</h2>
+        <p class="text-gray-600 mb-6">قريباً سيتم تفعيل طلبات الأدوية وتوصيل الروشتات.</p>
+        <a href="tel:19999" class="bg-emerald-600 text-white px-6 py-3 rounded-xl font-bold">اتصل بالخط الساخن: 19999</a>
+    </main>
+</body>
+</html>s
+                    colors: {
+                        pharmacy: {
+                            50: '#eefcf6',
+                            100: '#d5f7ea',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style> body { font-family: 'Cairo', sans-serif; } </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-cairo">
+    <div class="bg-pharmacy-900 text-white text-xs py-2 px-4">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fas fa-phone-alt ml-1 text-pharmacy-500"></i> الخط الساخن: 19999</span>
+                <span><i class="fas fa-map-marker-alt ml-1 text-pharmacy-500"></i> خدمة توصيل سريعة 24/7</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="bg-pharmacy-700 px-2 py-0.5 rounded text-xs font-semibold">توصيل مجاني للطلبات فوق 300 ج.م</span>
+            </div>
+        </div>
+    </div>
+    <header class="bg-white shadow-md sticky top-0 z-40">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between gap-4">
+            <a href="#" class="flex items-center gap-2">
+                <div class="bg-pharmacy-600 text-white p-2.5 rounded-xl shadow-md">
+                    <i class="fas fa-pills text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-black text-pharmacy-900 leading-tight">صيدلية النادري</h1>
+                    <p class="text-xs text-gray-500">صحتك جوهرة.. نرعاها بأمان</p>
+                </div>
+            </a>
+            <div class="hidden md:flex flex-1 max-w-xl mx-4">
+                <div class="relative w-full">
+                    <input type="text" id="searchInput" placeholder="ابحث عن الأدوية، الفيتامينات، أو المستحضرات..." class="w-full bg-gray-100 border border-gray-200 rounded-full py-2.5 pr-10 pl-4 text-sm focus:outline-none focus:border-pharmacy-500 focus:bg-white transition">
+                    <i class="fas fa-search absolute right-3.5 top-3.5 text-gray-400"></i>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <button onclick="openPrescriptionModal()" class="hidden sm:flex items-center gap-1.5 bg-amber-50 hover:bg-amber-100 text-amber-700 px-3.5 py-2 rounded-xl text-xs font-bold transition border border-amber-200">
+                    <i class="fas fa-file-prescription text-amber-600"></i>
+                    <span>اطلب بروشتة</span>
+                </button>
+                <button onclick="toggleCart()" class="relative bg-pharmacy-50 hover:bg-pharmacy-100 text-pharmacy-700 p-2.5 rounded-xl transition flex items-center gap-2 border border-pharmacy-200">
+                    <i class="fas fa-shopping-bag text-lg"></i>
+                    <span class="hidden sm:inline text-xs font-bold">السلة</span>
+                    <span id="cartCount" class="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-bold shadow">0</span>
+                </button>
+            </div>
+        </div>
+        <nav class="bg-gray-100 border-t border-gray-200 px-4 py-2 overflow-x-auto">
+            <div class="container mx-auto flex items-center gap-6 text-sm whitespace-nowrap">
+                <a href="#products" onclick="filterCategory('all')" class="category-btn text-pharmacy-700 font-bold hover:text-pharmacy-900 pb-1 border-b-2 border-pharmacy-600">الكل</a>
+                <a href="#products" onclick="filterCategory('medicines')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">أدوية ومسكنات</a>
+                <a href="#products" onclick="filterCategory('vitamins')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">فيتامينات ومكملات</a>
+                <a href="#products" onclick="filterCategory('skincare')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">عناية بالبشرة</a>
+                <a href="#products" onclick="filterCategory('cosmetics')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">مستحضرات تجميل</a>
+                <a href="#products" onclick="filterCategory('devices')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">أجهزة طبية</a>
+            </div>
+        </nav>
+    </header>
+    <section class="container mx-auto px-4 my-6">
+        <div class="bg-gradient-to-r from-pharmacy-800 to-pharmacy-600 rounded-3xl text-white p-6 md:p-12 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+            <div class="max-w-xl z-10 text-center md:text-right">
+                <span class="bg-pharmacy-500/40 text-pharmacy-100 text-xs px-3 py-1 rounded-full font-bold inline-block mb-3">خدمة توصيل سريعة</span>
+                <h2 class="text-3xl md:text-4xl font-black mb-4 leading-tight">كل ما تحتاجه لصحتك وصحة أسرتك بين يديك</h2>
+                <p class="text-pharmacy-100 text-sm md:text-base mb-6 leading-relaxed">اطلب أدويتك ومكملاتك الغذائية بكل سهولة أونلاين. نضمن لك جودة المنتجات وسرعة التوصيل حتى باب المنزل.</p>
+                <div class="flex flex-wrap items-center justify-center md:justify-start gap-3">
+                    <a href="#products" class="bg-white text-pharmacy-800 hover:bg-pharmacy-50 font-bold px-6 py-3 rounded-xl shadow transition text-sm">تسوق المنتجات الآن</a>
+                    <button onclick="openPrescriptionModal()" class="bg-amber-500 hover:bg-amber-600 text-white font-bold px-6 py-3 rounded-xl shadow transition text-sm flex items-center gap-2">
+                        <i class="fas fa-camera"></i> ارفع الروشتة الآن
+                    </button>
+                </div>
+            </div>
+            <div class="z-10 bg-white/15 backdrop-blur-md p-6 rounded-2xl border border-white/20 text-center max-w-xs w-full">
+                <div class="text-3xl font-black text-amber-300 mb-1">خصم 20%</div>
+                <div class="text-sm font-bold mb-3">على جميع الفيتامينات والمكملات</div>
+                <div class="text-xs text-pharmacy-100">استخدم الكود: <span class="bg-white/20 px-2 py-0.5 rounded font-mono font-bold">NADERY20</span></div>
+            </div>
+        </div>
+    </section>
+    <section class="container mx-auto px-4 mb-10">
+        <div class="bg-amber-50 border border-amber-200 rounded-2xl p-6 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-4">
+                <div class="bg-amber-500 text-white p-4 rounded-2xl text-2xl shadow"><i class="fas fa-file-prescription"></i></div>
+                <div>
+                    <h3 class="text-lg font-bold text-amber-900 mb-1">هل لديك روشتة طبية؟</h3>
+                    <p class="text-sm text-amber-700">قم بتصوير الروشتة وارفعها وسنقوم بتجهيز الأدوية وتوصيلها لك فوراً.</p>
+                </div>
+            </div>
+            <button onclick="openPrescriptionModal()" class="bg-amber-600 hover:bg-amber-700 text-white font-bold px-6 py-3 rounded-xl shadow transition text-sm whitespace-nowrap">ارفع الروشتة الآن</button>
+        </div>
+    </section>
+    <section id="products" class="container mx-auto px-4 mb-16">
+        <div class="flex items-center justify-between mb-6">
+            <h3 class="text-xl font-black text-gray-800 flex items-center gap-2">
+                <span class="w-3 h-3 bg-pharmacy-600 rounded-full"></span> قائمة المنتجات المتاحة
+            </h3>
+            <span id="productCount" class="text-xs text-gray-500 font-semibold">عرض المنتجات</span>
+        </div>
+        <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+    </section>
+    <footer class="bg-pharmacy-900 text-white pt-12 pb-6 border-t border-pharmacy-800">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div>
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="bg-pharmacy-600 text-white p-2 rounded-lg"><i class="fas fa-pills text-lg"></i></div>
+                    <h4 class="text-lg font-black">صيدلية النادري</h4>
+                </div>
+                <p class="text-xs text-pharmacy-100 leading-relaxed mb-4">صيدليتك المتكاملة لتوفير جميع الأدوية، مستحضرات التجميل، والمكملات الغذائية.</p>
+            </div>
+            <div>
+                <h5 class="text-sm font-bold mb-4 border-b border-pharmacy-800 pb-2">روابط سريعة</h5>
+                <ul class="space-y-2 text-xs text-pharmacy-100">
+                    <li><a href="#" class="hover:text-white transition">الرئيسية</a></li>
+                    <li><a href="#products" class="hover:text-white transition">الأقسام والمنتجات</a></li>
+                    <li><button onclick="openPrescriptionModal()" class="hover:text-white transition">رفع روشتة</button></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-sm font-bold mb-4 border-b border-pharmacy-800 pb-2">خدمة العملاء</h5>
+                <ul class="space-y-2 text-xs text-pharmacy-100">
+                    <li><span class="block text-white font-bold">الخط الساخن:</span> 19999</li>
+                    <li><span class="block text-white font-bold">ساعات العمل:</span> 24 ساعة</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-sm font-bold mb-4 border-b border-pharmacy-800 pb-2">النشرة البريدية</h5>
+                <div class="flex gap-2">
+                    <input type="email" placeholder="بريدك الإلكتروني" class="bg-pharmacy-800 text-xs px-3 py-2 rounded-lg w-full focus:outline-none border border-pharmacy-700 text-white">
+                    <button onclick="alert('تم الاشتراك بنجاح!')" class="bg-pharmacy-500 hover:bg-pharmacy-600 text-white px-3 py-2 rounded-lg text-xs font-bold transition">اشتراك</button>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 pt-4 border-t border-pharmacy-800 text-center text-xs text-pharmacy-200">جميع الحقوق محفوظة © 2026 صيدلية النادري.</div>
+    </footer>
+    <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div class="absolute inset-0 bg-black/50 transition-opacity" onclick="toggleCart()"></div>
+        <div class="absolute inset-y-0 left-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-white shadow-xl flex flex-col">
+                <div class="p-4 bg-pharmacy-900 text-white flex items-center justify-between">
+                    <h3 class="font-bold text-base flex items-center gap-2"><i class="fas fa-shopping-bag"></i> سلة المشتريات</h3>
+                    <button onclick="toggleCart()" class="text-white hover:text-gray-200 p-1"><i class="fas fa-times text-lg"></i></button>
+                </div>
+                <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-4 space-y-4 divide-y divide-gray-100"></div>
+                <div id="cartFooter" class="p-4 border-t border-gray-200 bg-gray-50">
+                    <div class="space-y-2 mb-4 text-sm">
+                        <div class="flex justify-between"><span class="text-gray-500">المجموع الفرعي:</span><span id="cartSubtotal" class="font-bold">0.00 ج.م</span></div>
+                        <div class="flex justify-between"><span class="text-gray-500">رسوم التوصيل:</span><span id="cartShipping" class="font-bold">25.00 ج.م</span></div>
+                        <div class="flex justify-between text-base border-t pt-2 border-gray-200 font-black text-pharmacy-900"><span>الإجمالي الكلي:</span><span id="cartTotal">0.00 ج.م</span></div>
+                    </div>
+                    <button onclick="openCheckoutModal()" id="checkoutBtn" class="w-full bg-pharmacy-600 hover:bg-pharmacy-700 text-white font-bold py-3 rounded-xl shadow transition text-center block disabled:opacity-50">إتمام الطلب</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="prescriptionModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+        <div class="absolute inset-0 bg-black/50" onclick="closePrescriptionModal()"></div>
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 relative z-10 shadow-2xl">
+            <div class="flex items-center justify-between mb-4 pb-2 border-b">
+                <h3 class="font-bold text-lg text-amber-800 flex items-center gap-2"><i class="fas fa-file-prescription"></i> اطلب بروشتة</h3>
+                <button onclick="closePrescriptionModal()" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times text-lg"></i></button>
+            </div>
+            <form onsubmit="handlePrescriptionSubmit(event)" class="space-y-4">
+                <div><label class="block text-xs font-bold text-gray-700 mb-1">الاسم الكريم</label><input type="text" required class="w-full bg-gray-50 border rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-amber-500" placeholder="اسمك الكامل"></div>
+                <div><label class="block text-xs font-bold text-gray-700 mb-1">رقم الهاتف للتواصل</label><input type="tel" required class="w-full bg-gray-50 border rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-amber-500" placeholder="01xxxxxxxxx"></div>
+                <div><label class="block text-xs font-bold text-gray-700 mb-1">صورة الروشتة</label><input type="file" accept="image/*" class="w-full text-xs text-gray-500"></div>
+                <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 rounded-xl shadow transition text-sm">إرسال الروشتة</button>
+            </form>
+        </div>
+    </div>
+    <div id="checkoutModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+        <div class="absolute inset-0 bg-black/50" onclick="closeCheckoutModal()"></div>
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 relative z-10 shadow-2xl">
+            <div class="flex items-center justify-between mb-4 pb-2 border-b">
+                <h3 class="font-bold text-lg text-pharmacy-900 flex items-center gap-2"><i class="fas fa-truck"></i> بيانات الشحن</h3>
+                <button onclick="closeCheckoutModal()" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times text-lg"></i></button>
+            </div>
+            <form onsubmit="handleCheckoutSubmit(event)" class="space-y-4">
+                <div><label class="block text-xs font-bold text-gray-700 mb-1">الاسم الكامل</label><input type="text" required class="w-full bg-gray-50 border rounded-xl px-3 py-2 text-sm"></div>
+                <div><label class="block text-xs font-bold text-gray-700 mb-1">رقم الهاتف</label><input type="tel" required class="w-full bg-gray-50 border rounded-xl px-3 py-2 text-sm"></div>
+                <div><label class="block text-xs font-bold text-gray-700 mb-1">العنوان بالتفصيل</label><textarea rows="2" required class="w-full bg-gray-50 border rounded-xl px-3 py-2 text-sm"></textarea></div>
+                <button type="submit" class="w-full bg-pharmacy-600 hover:bg-pharmacy-700 text-white font-bold py-3 rounded-xl shadow transition text-sm">تأكيد الشراء</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const products = [
+            { id: 1, name: 'بنادول إكسترا - 24 قرص', category: 'medicines', price: 65, oldPrice: 75, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 2, name: 'فيتامين سي فوار 1000 ملجم', category: 'vitamins', price: 90, oldPrice: 110, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 3, name: 'مرطب سيرافي للبشرة الجافة', category: 'skincare', price: 350, oldPrice: 400, image: 'https://images.unsplash.com/photo-1608248597359-f538e1b30d9e?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
+            { id: 4, name: 'أوميجا 3 مكمل غذائي', category: 'vitamins', price: 220, oldPrice: 260, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.7 }
+        ];
+        let cart = [];
+        let currentFilter = 'all';
+        function renderProducts(filter = 'all', searchQuery = '') {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = '';
+            let filtered = products.filter(p => (filter === 'all' || p.category === filter) && p.name.toLowerCase().includes(searchQuery.toLowerCase()));
+            document.getElementById('productCount').innerText = `عرض ${filtered.length} منتج`;
+            if (filtered.length === 0) { grid.innerHTML = `<div class="col-span-full text-center py-12 text-gray-400">لا توجد منتجات مطابقة</div>`; return; }
+            filtered.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'bg-white border border-gray-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition flex flex-col justify-between group';
+                card.innerHTML = `<div><div class="relative bg-gray-50 rounded-xl overflow-hidden mb-3 h-44 flex items-center justify-center p-2"><img src="${product.image}" class="h-full object-contain"></div><h4 class="font-bold text-sm text-gray-800 mb-2">${product.name}</h4></div><div><div class="flex items-center gap-2 mb-3"><span class="text-base font-black text-pharmacy-700">${product.price} ج.م</span></div><button onclick="addToCart(${product.id})" class="w-full bg-pharmacy-50 hover:bg-pharmacy-600 text-pharmacy-700 hover:text-white font-bold py-2 rounded-xl transition text-xs">أضف للسلة</button></div>`;
+                grid.appendChild(card);
+            });
+        }
+        function filterCategory(category) { currentFilter = category; renderProducts(currentFilter, document.getElementById('searchInput').value); }
+        document.getElementById('searchInput').addEventListener('input', (e) => renderProducts(currentFilter, e.target.value));
+        function addToCart(id) { const p = products.find(i => i.id === id); const ex = cart.find(i => i.id === id); if(ex) ex.quantity++; else cart.push({...p, quantity: 1}); updateCartUI(); toggleCart(); }
+        function updateCartUI() {
+            const container = document.getElementById('cartItemsContainer');
+            document.getElementById('cartCount').innerText = cart.reduce((s, i) => s + i.quantity, 0);
+            if(cart.length === 0) { container.innerHTML = `<div class="text-center py-12 text-gray-400 text-sm">السلة فارغة</div>`; document.getElementById('cartSubtotal').innerText = '0.00 ج.م'; document.getElementById('cartTotal').innerText = '0.00 ج.م'; document.getElementById('checkoutBtn').disabled = true; return; }
+            document.getElementById('checkoutBtn').disabled = false; container.innerHTML = ''; let sub = 0;
+            cart.forEach(item => {
+                sub += item.price * item.quantity;
+                container.innerHTML += `<div class="py-3 flex items-center justify-between gap-3"><div class="flex items-center gap-3"><img src="${item.image}" class="w-12 h-12 object-contain bg-gray-50 rounded-lg p-1"><div><h5 class="text-xs font-bold">${item.name}</h5><span class="text-xs text-pharmacy-700 font-bold">${item.price} ج.م × ${item.quantity}</span></div></div><button onclick="cart = cart.filter(i => i.id !== ${item.id}); updateCartUI();" class="text-red-400 text-xs"><i class="fas fa-trash-alt"></i></button></div>`;
+            });
+            document.getElementById('cartSubtotal').innerText = sub.toFixed(2) + ' ج.م';
+            document.getElementById('cartTotal').innerText = (sub + 25).toFixed(2) + ' ج.م';
+        }
+        function toggleCart() { document.getElementById('cartDrawer').classList.toggle('hidden'); }
+        function openPrescriptionModal() { document.getElementById('prescriptionModal').classList.remove('hidden'); }
+        function closePrescriptionModal() { document.getElementById('prescriptionModal').classList.add('hidden'); }
+        function handlePrescriptionSubmit(e) { e.preventDefault(); alert('تم إرسال الروشتة بنجاح!'); closePrescriptionModal(); }
+        function openCheckoutModal() { toggleCart(); document.getElementById('checkoutModal').classList.remove('hidden'); }
+        function closeCheckoutModal() { document.getElementById('checkoutModal').classList.add('hidden'); }
+        function handleCheckoutSubmit(e) { e.preventDefault(); alert('تم تأكيد الطلب بنجاح!'); closeCheckoutModal(); cart = []; updateCartUI(); }
+        renderProducts();
+    </script>
+</body>
+</html>
