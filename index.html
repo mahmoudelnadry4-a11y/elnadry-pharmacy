@@ -56,7 +56,7 @@
             </a>
             <div class="hidden md:flex flex-1 max-w-xl mx-4">
                 <div class="relative w-full">
-                    <input type="text" id="searchInput" placeholder="ابحث عن الغسولات، الأدوية، والفيتامينات..." class="w-full bg-gray-100 border border-gray-200 rounded-full py-2.5 pr-10 pl-4 text-sm focus:outline-none focus:border-pharmacy-500 focus:bg-white transition">
+                    <input type="text" id="searchInput" placeholder="ابحث عن الشامبو، الكريمات، معجون الأسنان، والأدوية..." class="w-full bg-gray-100 border border-gray-200 rounded-full py-2.5 pr-10 pl-4 text-sm focus:outline-none focus:border-pharmacy-500 focus:bg-white transition">
                     <i class="fas fa-search absolute right-3.5 top-3.5 text-gray-400"></i>
                 </div>
             </div>
@@ -75,20 +75,22 @@
         <nav class="bg-gray-100 border-t border-gray-200 px-4 py-2 overflow-x-auto">
             <div class="container mx-auto flex items-center gap-6 text-sm whitespace-nowrap">
                 <a href="#products" onclick="filterCategory('all')" class="category-btn text-pharmacy-700 font-bold hover:text-pharmacy-900 pb-1 border-b-2 border-pharmacy-600">الكل</a>
-                <a href="#products" onclick="filterCategory('skincare')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">غسولات العناية بالبشرة</a>
-                <a href="#products" onclick="filterCategory('limitless')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">فيتامينات ليمليس (Limitless)</a>
+                <a href="#products" onclick="filterCategory('hair')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">العناية بالشعر (شامبو، بلسم، زيوت وكريمات)</a>
+                <a href="#products" onclick="filterCategory('oral')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">عناية الأسنان (معجون وفرش)</a>
+                <a href="#products" onclick="filterCategory('skincare')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">غسولات البشرة</a>
+                <a href="#products" onclick="filterCategory('limitless')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">فيتامينات ليمليس</a>
                 <a href="#products" onclick="filterCategory('painkillers')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">مسكنات وعلاجات</a>
                 <a href="#products" onclick="filterCategory('antibiotics')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">مضادات حيوية</a>
-                <a href="#products" onclick="filterCategory('stomach')" class="category-btn text-gray-600 hover:text-gray-700 font-semibold pb-1 border-b-2 border-transparent">أدوية الجهاز الهضمي</a>
+                <a href="#products" onclick="filterCategory('stomach')" class="category-btn text-gray-600 hover:text-gray-700 font-semibold pb-1 border-b-2 border-transparent">أدوية المعدة</a>
             </div>
         </nav>
     </header>
     <section class="container mx-auto px-4 my-6">
         <div class="bg-gradient-to-r from-pharmacy-800 to-pharmacy-600 rounded-3xl text-white p-6 md:p-12 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
             <div class="max-w-xl z-10 text-center md:text-right">
-                <span class="bg-pharmacy-500/40 text-pharmacy-100 text-xs px-3 py-1 rounded-full font-bold inline-block mb-3">أكبر تشكيلة غسولات بشرة وفيتامينات</span>
-                <h2 class="text-3xl md:text-4xl font-black mb-4 leading-tight">كل ما تحتاجه لصحتك وجمالك</h2>
-                <p class="text-pharmacy-100 text-sm md:text-base mb-6 leading-relaxed">تسوق مجموعة غسولات البشرة الطبية والمستوردة وأدوية ومكملات صيدلية النادري الأصلية بأسعار ممتازة وتوصيل سريع.</p>
+                <span class="bg-pharmacy-500/40 text-pharmacy-100 text-xs px-3 py-1 rounded-full font-bold inline-block mb-3">شامبو، كريمات، زيوت وعناية شخصية متكاملة</span>
+                <h2 class="text-3xl md:text-4xl font-black mb-4 leading-tight">كل ما تحتاجه لصحتك وعنايتك الشخصية</h2>
+                <p class="text-pharmacy-100 text-sm md:text-base mb-6 leading-relaxed">تسوق أقوى منتجات العناية بالشعر والبشرة والأسنان وأدوية ومكملات صيدلية النادري بأسعار ممتازة وتوصيل سريع.</p>
                 <div class="flex flex-wrap items-center justify-center md:justify-start gap-3">
                     <a href="#products" class="bg-white text-pharmacy-800 hover:bg-pharmacy-50 font-bold px-6 py-3 rounded-xl shadow transition text-sm">تسوق المنتجات الآن</a>
                     <button onclick="openPrescriptionModal()" class="bg-amber-500 hover:bg-amber-600 text-white font-bold px-6 py-3 rounded-xl shadow transition text-sm flex items-center gap-2">
@@ -106,7 +108,7 @@
     <section id="products" class="container mx-auto px-4 mb-16">
         <div class="flex items-center justify-between mb-6">
             <h3 class="text-xl font-black text-gray-800 flex items-center gap-2">
-                <span class="w-3 h-3 bg-pharmacy-600 rounded-full"></span> المنتجات والغسولات المتوفرة
+                <span class="w-3 h-3 bg-pharmacy-600 rounded-full"></span> المنتجات والعناية الشخصية المتوفرة
             </h3>
             <span id="productCount" class="text-xs text-gray-500 font-semibold">عرض المنتجات</span>
         </div>
@@ -119,7 +121,7 @@
                     <div class="bg-pharmacy-600 text-white p-2 rounded-lg"><i class="fas fa-pills text-lg"></i></div>
                     <h4 class="text-lg font-black">صيدلية النادري</h4>
                 </div>
-                <p class="text-xs text-pharmacy-100 leading-relaxed mb-4">صيدليتك المتكاملة لتوفير جميع الأدوية، مستحضرات التجميل، وغسولات البشرة.</p>
+                <p class="text-xs text-pharmacy-100 leading-relaxed mb-4">صيدليتك المتكاملة لتوفير الأدوية، مستحضرات التجميل، منتجات الشعر، والعناية بالأسنان.</p>
             </div>
             <div>
                 <h5 class="text-sm font-bold mb-4 border-b border-pharmacy-800 pb-2">روابط سريعة</h5>
@@ -198,43 +200,45 @@
     </div>
     <script>
         const products = [
-            // غسولات البشرة الطبية والمستوردة في مصر
-            { id: 101, name: 'غسول سيتافيل للبشرة الجافة والحساسة 230 مل - Cetaphil', category: 'skincare', price: 450, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
-            { id: 102, name: 'سيتافيل غسول رغوي للبشرة الدهنية والمختلطة 236 مل - Cetaphil', category: 'skincare', price: 470, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 103, name: 'لاروش بوزيه إيفاكلار غسول للبشرة الدهنية 400 مل - La Roche-Posay', category: 'skincare', price: 750, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
-            { id: 104, name: 'لاروش بوزيه توليريان غسول مرطب للبشرة الجافة 400 مل - La Roche-Posay', category: 'skincare', price: 780, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 105, name: 'سيرافي غسول رغوي للوجه للبشرة العادية إلى الدهنية 236 مل - CeraVe', category: 'skincare', price: 520, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 106, name: 'سيرافي غسول مرطب للبشرة العادية إلى الجافة 236 مل - CeraVe', category: 'skincare', price: 520, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
-            { id: 107, name: 'ستريدكس غسول/جل لحب الشباب - Stridex', category: 'skincare', price: 340, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.7 },
-            { id: 108, name: 'بيوديرما سيبيوم غسول للبشرة الدهنية والمختلطة 200 مل - Bioderma', category: 'skincare', price: 580, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 109, name: 'بيوديرما أاتوديرم غسول للبشرة الجافة 200 مل - Bioderma', category: 'skincare', price: 600, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
-            { id: 110, name: 'اڤين غسول كلينانس للبشرة المعرضة لحب الشباب 200 مل - Avene', category: 'skincare', price: 590, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
-            { id: 111, name: 'ڤيلجي غسول للبشرة الدهنية والمختلطة 250 مل - Velor', category: 'skincare', price: 160, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.7 },
-            { id: 112, name: 'старڤيل غسول جل للبشرة الدهنية 200 مل - Starville', category: 'skincare', price: 135, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 113, name: 'سينوبار غسول للبشرة الدهنية - Synobar', category: 'skincare', price: 120, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.6 },
-            { id: 114, name: 'بوبانا غسول بالفحم للوجه 300 مل - Bobana', category: 'skincare', price: 85, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.5 },
-            { id: 115, name: 'كيرباي غسول مرطب للبشرة الجافة - Care By', category: 'skincare', price: 110, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.6 },
+            // ==================== العناية بالشعر (شامبو، بلسم، كريمات، زيوت) ====================
+            { id: 201, name: 'شامبو وبلسم فافو لعلاج القشرة 250 مل - Favo', category: 'hair', price: 120, image: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 202, name: 'شامبو كيراتين سيטشيل للشعر التالف 400 مل - Setchale', category: 'hair', price: 195, image: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=400&auto=format&fit=crop&q=80', rating: 4.7 },
+            { id: 203, name: 'سيفن سييز أو سيروم تريسبا لترطيب الشعر 120 مل - Tresba', category: 'hair', price: 160, image: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 204, name: 'كريم هيرمكس لتساقط الشعر والتغذية 150 جم - Hermix', category: 'hair', price: 140, image: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=400&auto=format&fit=crop&q=80', rating: 4.6 },
+            { id: 205, name: 'كريم فاتيكا بالصبار والعسل لتصفيف الشعر 140 مل - Vatika', category: 'hair', price: 55, image: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=400&auto=format&fit=crop&q=80', rating: 4.5 },
+            { id: 206, name: 'زيت ووكالي أو دابر أملا الأصلي لتطويل الشعر 300 مل - Dabur Amla', category: 'hair', price: 90, image: 'https://images.unsplash.com/photo-1608248597359-994ab31557d3?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 207, name: 'زيت الأرجان المغربي النقي للعناية بالشعر 100 مل - Argan Oil', category: 'hair', price: 220, image: 'https://images.unsplash.com/photo-1608248597359-994ab31557d3?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
+            { id: 208, name: 'شامبو لوريال إلفيف بالهيالورونيك المرطب 400 مل - L\'Oreal Elvive', category: 'hair', price: 185, image: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
 
-            // منتجات ليمليس (Limitless)
+            // ==================== عناية الأسنان (معجون، فرش، غسول فم) ====================
+            { id: 220, name: 'معجون أسنان سنسوداين للإصلاح والحماية الحساسة 75 مل - Sensodyne', category: 'oral', price: 135, image: 'https://images.unsplash.com/photo-1559595500-e14b2d495f2a?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
+            { id: 221, name: 'معجون أسنان كولجيت أوبيتك وايت لتبييض الأسنان 75 مل - Colgate', category: 'oral', price: 95, image: 'https://images.unsplash.com/photo-1559595500-e14b2d495f2a?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 222, name: 'معجون أسنان سيجنال كامل الحماية 100 مل - Signal', category: 'oral', price: 50, image: 'https://images.unsplash.com/photo-1559595500-e14b2d495f2a?w=400&auto=format&fit=crop&q=80', rating: 4.6 },
+            { id: 223, name: 'فرشاة أسنان كولجيت ناعمة مزدوجة (قطعتين) - Colgate Toothbrush', category: 'oral', price: 65, image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 224, name: 'فرشاة أسنان أورال-بي برو إكسبريس - Oral-B', category: 'oral', price: 75, image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+
+            // ==================== غسولات البشرة ====================
+            { id: 101, name: 'غسول سيتافيل للبشرة الجافة والحساسة 230 مل - Cetaphil', category: 'skincare', price: 450, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
+            { id: 102, name: 'سيتافيل غسول رغوي للبشرة الدهنية 236 مل - Cetaphil', category: 'skincare', price: 470, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 103, name: 'لاروش بوزيه إيفاكلار غسول للبشرة الدهنية 400 مل - La Roche-Posay', category: 'skincare', price: 750, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
+            { id: 105, name: 'سيرافي غسول رغوي للبشرة الدهنية 236 مل - CeraVe', category: 'skincare', price: 520, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 112, name: 'ستارڤيل غسول جل للبشرة الدهنية 200 مل - Starville', category: 'skincare', price: 135, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 114, name: 'بوبانا غسول بالفحم للوجه 300 مل - Bobana', category: 'skincare', price: 85, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.5 },
+
+            // ==================== فيتامينات ليمليس (Limitless) ====================
             { id: 1, name: 'ليمليس سليب أيد - Limitless Sleep Aid 30 Tab', category: 'limitless', price: 180, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
             { id: 2, name: 'ليمليس وومان ماكس - Limitless Woman Max', category: 'limitless', price: 210, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
             { id: 3, name: 'ليمليس مان ماكس - Limitless Man Max', category: 'limitless', price: 210, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
             { id: 4, name: 'ليمليس كيدز مالتيفيتامين - Limitless Kids', category: 'limitless', price: 150, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
-            { id: 5, name: 'ليمليس كونسيف كيو - Limitless Conceive Q', category: 'limitless', price: 260, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 6, name: 'ليمليس فيتامين بي 12 أودي إف - Limitless B12', category: 'limitless', price: 130, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
-            { id: 7, name: 'ليمليس بيبي دي دروبس - Limitless Baby D', category: 'limitless', price: 95, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
 
-            // مسكنات وعلاجات عامة
+            // ==================== مسكنات وعلاجات عامة ====================
             { id: 8, name: 'بنادول إكسترا - Panadol Extra', category: 'painkillers', price: 65, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
             { id: 9, name: 'كاتافاست 50 مجم - Catafast 50mg', category: 'painkillers', price: 85, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
             { id: 10, name: 'فولتارين 50 مجم - Voltaren 50mg', category: 'painkillers', price: 55, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
-            { id: 11, name: 'كومتركس - Comtrex للبرد والفلونزا', category: 'painkillers', price: 52, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
-            
-            // مضادات حيوية ومعدة
+
+            // ==================== مضادات حيوية ومعدة ====================
             { id: 12, name: 'أوجمنتين 1 جم - Augmentin 1g Tab', category: 'antibiotics', price: 105, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 13, name: 'زيثروكان 500 مجم - Zithrokan 500mg', category: 'antibiotics', price: 79, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 14, name: 'كونترولوك 40 مجم - Controloc 40mg', category: 'stomach', price: 115, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 15, name: 'انتودين 40 مجم - Antodine 40mg', category: 'stomach', price: 42, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.7 }
+            { id: 14, name: 'كونترولوك 40 مجم - Controloc 40mg', category: 'stomach', price: 115, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.9 }
         ];
 
         let cart = [];
