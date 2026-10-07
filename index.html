@@ -199,92 +199,150 @@
         </div>
     </div>
     <script>
-        const products = [
-            // ==================== العناية بالشعر (شامبو، بلسم، كريمات، زيوت) ====================
-            { id: 201, name: 'شامبو وبلسم فافو لعلاج القشرة 250 مل - Favo', category: 'hair', price: 120, image: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
-            { id: 202, name: 'شامبو كيراتين سيטشيل للشعر التالف 400 مل - Setchale', category: 'hair', price: 195, image: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=400&auto=format&fit=crop&q=80', rating: 4.7 },
-            { id: 203, name: 'سيفن سييز أو سيروم تريسبا لترطيب الشعر 120 مل - Tresba', category: 'hair', price: 160, image: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 204, name: 'كريم هيرمكس لتساقط الشعر والتغذية 150 جم - Hermix', category: 'hair', price: 140, image: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=400&auto=format&fit=crop&q=80', rating: 4.6 },
-            { id: 205, name: 'كريم فاتيكا بالصبار والعسل لتصفيف الشعر 140 مل - Vatika', category: 'hair', price: 55, image: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=400&auto=format&fit=crop&q=80', rating: 4.5 },
-            { id: 206, name: 'زيت ووكالي أو دابر أملا الأصلي لتطويل الشعر 300 مل - Dabur Amla', category: 'hair', price: 90, image: 'https://images.unsplash.com/photo-1608248597359-994ab31557d3?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
-            { id: 207, name: 'زيت الأرجان المغربي النقي للعناية بالشعر 100 مل - Argan Oil', category: 'hair', price: 220, image: 'https://images.unsplash.com/photo-1608248597359-994ab31557d3?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
-            { id: 208, name: 'شامبو لوريال إلفيف بالهيالورونيك المرطب 400 مل - L\'Oreal Elvive', category: 'hair', price: 185, image: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+         const products = [
+    // ==========================================
+    // 1. فيتامينات (Limitless)
+    // ==========================================
+    { id: 1, name: 'ليمليس سليب أيد - Limitless Sleep Aid 30 Tab', category: 'limitless', price: 180, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 2, name: 'ليمليس وومان ماكس - Limitless Woman Max', category: 'limitless', price: 210, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 3, name: 'ليمليس مان ماكس - Limitless Man Max', category: 'limitless', price: 210, image: 'https://images.unsplash.com/photo-1550572017-edd951b55100' },
+    { id: 4, name: 'ليمليس كيدز مالتي فيتامين - Limitless Kids', category: 'limitless', price: 150, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
 
-            // ==================== عناية الأسنان (معجون، فرش، غسول فم) ====================
-            { id: 220, name: 'معجون أسنان سنسوداين للإصلاح والحماية الحساسة 75 مل - Sensodyne', category: 'oral', price: 135, image: 'https://images.unsplash.com/photo-1559595500-e14b2d495f2a?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
-            { id: 221, name: 'معجون أسنان كولجيت أوبيتك وايت لتبييض الأسنان 75 مل - Colgate', category: 'oral', price: 95, image: 'https://images.unsplash.com/photo-1559595500-e14b2d495f2a?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
-            { id: 222, name: 'معجون أسنان سيجنال كامل الحماية 100 مل - Signal', category: 'oral', price: 50, image: 'https://images.unsplash.com/photo-1559595500-e14b2d495f2a?w=400&auto=format&fit=crop&q=80', rating: 4.6 },
-            { id: 223, name: 'فرشاة أسنان كولجيت ناعمة مزدوجة (قطعتين) - Colgate Toothbrush', category: 'oral', price: 65, image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
-            { id: 224, name: 'فرشاة أسنان أورال-بي برو إكسبريس - Oral-B', category: 'oral', price: 75, image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+    // ==========================================
+    // 2. مسكنات وعلاجات عامة
+    // ==========================================
+    { id: 8, name: 'بنادول إكسترا - Panadol Extra', category: 'painkillers', price: 65, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 9, name: 'كتافاست 50 مجم - Catafast 50mg', category: 'painkillers', price: 85, image: 'https://images.unsplash.com/photo-1550572017-edd951b55100' },
+    { id: 10, name: 'فولتارين 50 مجم - Voltaren 50mg', category: 'painkillers', price: 55, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 11, name: 'كونترولوك 40 مجم - Controloc 40mg', category: 'stomach', price: 115, image: 'https://images.unsplash.com/photo-1550572017-edd951b55100' },
 
-            // ==================== غسولات البشرة ====================
-            { id: 101, name: 'غسول سيتافيل للبشرة الجافة والحساسة 230 مل - Cetaphil', category: 'skincare', price: 450, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
-            { id: 102, name: 'سيتافيل غسول رغوي للبشرة الدهنية 236 مل - Cetaphil', category: 'skincare', price: 470, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 103, name: 'لاروش بوزيه إيفاكلار غسول للبشرة الدهنية 400 مل - La Roche-Posay', category: 'skincare', price: 750, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
-            { id: 105, name: 'سيرافي غسول رغوي للبشرة الدهنية 236 مل - CeraVe', category: 'skincare', price: 520, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 112, name: 'ستارڤيل غسول جل للبشرة الدهنية 200 مل - Starville', category: 'skincare', price: 135, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 114, name: 'بوبانا غسول بالفحم للوجه 300 مل - Bobana', category: 'skincare', price: 85, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.5 },
+    // ==========================================
+    // 3. المضادات الحيوية
+    // ==========================================
+    { id: 12, name: 'أوجمنتين 1 جم - Augmentin 1g Tab', category: 'antibiotics', price: 105, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 13, name: 'هاى بيوتك - Hibiotic', category: 'antibiotics', price: 110, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 14, name: 'ميجاموكس - Megamox', category: 'antibiotics', price: 95, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 15, name: 'كلاموكس - Clamox', category: 'antibiotics', price: 90, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 16, name: 'كيورام - Curam', category: 'antibiotics', price: 100, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 17, name: 'كلافوكس - Klavox', category: 'antibiotics', price: 85, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 18, name: 'فلوموكس - Flumox', category: 'antibiotics', price: 75, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 19, name: 'إيموكس - E-mox', category: 'antibiotics', price: 60, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 20, name: 'أموكسيل - Amoxil', category: 'antibiotics', price: 65, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 21, name: 'نوفاموكس - Novamox', category: 'antibiotics', price: 70, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 22, name: 'زيثروماكس - Zithromax', category: 'antibiotics', price: 145, image: 'https://images.unsplash.com/photo-1550572017-edd951b55100' },
+    { id: 23, name: 'أزومايسين - Azomycin', category: 'antibiotics', price: 95, image: 'https://images.unsplash.com/photo-1550572017-edd951b55100' },
+    { id: 24, name: 'زيتروكين - Zitrocin', category: 'antibiotics', price: 90, image: 'https://images.unsplash.com/photo-1550572017-edd951b55100' },
+    { id: 25, name: 'أبيزيثرو - Apithro', category: 'antibiotics', price: 85, image: 'https://images.unsplash.com/photo-1550572017-edd951b55100' },
+    { id: 26, name: 'أزي ونس - Azi-Once', category: 'antibiotics', price: 80, image: 'https://images.unsplash.com/photo-1550572017-edd951b55100' },
+    { id: 27, name: 'سومامد - Sumamed', category: 'antibiotics', price: 120, image: 'https://images.unsplash.com/photo-1550572017-edd951b55100' },
+    { id: 28, name: 'كلاسيد - Klacid', category: 'antibiotics', price: 180, image: 'https://images.unsplash.com/photo-1550572017-edd951b55100' },
+    { id: 29, name: 'إريثروسين - Erythrocin', category: 'antibiotics', price: 50, image: 'https://images.unsplash.com/photo-1550572017-edd951b55100' },
+    { id: 30, name: 'زينات - Zinnat', category: 'antibiotics', price: 135, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 31, name: 'سيفوتيل - Ceftil', category: 'antibiotics', price: 115, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 32, name: 'سوبراكس - Suprax', category: 'antibiotics', price: 155, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 33, name: 'سيفكس - Cefix', category: 'antibiotics', price: 95, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 34, name: 'أمونيسف - Amonicef', category: 'antibiotics', price: 90, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 35, name: 'كالفوران - Claforan', category: 'antibiotics', price: 70, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 36, name: 'روسفين - Rocephin', category: 'antibiotics', price: 110, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 37, name: 'كيفلكس - Keflex', category: 'antibiotics', price: 65, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 38, name: 'ديوريسف - Duricef', category: 'antibiotics', price: 80, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    { id: 39, name: 'أنسيف - Ancef', category: 'antibiotics', price: 65, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
 
-            // ==================== فيتامينات ليمليس (Limitless) ====================
-            { id: 1, name: 'ليمليس سليب أيد - Limitless Sleep Aid 30 Tab', category: 'limitless', price: 180, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 2, name: 'ليمليس وومان ماكس - Limitless Woman Max', category: 'limitless', price: 210, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 3, name: 'ليمليس مان ماكس - Limitless Man Max', category: 'limitless', price: 210, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
-            { id: 4, name: 'ليمليس كيدز مالتيفيتامين - Limitless Kids', category: 'limitless', price: 150, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
+    // ==========================================
+    // 4. الحقن والأمبولات (50 حقنة)
+    // ==========================================
+    { id: 40, name: 'كتافلام أمبول - Cataflam Amp', category: 'injections', price: 45, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 41, name: 'فولتارين أمبول - Voltaren Amp', category: 'injections', price: 50, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 42, name: 'كيتولين أمبول - Ketolene Amp', category: 'injections', price: 35, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 43, name: 'بيلاكام أمبول - Pielocam Amp', category: 'injections', price: 40, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 44, name: 'دولكات أمبول - Dolcat Amp', category: 'injections', price: 30, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 45, name: 'اسيفين أمبول - Acefen Amp', category: 'injections', price: 25, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 46, name: 'نوفالجين أمبول - Novalgin Amp', category: 'injections', price: 30, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 47, name: 'كيتولاك أمبول - Ketolac Amp', category: 'injections', price: 35, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 48, name: 'بيو-كيم أمبول - Biocam Amp', category: 'injections', price: 30, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 49, name: 'أوجمنتين فيال - Augmentin Vial', category: 'injections', price: 90, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 50, name: 'روستريت فيال - Rocephin Vial', category: 'injections', price: 110, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 51, name: 'سيفوكسيم فيال - Cefotax Vial', category: 'injections', price: 65, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 52, name: 'سيفوبيد فيال - Cefobid Vial', category: 'injections', price: 85, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 53, name: 'يوناسين فيال - Unasyn Vial', category: 'injections', price: 95, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 54, name: 'ميرونيم فيال - Meronem Vial', category: 'injections', price: 310, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 55, name: 'فانكوسين فيال - Vancozin Vial', category: 'injections', price: 220, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 56, name: 'تارجوسيد فيال - Targocid Vial', category: 'injections', price: 350, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 57, name: 'أميكين أمبول - Amikin Amp', category: 'injections', price: 45, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 58, name: 'جاراميسين أمبول - Garamycin Amp', category: 'injections', price: 35, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 59, name: 'كلينداسين أمبول - Clindacin Amp', category: 'injections', price: 50, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 60, name: 'لينكومايسين أمبول - Lincomycin Amp', category: 'injections', price: 40, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 61, name: 'سبروباي فيال - Cprobay Vial', category: 'injections', price: 75, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 62, name: 'بوسكوبران أمبول - Buscopan Amp', category: 'injections', price: 35, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 63, name: 'سبازموفري أمبول - Spasmofre Amp', category: 'injections', price: 30, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 64, name: 'فيسبيرال أمبول - Visceralge Amp', category: 'injections', price: 30, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 65, name: 'بارالجين أمبول - Baralgin Amp', category: 'injections', price: 40, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 66, name: 'رياثلين أمبول - Riabal Amp', category: 'injections', price: 35, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 67, name: 'ديكساميثازون أمبول - Dexamethasone Amp', category: 'injections', price: 20, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 68, name: 'سيلوسترون أمبول - Celestone Amp', category: 'injections', price: 30, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 69, name: 'هيدروكورتيزون فيال - Hydrocortisone Vial', category: 'injections', price: 25, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 70, name: 'أفايل أمبول - Avil Amp', category: 'injections', price: 25, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 71, name: 'الرجكس أمبول - Allergex Amp', category: 'injections', price: 25, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 72, name: 'سولو-كورتيف فيال - Solu-Cortef Vial', category: 'injections', price: 45, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 73, name: 'ميدرول فيال - Medrol Vial', category: 'injections', price: 60, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 74, name: 'نوربايون أمبول - Neurobion Amp', category: 'injections', price: 55, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 75, name: 'ديبوفيت أمبول - Depovit Amp', category: 'injections', price: 50, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 76, name: 'مادافيت أمبول - Megavit Amp', category: 'injections', price: 45, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 77, name: 'بيكوين أمبول - Becozyme Amp', category: 'injections', price: 40, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 78, name: 'سي جيت أمبول - C-Ject Amp', category: 'injections', price: 35, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 79, name: 'فيتامين ب12 أمبول - Vitamin B12 Amp', category: 'injections', price: 30, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 80, name: 'لافيرون أمبول - Laferon Amp', category: 'injections', price: 70, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 81, name: 'بريمبران أمبول - Primperan Amp', category: 'injections', price: 30, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 82, name: 'زفران أمبول - Zofran Amp', category: 'injections', price: 65, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 83, name: 'كونترولوك فيال - Controloc Vial', category: 'injections', price: 85, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 84, name: 'نيكسيوم فيال - Nexium Vial', category: 'injections', price: 95, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 85, name: 'أوميباك فيال - Omepac Vial', category: 'injections', price: 75, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 86, name: 'أدرينالين أمبول - Adrenaline Amp', category: 'injections', price: 25, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 87, name: 'أتروبين أمبول - Atropine Amp', category: 'injections', price: 25, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 88, name: 'كلكسان سرنجة - Clexane Syringe', category: 'injections', price: 140, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
+    { id: 89, name: 'لازيكس أمبول - Lasix Amp', category: 'injections', price: 30, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
 
-            // ==================== مسكنات وعلاجات عامة ====================
-            { id: 8, name: 'بنادول إكسترا - Panadol Extra', category: 'painkillers', price: 65, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 9, name: 'كاتافاست 50 مجم - Catafast 50mg', category: 'painkillers', price: 85, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 10, name: 'فولتارين 50 مجم - Voltaren 50mg', category: 'painkillers', price: 55, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
-// ======مضادات حيوية واسعة المجال=======
-// ==========================================
-{ id: 12, name: 'هاى بيوتك - Hibiotic', category: 'antibiotics', price: 110, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
-{ id: 13, name: 'أوجمنتين - Augmentin', category: 'antibiotics', price: 130, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
-{ id: 14, name: 'ميجاموكس - Megamox', category: 'antibiotics', price: 95, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
-{ id: 15, name: 'كلاموكس - Clamox', category: 'antibiotics', price: 90, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
-{ id: 16, name: 'كيورام - Curam', category: 'antibiotics', price: 100, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
-{ id: 17, name: 'كلافوكس - Klavox', category: 'antibiotics', price: 85, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
-{ id: 18, name: 'فلوموكس - Flumox', category: 'antibiotics', price: 75, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
-{ id: 19, name: 'إيموكس - E-mox', category: 'antibiotics', price: 60, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
-{ id: 20, name: 'أموكسيل - Amoxil', category: 'antibiotics', price: 65, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
-{ id: 21, name: 'نوفاموكس - Novamox', category: 'antibiotics', price: 70, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+    // ==========================================
+    // 5. كريمات الشعر (Hair Creams)
+    // ==========================================
+    { id: 90, name: 'فاتيكا كريم شعر - Vatika Hair Cream', category: 'hair', price: 65, image: 'https://images.unsplash.com/photo-1608248597359-f5383563914a' },
+    { id: 91, name: 'باراشوت كريم شعر - Parachute Hair Cream', category: 'hair', price: 70, image: 'https://images.unsplash.com/photo-1608248597359-f5383563914a' },
+    { id: 92, name: 'دابر أملا كريم شعر - Dabur Amla Cream', category: 'hair', price: 60, image: 'https://images.unsplash.com/photo-1608248597359-f5383563914a' },
+    { id: 93, name: 'تريسباست كريم شعر - Tracepant Hair Cream', category: 'hair', price: 110, image: 'https://images.unsplash.com/photo-1608248597359-f5383563914a' },
+    { id: 94, name: 'بالمرز كريم شعر - Palmer\'s Hair Cream', category: 'hair', price: 150, image: 'https://images.unsplash.com/photo-1608248597359-f5383563914a' },
+    { id: 95, name: 'برنسيس كريم شعر - Princess Hair Cream', category: 'hair', price: 55, image: 'https://images.unsplash.com/photo-1608248597359-f5383563914a' },
+    { id: 96, name: 'بانتين كريم شعر - Pantene Hair Cream', category: 'hair', price: 85, image: 'https://images.unsplash.com/photo-1608248597359-f5383563914a' },
+    { id: 97, name: 'الف إي في كير كريم شعر - V Care Cream', category: 'hair', price: 75, image: 'https://images.unsplash.com/photo-1608248597359-f5383563914a' },
 
-// ==========================================
-// مضادات حيوية للجهاز التنفسي (الماكروليدات)
-// ==========================================
-{ id: 22, name: 'زيثروماكس - Zithromax', category: 'antibiotics', price: 145, image: 'https://images.unsplash.com/photo-1550572017-edd951b55100' },
-{ id: 23, name: 'أزومايسين - Azomycin', category: 'antibiotics', price: 95, image: 'https://images.unsplash.com/photo-1550572017-edd951b55100' },
-{ id: 24, name: 'زيتروكين - Zitrocin', category: 'antibiotics', price: 90, image: 'https://images.unsplash.com/photo-1550572017-edd951b55100' },
-{ id: 25, name: 'أبيزيثرو - Apithro', category: 'antibiotics', price: 85, image: 'https://images.unsplash.com/photo-1550572017-edd951b55100' },
-{ id: 26, name: 'أزي ونس - Azi-Once', category: 'antibiotics', price: 80, image: 'https://images.unsplash.com/photo-1550572017-edd951b55100' },
-{ id: 27, name: 'سومامد - Sumamed', category: 'antibiotics', price: 120, image: 'https://images.unsplash.com/photo-1550572017-edd951b55100' },
-{ id: 28, name: 'كلاسيد - Klacid', category: 'antibiotics', price: 180, image: 'https://images.unsplash.com/photo-1550572017-edd951b55100' },
-{ id: 29, name: 'إريثروسين - Erythrocin', category: 'antibiotics', price: 50, image: 'https://images.unsplash.com/photo-1550572017-edd951b55100' },
+    // ==========================================
+    // 6. الغسولات الطبية والتجميلية (Cleansers & Washes)
+    // ==========================================
+    { id: 98, name: 'سترونج فيل غسول - Strongville Cleanser', category: 'washes', price: 180, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03' },
+    { id: 99, name: 'بيوديرما غسول - Bioderma Gel Moussant', category: 'washes', price: 450, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03' },
+    { id: 100, name: 'سيراميف غسول - CeraVe Cleanser', category: 'washes', price: 480, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03' },
+    { id: 101, name: 'إيزيس غسول - Isis Pharma Gel', category: 'washes', price: 320, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03' },
+    { id: 102, name: 'ستارفيل غسول - Starville Facial Cleanser', category: 'washes', price: 140, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03' },
+    { id: 103, name: 'كلين آند كير غسول - Clean & Clear Wash', category: 'washes', price: 95, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03' },
+    { id: 104, name: 'سيباميد غسول - Sebamed Clear Face', category: 'washes', price: 250, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03' },
+    { id: 105, name: 'ملцеп غسول نسائي - Meladerm Feminine Wash', category: 'washes', price: 110, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03' }
+];
 
-// ==========================================
-// مجموعة السيفالوسبورينات
-// ==========================================
-{ id: 30, name: 'زينات - Zinnat', category: 'antibiotics', price: 135, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
-{ id: 31, name: 'سيفوتيل - Ceftil', category: 'antibiotics', price: 115, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
-{ id: 32, name: 'سوبراكس - Suprax', category: 'antibiotics', price: 155, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
-{ id: 33, name: 'سيفكس - Cefix', category: 'antibiotics', price: 95, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
-{ id: 34, name: 'أمونيسف - Amonicef', category: 'antibiotics', price: 90, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
-{ id: 35, name: 'كالفوران - Claforan', category: 'antibiotics', price: 70, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
-{ id: 36, name: 'روسفين - Rocephin', category: 'antibiotics', price: 110, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
-{ id: 37, name: 'كيفلكس - Keflex', category: 'antibiotics', price: 65, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
-{ id: 38, name: 'ديوريسف - Duricef', category: 'antibiotics', price: 80, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
-{ id: 39, name: 'أنسيف - Ancef', category: 'antibiotics', price: 65, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae' },
+let cart = [];
+let currentFilter = 'all';
 
-// ==========================================
-// حقن وحالات طوارئ ومستشفيات
-// ==========================================
-{ id: 40, name: 'فانكوسين - Vancozin', category: 'injections', price: 220, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
-{ id: 41, name: 'ميريم - Merim', category: 'injections', price: 310, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
-{ id: 42, name: 'تارجوسيد - Targocid', category: 'injections', price: 350, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
-{ id: 43, name: 'أميكين - Amikin', category: 'injections', price: 45, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' },
-{ id: 44, name: 'جاراميسين - Garamycin', category: 'injections', price: 35, image: 'https://images.unsplash.com/photo-1579165466741-7f35e4755660' }
-            /
-        let cart = [];
-        let currentFilter = 'all';
+function renderProducts(filter = 'all', searchQuery = '') {
+    const grid = document.getElementById('productsGrid');
+    grid.innerHTML = '';
+    let filtered = products.filter(p => (filter === 'all' || p.category === filter) && p.name.toLowerCase().includes(searchQuery.toLowerCase()));
+    document.getElementById('productCount').innerText = `عرض ${filtered.length} منتج`;
+    if (filtered.length === 0) {
+        grid.innerHTML = '<div class="col-span-full text-center py-12 text-gray-400">لا توجد منتجات مطابقة...</div>';
+        return;
+    }
+    filtered.forEach(product => {
+        
+    });
+}
 
         function renderProducts(filter = 'all', searchQuery = '') {
             const grid = document.getElementById('productsGrid');
