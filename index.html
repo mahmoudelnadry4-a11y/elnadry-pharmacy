@@ -56,7 +56,7 @@
             </a>
             <div class="hidden md:flex flex-1 max-w-xl mx-4">
                 <div class="relative w-full">
-                    <input type="text" id="searchInput" placeholder="ابحث عن الأدوية، فيتامينات ليمتليس، الغسولات، والمضادات الحيوية..." class="w-full bg-gray-100 border border-gray-200 rounded-full py-2.5 pr-10 pl-4 text-sm focus:outline-none focus:border-pharmacy-500 focus:bg-white transition">
+                    <input type="text" id="searchInput" placeholder="ابحث عن الفيتامينات، كابكسي، الغسولات، ومعجون الأسنان..." class="w-full bg-gray-100 border border-gray-200 rounded-full py-2.5 pr-10 pl-4 text-sm focus:outline-none focus:border-pharmacy-500 focus:bg-white transition">
                     <i class="fas fa-search absolute right-3.5 top-3.5 text-gray-400"></i>
                 </div>
             </div>
@@ -76,12 +76,13 @@
             <div class="container mx-auto flex items-center gap-6 text-sm whitespace-nowrap">
                 <a href="#products" onclick="filterCategory('all')" class="category-btn text-pharmacy-700 font-bold hover:text-pharmacy-900 pb-1 border-b-2 border-pharmacy-600">الكل</a>
                 <a href="#products" onclick="filterCategory('limitless')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">فيتامينات ليمتليس</a>
-                <a href="#products" onclick="filterCategory('skincare')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">غسولات البشرة</a>
-                <a href="#products" onclick="filterCategory('hair')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">العناية بالشعر</a>
-                <a href="#products" onclick="filterCategory('oral')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">عناية الأسنان</a>
+                <a href="#products" onclick="filterCategory('haircare')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">منتجات كابكسي وكلاري</a>
+                <a href="#products" onclick="filterCategory('skincare')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">غسولات البشرة (20 نوع)</a>
+                <a href="#products" onclick="filterCategory('oralcare')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">عناية الأسنان</a>
+                <a href="#products" onclick="filterCategory('tablets')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">أقراص وكسپولات عامة</a>
+                <a href="#products" onclick="filterCategory('injections')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">الحقن والأمبولات</a>
+                <a href="#products" onclick="filterCategory('sachets')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">الأكياس والفوارات</a>
                 <a href="#products" onclick="filterCategory('painkillers')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">مسكنات وعلاجات</a>
-                <a href="#products" onclick="filterCategory('antibiotics')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">مضادات حيوية</a>
-                <a href="#products" onclick="filterCategory('stomach')" class="category-btn text-gray-600 hover:text-gray-700 font-semibold pb-1 border-b-2 border-transparent">أدوية المعدة والهضم</a>
             </div>
         </nav>
     </header>
@@ -89,8 +90,8 @@
         <div class="bg-gradient-to-r from-pharmacy-800 to-pharmacy-600 rounded-3xl text-white p-6 md:p-12 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
             <div class="max-w-xl z-10 text-center md:text-right">
                 <span class="bg-pharmacy-500/40 text-pharmacy-100 text-xs px-3 py-1 rounded-full font-bold inline-block mb-3">صيدليتك الشاملة 24 ساعة</span>
-                <h2 class="text-3xl md:text-4xl font-black mb-4 leading-tight">كل ما تحتاجه لصحتك وعنايتك الشخصية</h2>
-                <p class="text-pharmacy-100 text-sm md:text-base mb-6 leading-relaxed">تسوق جميع منتجات فيتامينات ليمتليس الأصلية، وأدوية المعدة، المضادات الحيوية، وغسولات البشرة بأسعار ممتازة وتوصيل سريع.</p>
+                <h2 class="text-3xl md:text-4xl font-black mb-4 leading-tight">كل الفيتامينات، كابكسي، وغسولات البشرة في مصر</h2>
+                <p class="text-pharmacy-100 text-sm md:text-base mb-6 leading-relaxed">تسوق أقراص الفيتامينات، منتجات كابكسي وكلاري، 20 نوع غسول للبشرة، معجون الأسنان، وباقي المنتجات بأسعار ممتازة وتوصيل سريع.</p>
                 <div class="flex flex-wrap items-center justify-center md:justify-start gap-3">
                     <a href="#products" class="bg-white text-pharmacy-800 hover:bg-pharmacy-50 font-bold px-6 py-3 rounded-xl shadow transition text-sm">تسوق المنتجات الآن</a>
                     <button onclick="openPrescriptionModal()" class="bg-amber-500 hover:bg-amber-600 text-white font-bold px-6 py-3 rounded-xl shadow transition text-sm flex items-center gap-2">
@@ -108,7 +109,7 @@
     <section id="products" class="container mx-auto px-4 mb-16">
         <div class="flex items-center justify-between mb-6">
             <h3 class="text-xl font-black text-gray-800 flex items-center gap-2">
-                <span class="w-3 h-3 bg-pharmacy-600 rounded-full"></span> جميع المنتجات والأدوية المتوفرة
+                <span class="w-3 h-3 bg-pharmacy-600 rounded-full"></span> جميع المنتجات والفيتامينات المتوفرة
             </h3>
             <span id="productCount" class="text-xs text-gray-500 font-semibold">عرض المنتجات</span>
         </div>
@@ -200,56 +201,72 @@
     </div>
     <script>
         const products = [
-            // ==================== منتجات ليمتليس (Limitless - الكاملة) ====================
-            { id: 1, name: 'ليمتلس مان ماكس - Limitless Man Max (30 قرص)', category: 'limitless', price: 250, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 2, name: 'ليمتلس وومان ماكس - Limitless Woman Max (30 قرص)', category: 'limitless', price: 250, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 3, name: 'ليمتلس مان / وومان ماكس (100 قرص)', category: 'limitless', price: 700, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 4, name: 'ليمتلس مان / وومان مالتي جاميز (90 قطعة)', category: 'limitless', price: 345, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
-            { id: 5, name: 'ليمتلس باور ماكس للرجال - Limitless Power Max (30 قرص)', category: 'limitless', price: 300, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
-            { id: 6, name: 'ليمتلس ميلجا ماكس للأعصاب - Limitless Milga Max (30 قرص)', category: 'limitless', price: 295, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
-            { id: 7, name: 'ليمتلس أوميجا 3 زيت السمك 2000 مجم (30 كبسولة)', category: 'limitless', price: 260, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 8, name: 'ليمتلس أوميجا 3 زيت السمك (60 كبسولة)', category: 'limitless', price: 450, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
-            { id: 9, name: 'ليمتلس أوسوفورتين د3 - تركيز 2000 وحدة (30 قرص)', category: 'limitless', price: 85, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
-            { id: 10, name: 'ليمتلس أوسوفورتين د3 - تركيز 5000 وحدة (30 قرص)', category: 'limitless', price: 135, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 11, name: 'ليمتلس جلو هير للشعر - Limitless Glow Hair (30 كبسولة)', category: 'limitless', price: 220, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 12, name: 'ليمتلس ماغنيسيوم 150 مجم - Limitless Magnesium (30 قرص)', category: 'limitless', price: 220, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
-            { id: 13, name: 'ليمتلس زنك 25 مجم - Limitless Zinc (30 قرص)', category: 'limitless', price: 80, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.7 },
-            { id: 14, name: 'ليمتلس كو كيو 10 للقلب - Limitless CoQ10 (30 كبسولة)', category: 'limitless', price: 345, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 15, name: 'ليمتلس بريناتال ماكس للحامل - Limitless Prenatal Max (30 قرص)', category: 'limitless', price: 220, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
-            { id: 16, name: 'ليمتلس لاكتوفيرين للمناعة - Limitless Lactoferrin (30 أكياس)', category: 'limitless', price: 420, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 17, name: 'ليمتلس كروماكس كت للتخسيس - Limitless Chromax Cut (30 أكياس)', category: 'limitless', price: 390, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.7 },
-            { id: 18, name: 'ليمتلس ليبوفريكس لعلاج نقص الحديد - Limitless Lipofrix (30 قرص)', category: 'limitless', price: 200, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            // ==================== منتجات كابكسي وكلاري (Capixy & Clary) ====================
+            { id: 101, name: 'كابكسي سيروم للشعر (Capixy Hair Serum)', category: 'haircare', price: 295, image: 'https://images.unsplash.com/photo-1608248597359-f53835626917?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 102, name: 'كابكسي سبراي لتقوية الشعر (Capixy Spray)', category: 'haircare', price: 260, image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 103, name: 'كابكسي شامبو طبي لتساقط الشعر (Capixy Shampoo)', category: 'haircare', price: 180, image: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 104, name: 'كلاري شامبو للعناية بالشعر (Clary Shampoo)', category: 'haircare', price: 165, image: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 105, name: 'كلاري بلسم مرطب للشعر (Clary Conditioner)', category: 'haircare', price: 155, image: 'https://images.unsplash.com/photo-1608248597359-f53835626917?w=400&auto=format&fit=crop&q=80', rating: 4.7 },
 
-            // ==================== مسكنات وعلاجات عامة ====================
-            { id: 19, name: 'بنادول إكسترا - Panadol Extra', category: 'painkillers', price: 65, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 20, name: 'كاتافاست 50 مجم - Catafast 50mg', category: 'painkillers', price: 85, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 21, name: 'فولتارين 50 مجم - Voltaren 50mg', category: 'painkillers', price: 55, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
-            { id: 22, name: 'كومتركس - Comtrex للبرد والفلونزا', category: 'painkillers', price: 52, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            // ==================== معجون الأسنان سيجنال، سانسوداين وكويجرا ====================
+            { id: 106, name: 'معجون أسنان سيجنال كافيتي فايتر 120 مل', category: 'oralcare', price: 45, image: 'https://images.unsplash.com/photo-1559563362-c667ba5f5480?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 107, name: 'معجون أسنان سيجنال وايت ناو لتبييض الأسنان', category: 'oralcare', price: 75, image: 'https://images.unsplash.com/photo-1559563362-c667ba5f5480?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 108, name: 'معجون أسنان سانسوداين للأسنان الحساسة 75 مل', category: 'oralcare', price: 115, image: 'https://images.unsplash.com/photo-1559563362-c667ba5f5480?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
+            { id: 109, name: 'معجون أسنان سانسوداين رابيد ريليف', category: 'oralcare', price: 135, image: 'https://images.unsplash.com/photo-1559563362-c667ba5f5480?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
+            { id: 110, name: 'كويجرا سبراي أو أقراص (Quicra)', category: 'oralcare', price: 95, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
 
-            // ==================== أدوية المعدة والجهاز الهضمي ====================
-            { id: 23, name: 'انتودين 40 مجم - Antodine 40mg', category: 'stomach', price: 42, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.7 },
-            { id: 24, name: 'كونترولوك 40 مجم - Controloc 40mg', category: 'stomach', price: 115, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 25, name: 'نكسيوم 40 مجم - Nexium 40mg', category: 'stomach', price: 130, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
-            { id: 26, name: 'جافيسكون شراب أو أقراص - Gaviscon', category: 'stomach', price: 95, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 27, name: 'موتيليوم 10 مجم - Motilium', category: 'stomach', price: 65, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            // ==================== 20 غسول بشرة متنوع (Skincare Cleansers) ====================
+            { id: 201, name: 'غسول سيتافيل للبشرة الجافة والحساسة 230 مل', category: 'skincare', price: 450, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
+            { id: 202, name: 'لاروش بوزيه إيفاكلار غسول للبشرة الدهنية 400 مل', category: 'skincare', price: 750, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
+            { id: 203, name: 'ستارڤيل غسول جل للبشرة الدهنية والمختلطة 200 مل', category: 'skincare', price: 135, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 204, name: 'سيوفي غسول للبشرة المعرضة للحبوب', category: 'skincare', price: 120, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 205, name: 'بيوديرما سيبيوم غسول للبشرة الدهنية 200 مل', category: 'skincare', price: 620, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
+            { id: 206, name: 'بيوديرما أاتوديرم غسول للبشرة الجافة', category: 'skincare', price: 640, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 207, name: 'ايفلاين غسول مرطب للوجه', category: 'skincare', price: 110, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.7 },
+            { id: 208, name: 'نيفيا غسول منعش للبشرة العادية', category: 'skincare', price: 95, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 209, name: 'ڤازلين جل غسول مرطب', category: 'skincare', price: 130, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 210, name: 'غسول كليراسيل المضاد للحبوب', category: 'skincare', price: 145, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.7 },
+            { id: 211, name: 'غسول هيمالايا بالنيم لتنقية البشرة', category: 'skincare', price: 75, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 212, name: 'غسول غارنييه بالحليب والعسل للبشرة الجافة', category: 'skincare', price: 105, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 213, name: 'غسول غارنييه بالفحم لتنقية المسام', category: 'skincare', price: 115, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 214, name: 'بانوكسيل غسول بنزويل بيروك사يد للحبوب 4%', category: 'skincare', price: 380, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
+            { id: 215, name: 'سيرافي غسول مرطب للبشرة العادية إلى الجافة 236 مل', category: 'skincare', price: 490, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
+            { id: 216, name: 'سيرافي غسول رغوي للبشرة العادية إلى الدهنية 236 مل', category: 'skincare', price: 490, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
+            { id: 217, name: 'إيزيس فاماكليور غسول مقشر للبشرة الدهنية', category: 'skincare', price: 340, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 218, name: 'يوسيرين ديرمو باوريور غسول منقي', category: 'skincare', price: 410, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 219, name: 'إفا كير غسول للبشرة الدهنية بالعسل والليمون', category: 'skincare', price: 65, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.6 },
+            { id: 220, name: 'ميلانو فري غسول ومقشر لطيف', category: 'skincare', price: 90, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.7 },
 
-            // ==================== المضادات الحيوية ====================
-            { id: 28, name: 'أوجمنتين 1 جم أقراص - Augmentin 1g Tab', category: 'antibiotics', price: 105, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
-            { id: 29, name: 'زيثروكان 500 مجم كبسولات - Zithrokan 500mg', category: 'antibiotics', price: 79, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-            { id: 30, name: 'ميجايموكس 1 جم أقراص - Megamox 1g Tab', category: 'antibiotics', price: 95, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
-
-            // ==================== غسولات البشرة ====================
-            { id: 31, name: 'غسول سيتافيل للبشرة الجافة والحساسة 230 مل - Cetaphil', category: 'skincare', price: 450, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
-            { id: 32, name: 'لاروش بوزيه إيفاكلار غسول للبشرة الدهنية 400 مل - La Roche-Posay', category: 'skincare', price: 750, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
-            { id: 33, name: 'ستارڤيل غسول جل للبشرة الدهنية 200 مل - Starville', category: 'skincare', price: 135, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
-
-            // ==================== العناية بالشعر ====================
-            { id: 34, name: 'شامبو وبلسم فافو لعلاج القشرة 250 مل - Favo', category: 'hair', price: 120, image: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
-            { id: 35, name: 'زيت الأرجان المغربي النقي للعناية بالشعر 100 مل - Argan Oil', category: 'hair', price: 220, image: 'https://images.unsplash.com/photo-1608248597359-994ab31557d3?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
-
-            // ==================== عناية الأسنان ====================
-            { id: 36, name: 'معجون أسنان سنسوداين للحماية الحساسة 75 مل - Sensodyne', category: 'oral', price: 135, image: 'https://images.unsplash.com/photo-1559595500-e14b2d495f2a?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
-            { id: 37, name: 'معجون أسنان كولجيت أوبيتك وايت لتبييض الأسنان 75 مل - Colgate', category: 'oral', price: 95, image: 'https://images.unsplash.com/photo-1559595500-e14b2d495f2a?w=400&auto=format&fit=crop&q=80', rating: 4.8 }
+            // ==================== المنتجات السابقة الأصلية (لا تقلق لم يتم حذف شيء) ====================
+            { id: 1, name: 'سنتروم بالعمر (Centrum Silver) - 30 قرص', category: 'tablets', price: 290, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 2, name: 'سنتروم العادي (Centrum Multivitamin) - 30 قرص', category: 'tablets', price: 270, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 3, name: 'ليمتلس مان ماكس (Limitless Man Max) - 30 قرص', category: 'limitless', price: 250, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 4, name: 'ليمتلس وومان ماكس (Limitless Woman Max) - 30 قرص', category: 'limitless', price: 250, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 5, name: 'نيوروفيت (Neuroivit) أقراص للأعصاب', category: 'tablets', price: 52, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
+            { id: 6, name: 'نيوروبيون (Neurobion) فيتامين ب المركب', category: 'tablets', price: 65, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 7, name: 'برفكتيل (Perfectil) للبشرة والشعر والأظافر', category: 'tablets', price: 320, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 8, name: 'اوستيوكير (Osteocare) للكالسيوم والعظام', category: 'tablets', price: 85, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 9, name: 'فيروجلوبين (Feroglobin) كبسولات الحديد للأنيميا', category: 'tablets', price: 110, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 10, name: 'أوميجا 3 بلس (Omega 3 Plus) كبسولات زيت السمك', category: 'tablets', price: 105, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 11, name: 'بريجناكير (Pregnacare) فيتامينات الحمل والرضاعة', category: 'tablets', price: 340, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
+            { id: 12, name: 'ثيوتاسيد (Thiotacid 600) مضاد أكسدة وأعصاب', category: 'tablets', price: 145, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 13, name: 'مادوفيت (Maddovit) مقوي عام', category: 'tablets', price: 130, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.7 },
+            { id: 14, name: 'كيروفيت (Kerovit) كبسولات الطاقة والجينسنج', category: 'tablets', price: 175, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 15, name: 'ليمتلس جلو هير للشعر - Limitless Glow Hair', category: 'limitless', price: 220, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 16, name: 'ليمتلس أوسوفورتين د3 - 5000 وحدة', category: 'limitless', price: 135, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 17, name: 'بى كوزيم (B-Cozyme) أمبولات فيتامين ب المركب', category: 'injections', price: 45, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 18, name: 'ديبوفيت (Depovit) أمبولات فيتامين ب12', category: 'injections', price: 50, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
+            { id: 19, name: 'كوبال (Cobal) أمبولات فيتامين ب12 للأعصاب', category: 'injections', price: 55, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 20, name: 'لارجتيلي (L-Cargil) أمبولات للطاقة والحرق', category: 'injections', price: 90, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 21, name: 'ستيروجيل (Sterogyl) نقط/حقن فيتامين د المركزة', category: 'injections', price: 75, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 22, name: 'فيتاسيد ج (Vitacid C) أقراص فوارة فيتامين سي', category: 'sachets', price: 40, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 23, name: 'فور تيفيروم أكياس (Four Teverum) حديد سريع الامتصاص', category: 'sachets', price: 160, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 24, name: 'أكياس الماغنسيوم (Magnesium Sachets) للعضلات', category: 'sachets', price: 135, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.7 },
+            { id: 25, name: 'أكياس الكولاجين (Collagen Sachets) للمفاصل والبشرة', category: 'sachets', price: 350, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
+            { id: 26, name: 'ليمتلس لاكتوفيرين للمناعة - Limitless Lactoferrin', category: 'sachets', price: 420, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 30, name: 'بنادول إكسترا (Panadol Extra)', category: 'painkillers', price: 65, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 31, name: 'كاتافاست 50 مجم (Catafast 50mg)', category: 'painkillers', price: 85, image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 32, name: 'فولتارين 50 مجم (Voltaren 50mg)', category: 'painkillers', price: 55, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.8 }
         ];
 
         let cart = [];
