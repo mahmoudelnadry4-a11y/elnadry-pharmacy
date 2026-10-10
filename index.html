@@ -115,4 +115,137 @@
             </h3>
             <span id="productCount" class="text-xs text-gray-500 font-semibold">عرض المنتجات</span>
         </div>
-        <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-
+        <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+    </section>
+    <footer class="bg-pharmacy-900 text-white pt-12 pb-6 border-t border-pharmacy-800">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div>
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="bg-pharmacy-600 text-white p-2 rounded-lg"><i class="fas fa-pills text-lg"></i></div>
+                    <h4 class="text-lg font-black">صيدلية النادري</h4>
+                </div>
+                <p class="text-xs text-pharmacy-100 leading-relaxed mb-4">صيدليتك المتكاملة لتوفير جميع الأدوية والمستحضرات.</p>
+            </div>
+            <div>
+                <h5 class="text-sm font-bold mb-4 border-b border-pharmacy-800 pb-2">روابط سريعة</h5>
+                <ul class="space-y-2 text-xs text-pharmacy-100">
+                    <li><a href="#" class="hover:text-white transition">الرئيسية</a></li>
+                    <li><a href="#products" class="hover:text-white transition">الأقسام والمنتجات</a></li>
+                    <li><button onclick="openPrescriptionModal()" class="hover:text-white transition">رفع روشتة</button></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-sm font-bold mb-4 border-b border-pharmacy-800 pb-2">خدمة العملاء</h5>
+                <ul class="space-y-2 text-xs text-pharmacy-100">
+                    <li><span class="block text-white font-bold">الخط الساخن:</span> 0100525572</li>
+                    <li><span class="block text-white font-bold">ساعات العمل:</span> 24 ساعة</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-sm font-bold mb-4 border-b border-pharmacy-800 pb-2">النشرة البريدية</h5>
+                <div class="flex gap-2">
+                    <input type="email" placeholder="بريدك الإلكتروني" class="bg-pharmacy-800 text-xs px-3 py-2 rounded-lg w-full focus:outline-none border border-pharmacy-700 text-white">
+                    <button onclick="alert('تم الاشتراك بنجاح!')" class="bg-pharmacy-500 hover:bg-pharmacy-600 text-white px-3 py-2 rounded-lg text-xs font-bold transition">اشتراك</button>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 pt-4 border-t border-pharmacy-800 text-center text-xs text-pharmacy-200">جميع الحقوق محفوظة © 2026 صيدلية النادري.</div>
+    </footer>
+    <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div class="absolute inset-0 bg-black/50 transition-opacity" onclick="toggleCart()"></div>
+        <div class="absolute inset-y-0 left-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-white shadow-xl flex flex-col">
+                <div class="p-4 bg-pharmacy-900 text-white flex items-center justify-between">
+                    <h3 class="font-bold text-base flex items-center gap-2"><i class="fas fa-shopping-bag"></i> سلة المشتريات</h3>
+                    <button onclick="toggleCart()" class="text-white hover:text-gray-200 p-1"><i class="fas fa-times text-lg"></i></button>
+                </div>
+                <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-4 space-y-4 divide-y divide-gray-100"></div>
+                <div id="cartFooter" class="p-4 border-t border-gray-200 bg-gray-50">
+                    <div class="space-y-2 mb-4 text-sm">
+                        <div class="flex justify-between"><span class="text-gray-500">المجموع الفرعي:</span><span id="cartSubtotal" class="font-bold">0.00 ج.م</span></div>
+                        <div class="flex justify-between"><span class="text-gray-500">رسوم التوصيل:</span><span id="cartShipping" class="font-bold">25.00 ج.م</span></div>
+                        <div class="flex justify-between text-base border-t pt-2 border-gray-200 font-black text-pharmacy-900"><span>الإجمالي الكلي:</span><span id="cartTotal">0.00 ج.م</span></div>
+                    </div>
+                    <button onclick="openCheckoutModal()" id="checkoutBtn" class="w-full bg-pharmacy-600 hover:bg-pharmacy-700 text-white font-bold py-3 rounded-xl shadow transition text-center block disabled:opacity-50">إتمام الطلب</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="prescriptionModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+        <div class="absolute inset-0 bg-black/50" onclick="closePrescriptionModal()"></div>
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 relative z-10 shadow-2xl">
+            <div class="flex items-center justify-between mb-4 pb-2 border-b">
+                <h3 class="font-bold text-lg text-amber-800 flex items-center gap-2"><i class="fas fa-file-prescription"></i> اطلب بروشتة</h3>
+                <button onclick="closePrescriptionModal()" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times text-lg"></i></button>
+            </div>
+            <form onsubmit="handlePrescriptionSubmit(event)" class="space-y-4">
+                <div><label class="block text-xs font-bold text-gray-700 mb-1">الاسم الكريم</label><input type="text" required class="w-full bg-gray-50 border rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-amber-500" placeholder="اسمك الكامل"></div>
+                <div><label class="block text-xs font-bold text-gray-700 mb-1">رقم الهاتف للتواصل</label><input type="tel" required class="w-full bg-gray-50 border rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-amber-500" placeholder="01xxxxxxxxx"></div>
+                <div><label class="block text-xs font-bold text-gray-700 mb-1">صورة الروشتة</label><input type="file" accept="image/*" class="w-full text-xs text-gray-500"></div>
+                <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 rounded-xl shadow transition text-sm">إرسال الروشتة</button>
+            </form>
+        </div>
+    </div>
+    <div id="checkoutModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+        <div class="absolute inset-0 bg-black/50" onclick="closeCheckoutModal()"></div>
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 relative z-10 shadow-2xl">
+            <div class="flex items-center justify-between mb-4 pb-2 border-b">
+                <h3 class="font-bold text-lg text-pharmacy-900 flex items-center gap-2"><i class="fas fa-truck"></i> بيانات الشحن</h3>
+                <button onclick="closeCheckoutModal()" class="text-gray-400 hover:text-gray-600"><i class="fas fa-times text-lg"></i></button>
+            </div>
+            <form onsubmit="handleCheckoutSubmit(event)" class="space-y-4">
+                <div><label class="block text-xs font-bold text-gray-700 mb-1">الاسم الكامل</label><input type="text" required class="w-full bg-gray-50 border rounded-xl px-3 py-2 text-sm"></div>
+                <div><label class="block text-xs font-bold text-gray-700 mb-1">رقم الهاتف</label><input type="tel" required class="w-full bg-gray-50 border rounded-xl px-3 py-2 text-sm"></div>
+                <div><label class="block text-xs font-bold text-gray-700 mb-1">العنوان بالتفصيل</label><textarea rows="2" required class="w-full bg-gray-50 border rounded-xl px-3 py-2 text-sm"></textarea></div>
+                <button type="submit" class="w-full bg-pharmacy-600 hover:bg-pharmacy-700 text-white font-bold py-3 rounded-xl shadow transition text-sm">تأكيد الشراء</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const products = [
+            // ==================== المضادات الحيوية (المجموعة الكاملة) ====================
+            { id: 501, name: 'أوجمنتين 1جم أقراص (Augmentin 1g)', category: 'antibiotics', price: 115, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 5.0 },
+            { id: 502, name: 'ميجاموكس 1جم (Megamox 1g)', category: 'antibiotics', price: 95, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 503, name: 'كلاسيد 500 مجم (Klacit 500mg)', category: 'antibiotics', price: 145, image: 'https://images.unsplash.com/photo-1550572110-2228f427f7b2?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 504, name: 'زيثروكان 500 مجم (Zithrocan)', category: 'antibiotics', price: 85, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 505, name: 'فلوموكس 500 مجم كبسولات (Flumox)', category: 'antibiotics', price: 75, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 506, name: 'أوجمنتين 625 مجم أقراص (Augmentin 625mg)', category: 'antibiotics', price: 90, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 507, name: 'أوجمنتين شراب 457 مجم (Augmentin Syrup)', category: 'antibiotics', price: 70, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 508, name: 'فلوموكس شراب 250 مجم (Flumox Syrup)', category: 'antibiotics', price: 45, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.7 },
+            { id: 509, name: 'أبيكسيد 500 مجم (Apiced 500mg)', category: 'antibiotics', price: 65, image: 'https://images.unsplash.com/photo-1550572110-2228f427f7b2?w=400&auto=format&fit=crop&q=80', rating: 4.7 },
+            { id: 510, name: 'سيبروباي 500 مجم (Ciprobay 500mg)', category: 'antibiotics', price: 110, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 511, name: 'سيبروفار 500 مجم (Ciprofar 500mg)', category: 'antibiotics', price: 60, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 512, name: 'تيفان 500 مجم (Tivan 500mg)', category: 'antibiotics', price: 55, image: 'https://images.unsplash.com/photo-1550572110-2228f427f7b2?w=400&auto=format&fit=crop&q=80', rating: 4.7 },
+            { id: 513, name: 'أفلوسين 500 مجم (Aflocin 500mg)', category: 'antibiotics', price: 70, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 514, name: 'كينابيوتك 1جم (Kinabiotic 1g)', category: 'antibiotics', price: 88, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 515, name: 'يُوناسين 375 مجم أقراص (Unynasin 375mg)', category: 'antibiotics', price: 65, image: 'https://images.unsplash.com/photo-1550572110-2228f427f7b2?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 516, name: 'يُوناسين 750 مجم أقراص (Unynasin 750mg)', category: 'antibiotics', price: 95, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 517, name: 'يُوناسين شراب (Unynasin Syrup)', category: 'antibiotics', price: 50, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.7 },
+            { id: 518, name: 'Sultamicillin 375mg (سولتاميسيلين)', category: 'antibiotics', price: 60, image: 'https://images.unsplash.com/photo-1550572110-2228f427f7b2?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 519, name: 'دالاسين سي 300 مجم كبسولات (Dalacin C)', category: 'antibiotics', price: 120, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 520, name: 'كلينداسول 300 مجم كبسولات (Clindasol)', category: 'antibiotics', price: 75, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 521, name: 'ميكروكُليد 250 مجم شراب (Microclid Syrup)', category: 'antibiotics', price: 80, image: 'https://images.unsplash.com/photo-1550572110-2228f427f7b2?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 522, name: 'زيثروكس 500 مجم أقراص (Zithrox)', category: 'antibiotics', price: 80, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 523, name: 'زيسروسين 500 مجم (Zisrocin)', category: 'antibiotics', price: 82, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 524, name: 'ازرو 250 مجم شراب (Azro Syrup)', category: 'antibiotics', price: 55, image: 'https://images.unsplash.com/photo-1550572110-2228f427f7b2?w=400&auto=format&fit=crop&q=80', rating: 4.7 },
+            { id: 525, name: 'الفاكين 500 مجم (Alfacin 500mg)', category: 'antibiotics', price: 70, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 526, name: 'سيبروسين 500 مجم أقراص (Ciprosin)', category: 'antibiotics', price: 65, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.7 },
+            { id: 527, name: 'تيفوبايود 500 مجم (Tifobiotic)', category: 'antibiotics', price: 60, image: 'https://images.unsplash.com/photo-1550572110-2228f427f7b2?w=400&auto=format&fit=crop&q=80', rating: 4.7 },
+            { id: 528, name: 'أموكسيل 500 مجم كبسولات (Amoxil)', category: 'antibiotics', price: 55, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 529, name: 'أموكسيسيلين شراب 125 مجم (Amoxicillin Syrup)', category: 'antibiotics', price: 30, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.7 },
+            { id: 530, name: 'ايموبيوتك 1جم (Immobiotic)', category: 'antibiotics', price: 90, image: 'https://images.unsplash.com/photo-1550572110-2228f427f7b2?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 531, name: 'سوبراكس 400 مجم كبسولات (Suprax 400mg)', category: 'antibiotics', price: 135, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 532, name: 'سوبراكس شراب 100 مجم (Suprax Syrup)', category: 'antibiotics', price: 95, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 533, name: 'جنتاميسين 80 مجم حقن (Gentamicin)', category: 'antibiotics', price: 25, image: 'https://images.unsplash.com/photo-1550572110-2228f427f7b2?w=400&auto=format&fit=crop&q=80', rating: 4.6 },
+            { id: 534, name: 'سيفترياكسون 1جم حقن (Ceftriaxone 1g)', category: 'antibiotics', price: 45, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 535, name: 'ميكراسيف 1جم (Micracef 1g)', category: 'antibiotics', price: 50, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 536, name: 'كيورام 1جم أقراص (Curam 1g)', category: 'antibiotics', price: 110, image: 'https://images.unsplash.com/photo-1550572110-2228f427f7b2?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 537, name: 'كيورام شراب 457 مجم (Curam Syrup)', category: 'antibiotics', price: 68, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 538, name: 'هايكوبايوتيك 1جم (Hicobiotic 1g)', category: 'antibiotics', price: 105, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 539, name: 'هايكوبايوتيك شراب 625 (Hicobiotic Syrup)', category: 'antibiotics', price: 65, image: 'https://images.unsplash.com/photo-1550572110-2228f427f7b2?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 540, name: 'فانكوميسين 500 مجم (Vancomycin)', category: 'antibiotics', price: 150, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 541, name: 'سيبرولين 500 مجم (Ciproline)', category: 'antibiotics', price: 58, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.7 },
+            { id: 542, name: 'تلفاست 180 مجم أقراص (Telfast) - مضاد للحساسية', category: 'antibiotics', price: 115, image: 'https://images.unsplash.com/photo-1550572110-2228f427f7b2?w=400&auto=format&fit=crop&q=80', rating: 4.9 },
+            { id: 543, name: 'فلاجيل 500 مجم أقراص (Flagyl 500mg)', category: 'antibiotics', price: 35, image: 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 544, name: 'فلاجيل شراب (Flagyl Syrup)', category: 'antibiotics', price: 25, image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80', rating: 4.8 },
+            { id: 545, name: 'امريزول 500
