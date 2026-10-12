@@ -56,7 +56,7 @@
             </a>
             <div class="hidden md:flex flex-1 max-w-xl mx-4">
                 <div class="relative w-full">
-                    <input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="ابحث عن بامبرز، الفيتامينات، ألبان الأطفال، المضادات الحيوية..." class="w-full bg-gray-100 border border-gray-200 rounded-full py-2.5 pr-10 pl-4 text-sm focus:outline-none focus:border-pharmacy-500 focus:bg-white transition">
+                    <input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="ابحث عن بامبرز، الفيتامينات، غسول، ألبان الأطفال، الأدوية..." class="w-full bg-gray-100 border border-gray-200 rounded-full py-2.5 pr-10 pl-4 text-sm focus:outline-none focus:border-pharmacy-500 focus:bg-white transition">
                     <i class="fas fa-search absolute right-3.5 top-3.5 text-gray-400"></i>
                 </div>
             </div>
@@ -75,9 +75,13 @@
         <nav class="bg-gray-100 border-t border-gray-200 px-4 py-2 overflow-x-auto">
             <div class="container mx-auto flex items-center gap-6 text-sm whitespace-nowrap">
                 <button onclick="filterCategory('all')" class="category-btn text-pharmacy-700 font-bold hover:text-pharmacy-900 pb-1 border-b-2 border-pharmacy-600">الكل</button>
-                <button onclick="filterCategory('pampers')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">حفاضات بامبرز (Pampers)</button>
-                <button onclick="filterCategory('baby-milk')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">ألبان الأطفال (بيبيلاك، هيرو، نان)</button>
+                <button onclick="filterCategory('pampers')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">منتجات بامبرز</button>
+                <button onclick="filterCategory('baby-milk')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">ألبان الأطفال</button>
                 <button onclick="filterCategory('limitless')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">فيتامينات ليمتليس</button>
+                <button onclick="filterCategory('haircare')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">كابكسي وكلاري</button>
+                <button onclick="filterCategory('skincare')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">غسولات البشرة (20 نوع)</button>
+                <button onclick="filterCategory('oralcare')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">عناية الأسنان</button>
+                <button onclick="filterCategory('stomach')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">أدوية المعدة</button>
                 <button onclick="filterCategory('antibiotics')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">المضادات الحيوية</button>
             </div>
         </nav>
@@ -87,8 +91,8 @@
         <div class="bg-gradient-to-r from-pharmacy-800 to-pharmacy-600 rounded-3xl text-white p-6 md:p-12 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
             <div class="max-w-xl z-10 text-center md:text-right">
                 <span class="bg-pharmacy-500/40 text-pharmacy-100 text-xs px-3 py-1 rounded-full font-bold inline-block mb-3">صيدليتك الشاملة 24 ساعة</span>
-                <h2 class="text-3xl md:text-4xl font-black mb-4 leading-tight">جميع الأدوية، حفاضات بامبرز، الفيتامينات، وألبان الأطفال</h2>
-                <p class="text-pharmacy-100 text-sm md:text-base mb-6 leading-relaxed">نوفر كافة الأدوية العلاجية، منتجات وحفاضات بامبرز بجميع المقاسات، ألبان الأطفال، ومنتجات ليمتليس بأسعار ممتازة وتوصيل سريع.</p>
+                <h2 class="text-3xl md:text-4xl font-black mb-4 leading-tight">جميع الأدوية، منتجات بامبرز، الفيتامينات، وألبان الأطفال</h2>
+                <p class="text-pharmacy-100 text-sm md:text-base mb-6 leading-relaxed">نوفر كافة الأدوية العلاجية، حفاضات بامبرز بمختلف المقاسات، ألبان بيبيلاك وهيرو ونان، المضادات الحيوية، غسولات البشرة، ومنتجات ليمتليس بأسعار ممتازة وتوصيل سريع.</p>
                 <div class="flex flex-wrap items-center justify-center md:justify-start gap-3">
                     <a href="#products" class="bg-white text-pharmacy-800 hover:bg-pharmacy-50 font-bold px-6 py-3 rounded-xl shadow transition text-sm">تسوق المنتجات الآن</a>
                     <button onclick="openPrescriptionModal()" class="bg-amber-500 hover:bg-amber-600 text-white font-bold px-6 py-3 rounded-xl shadow transition text-sm flex items-center gap-2">
@@ -171,7 +175,7 @@
         </div>
     </div>
 
-    <!-- Prescription Modal -->
+    <!-- Modals -->
     <div id="prescriptionModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
         <div class="absolute inset-0 bg-black/50" onclick="closePrescriptionModal()"></div>
         <div class="bg-white rounded-2xl max-w-md w-full p-6 relative z-10 shadow-2xl">
@@ -188,7 +192,6 @@
         </div>
     </div>
 
-    <!-- Checkout Modal -->
     <div id="checkoutModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
         <div class="absolute inset-0 bg-black/50" onclick="closeCheckoutModal()"></div>
         <div class="bg-white rounded-2xl max-w-md w-full p-6 relative z-10 shadow-2xl">
@@ -210,22 +213,23 @@
         const mainSyrupBox = 'https://cdn-icons-png.flaticon.com/512/883/883360.png';
         const mainSkincare = 'https://cdn-icons-png.flaticon.com/512/3132/3132739.png';
         const mainInjection = 'https://cdn-icons-png.flaticon.com/512/883/883332.png';
+        const mainToothpaste = 'https://cdn-icons-png.flaticon.com/512/2965/2965318.png';
 
         const products = [
-            // ==================== حفاضات ومنتجات بامبرز (Pampers) ====================
-            { id: 901, name: 'بامبرز العناية الممتازة (Premium Care) - مقاس 1 (حديثي الولادة 60 حفاضة)', category: 'pampers', price: 375, image: mainSyrupBox, rating: 5.0 },
-            { id: 902, name: 'بامبرز العناية الممتازة (Premium Care) - مقاس 2 (64 حفاضة)', category: 'pampers', price: 390, image: mainSyrupBox, rating: 4.9 },
-            { id: 903, name: 'بامبرز العناية الممتازة (Premium Care) - مقاس 3 (58 حفاضة)', category: 'pampers', price: 430, image: mainSyrupBox, rating: 4.9 },
-            { id: 904, name: 'بامبرز العناية الممتازة (Premium Care) - مقاس 4 (52 حفاضة)', category: 'pampers', price: 460, image: mainSyrupBox, rating: 5.0 },
-            { id: 905, name: 'بامبرز العناية الممتازة (Premium Care) - مقاس 5 (44 حفاضة)', category: 'pampers', price: 475, image: mainSyrupBox, rating: 4.9 },
-            { id: 906, name: 'بامبرز العناية الممتازة (Premium Care) - مقاس 6 (38 حفاضة)', category: 'pampers', price: 490, image: mainSyrupBox, rating: 4.8 },
+            // === 1. منتجات وحفاضات بامبرز (Pampers) ===
+            { id: 901, name: 'بامبرز العناية الممتازة - مقاس 1 (60 حفاضة)', category: 'pampers', price: 375, image: mainSyrupBox, rating: 5.0 },
+            { id: 902, name: 'بامبرز العناية الممتازة - مقاس 2 (64 حفاضة)', category: 'pampers', price: 390, image: mainSyrupBox, rating: 4.9 },
+            { id: 903, name: 'بامبرز العناية الممتازة - مقاس 3 (58 حفاضة)', category: 'pampers', price: 430, image: mainSyrupBox, rating: 4.9 },
+            { id: 904, name: 'بامبرز العناية الممتازة - مقاس 4 (52 حفاضة)', category: 'pampers', price: 460, image: mainSyrupBox, rating: 5.0 },
+            { id: 905, name: 'بامبرز العناية الممتازة - مقاس 5 (44 حفاضة)', category: 'pampers', price: 475, image: mainSyrupBox, rating: 4.9 },
+            { id: 906, name: 'بامبرز العناية الممتازة - مقاس 6 (38 حفاضة)', category: 'pampers', price: 490, image: mainSyrupBox, rating: 4.8 },
             { id: 907, name: 'بامبرز كلوت العبوة الجامبو - مقاس 3 (56 حفاضة)', category: 'pampers', price: 335, image: mainSyrupBox, rating: 4.8 },
             { id: 908, name: 'بامبرز كلوت العبوة الجامبو - مقاس 4 (52 حفاضة)', category: 'pampers', price: 365, image: mainSyrupBox, rating: 4.9 },
             { id: 909, name: 'بامبرز كلوت العبوة الجامبو - مقاس 5 (44 حفاضة)', category: 'pampers', price: 385, image: mainSyrupBox, rating: 4.8 },
             { id: 910, name: 'بامبرز كلوت العبوة الجامبو - مقاس 6 (36 حفاضة)', category: 'pampers', price: 410, image: mainSyrupBox, rating: 4.8 },
-            { id: 911, name: 'مناديل بامبرز المبللة للأطفال (Pampers Wipes) - 56 منديل', category: 'pampers', price: 85, image: mainSkincare, rating: 4.9 },
+            { id: 911, name: 'مناديل بامبرز المبللة للأطفال - 56 منديل', category: 'pampers', price: 85, image: mainSkincare, rating: 4.9 },
 
-            // ==================== ألبان الأطفال (بيبيلاك، هيرو بيبي، نان) ====================
+            // === 2. ألبان الأطفال ===
             { id: 701, name: 'بيبيلاك 1 (Bebelac 1) - 400 جم', category: 'baby-milk', price: 363, image: mainSyrupBox, rating: 4.9 },
             { id: 702, name: 'بيبيلاك 2 (Bebelac 2) - 400 جم', category: 'baby-milk', price: 363, image: mainSyrupBox, rating: 4.9 },
             { id: 703, name: 'بيبيلاك 3 - بيبي جونيور (400 جم)', category: 'baby-milk', price: 363, image: mainSyrupBox, rating: 4.8 },
@@ -245,7 +249,7 @@
             { id: 717, name: 'نان LF (خالي من اللاكتوز) - 400 جم', category: 'baby-milk', price: 405, image: mainSyrupBox, rating: 4.9 },
             { id: 718, name: 'نان بري (NAN Pre) للمبتسرين - 400 جم', category: 'baby-milk', price: 410, image: mainSyrupBox, rating: 4.8 },
 
-            // ==================== فيتامينات ليمتليس (Limitless) ====================
+            // === 3. فيتامينات ليمتليس (Limitless) ===
             { id: 801, name: 'ليمتلس أوميجا 3 (Limitless Omega 3) - 2000 مجم', category: 'limitless', price: 250, image: mainPillBox, rating: 4.9 },
             { id: 802, name: 'ليمتلس أوميجا 3 كارديو (Limitless Omega 3 Cardio)', category: 'limitless', price: 280, image: mainPillBox, rating: 4.9 },
             { id: 803, name: 'ليمتلس سي-زنك الأصلي (Limitless C-Zinc)', category: 'limitless', price: 120, image: mainPillBox, rating: 4.8 },
@@ -253,16 +257,62 @@
             { id: 805, name: 'ليمتلس هيدريت (Limitless Hydrate)', category: 'limitless', price: 95, image: mainSyrupBox, rating: 4.7 },
             { id: 806, name: 'ليمتلس أشواجاندا 600 مجم (Limitless Ashwagandha)', category: 'limitless', price: 310, image: mainPillBox, rating: 4.9 },
             { id: 807, name: 'ليمتلس أوسوفورتين 2000/5000 (Limitless Ossofortin)', category: 'limitless', price: 160, image: mainPillBox, rating: 4.9 },
-            { id: 808, name: 'ليمتلس أوسوفورتين ك2 (Limitless Ossofortin K2)', category: 'limitless', price: 190, image: mainPillBox, rating: 4.8 },
-            { id: 809, name: 'ليمتلس أوسوفورتين د3 ليبو (Limitless Ossofortin D3)', category: 'limitless', price: 210, image: mainPillBox, rating: 4.9 },
+            { id: 808, name: 'ليمتلس أوسوفورتين ك2 أقرص على اللسان', category: 'limitless', price: 190, image: mainPillBox, rating: 4.8 },
+            { id: 809, name: 'ليمتلس أوسوفورتين د3 ليبو (Ossofortin D3 Liposomal)', category: 'limitless', price: 210, image: mainPillBox, rating: 4.9 },
             { id: 810, name: 'ليمتلس أوستيودينس (Limitless Osteodense)', category: 'limitless', price: 220, image: mainPillBox, rating: 4.8 },
-            { id: 811, name: 'ليمتلس المغنيسيوم ثريونات (Limitless Magnesium)', category: 'limitless', price: 260, image: mainPillBox, rating: 4.9 },
+            { id: 811, name: 'ليمتلس المغنيسيوم / ثريونات (Limitless Magnesium)', category: 'limitless', price: 260, image: mainPillBox, rating: 4.9 },
             { id: 812, name: 'ليمتلس زنك (Limitless Zinc)', category: 'limitless', price: 110, image: mainPillBox, rating: 4.8 },
             { id: 813, name: 'ليمتلس مان ماكس (Limitless Man Max)', category: 'limitless', price: 270, image: mainPillBox, rating: 4.9 },
             { id: 814, name: 'ليمتلس وومان ماكس (Limitless Woman Max)', category: 'limitless', price: 270, image: mainPillBox, rating: 5.0 },
             { id: 815, name: 'ليمتلس بريناتال أوريجينال (Limitless Prenatal Original)', category: 'limitless', price: 240, image: mainPillBox, rating: 4.8 },
+            { id: 816, name: 'ليمتلس بريناتال ماكس (Limitless Prenatal Max)', category: 'limitless', price: 290, image: mainPillBox, rating: 4.9 },
+            { id: 817, name: 'ليمتلس ميثيل فوليت (Limitless Methylfolate)', category: 'limitless', price: 180, image: mainPillBox, rating: 4.8 },
+            { id: 818, name: 'ليمتلس بيبي دروبس / نقط فيتامين د (Baby D Drops)', category: 'limitless', price: 115, image: mainSyrupBox, rating: 4.9 },
+            { id: 819, name: 'ليمتلس كيدز شراب (Limitless Kids Syrup)', category: 'limitless', price: 130, image: mainSyrupBox, rating: 4.8 },
+            { id: 820, name: 'ليمتلس كيدز مالتي جاميز (Limitless Kids Multi Gummies)', category: 'limitless', price: 175, image: mainPillBox, rating: 4.9 },
+            { id: 821, name: 'ليمتلس جلو هير (Limitless Glow Hair)', category: 'limitless', price: 280, image: mainSkincare, rating: 4.9 },
 
-            // ==================== المضادات الحيوية ====================
+            // === 4. غسولات البشرة العشرين (Skin Wash & Skincare) ===
+            { id: 101, name: 'غسول لاروش بوزيه إيفاكلار جل (La Roche-Posay Effaclar)', category: 'skincare', price: 450, image: mainSkincare, rating: 4.9 },
+            { id: 102, name: 'غسول سيرافي للبشرة العادية والجافة (CeraVe Hydrating Cleanser)', category: 'skincare', price: 380, image: mainSkincare, rating: 4.9 },
+            { id: 103, name: 'غسول سيرافي للبشرة الدهنية (CeraVe Foaming Facial Cleanser)', category: 'skincare', price: 390, image: mainSkincare, rating: 5.0 },
+            { id: 104, name: 'غسول بيوديرما سيبيوم جل (Bioderma Sebium Gel)', category: 'skincare', price: 420, image: mainSkincare, rating: 4.8 },
+            { id: 105, name: 'غسول فيشي نورماديرم الجل (Vichy Normaderm Cleansing Gel)', category: 'skincare', price: 430, image: mainSkincare, rating: 4.8 },
+            { id: 106, name: 'غسول أเวين كلينانس جل (Avene Cleanance Cleansing Gel)', category: 'skincare', price: 410, image: mainSkincare, rating: 4.9 },
+            { id: 107, name: 'غسول يورياج هيساك جل (Uriage Hyséac Cleansing Gel)', category: 'skincare', price: 395, image: mainSkincare, rating: 4.8 },
+            { id: 108, name: 'غسول نيوتروجينا هيدرو بوست جل (Neutrogena Hydro Boost)', category: 'skincare', price: 210, image: mainSkincare, rating: 4.7 },
+            { id: 109, name: 'غسول نيوتروجينا فيزيبلي كلير لحب الشباب (Neutrogena)', category: 'skincare', price: 195, image: mainSkincare, rating: 4.7 },
+            { id: 110, name: 'غسول بيزلين للتفتيح (Beesline Whitening Facial Wash)', category: 'skincare', price: 260, image: mainSkincare, rating: 4.8 },
+            { id: 111, name: 'غسول شان جل للبشرة الدهنية (Shan Gel Cleanser)', category: 'skincare', price: 170, image: mainSkincare, rating: 4.8 },
+            { id: 112, name: 'غسول ستارفيل جل للبشرة المختلطة والدهنية (Starville Gel)', category: 'skincare', price: 120, image: mainSkincare, rating: 4.8 },
+            { id: 113, name: 'غسول بوبانا بالفحم للبشرة الدهنية (Bobana Charcoal Wash)', category: 'skincare', price: 75, image: mainSkincare, rating: 4.6 },
+            { id: 114, name: 'غسول ايفا بي white للتفتيح (Eva B-White Facial Wash)', category: 'skincare', price: 65, image: mainSkincare, rating: 4.5 },
+            { id: 115, name: 'غسول غارنييه بالليمون للتفتيح (Garnier Fast Fairness Wash)', category: 'skincare', price: 85, image: mainSkincare, rating: 4.7 },
+            { id: 116, name: 'غسول سيبيكلار جل من أس في آر (SVR Sebiaclear Gel)', category: 'skincare', price: 380, image: mainSkincare, rating: 4.9 },
+            { id: 117, name: 'غسول سينوبار جل لحب الشباب (Synobar Facial Cleanser)', category: 'skincare', price: 135, image: mainSkincare, rating: 4.7 },
+            { id: 118, name: 'غسول ناتو جولد للبشرة (Nato Gold Facial Wash)', category: 'skincare', price: 150, image: mainSkincare, rating: 4.6 },
+            { id: 119, name: 'غسول كلين آند كلير لإزالة الرؤوس السوداء (Clean & Clear)', category: 'skincare', price: 110, image: mainSkincare, rating: 4.6 },
+            { id: 120, name: 'غسول بانوكسيل بنزويل بيروكسيد (PanOxyl Acne Foaming Wash)', category: 'skincare', price: 490, image: mainSkincare, rating: 5.0 },
+
+            // === 5. كابكسي وكلاري ===
+            { id: 201, name: 'شامبو كابكسي لمنع تساقط الشعر (Capixi Shampoo)', category: 'haircare', price: 180, image: mainSkincare, rating: 4.8 },
+            { id: 202, name: 'سيروم كابكسي لتحفيز نمو الشعر (Capixi Hair Serum)', category: 'haircare', price: 250, image: mainSkincare, rating: 4.9 },
+            { id: 203, name: 'أمبولات كابكسي المكثفة للشعر (Capixi Ampoules)', category: 'haircare', price: 320, image: mainSkincare, rating: 4.9 },
+            { id: 204, name: 'كريم كلاري لتفتيح البشرة (Clari Whitening Cream)', category: 'haircare', price: 160, image: mainSkincare, rating: 4.7 },
+            { id: 205, name: 'سيروم كلاري لفيتامين سي (Clari Vitamin C Serum)', category: 'haircare', price: 210, image: mainSkincare, rating: 4.8 },
+
+            // === 6. أدوية المعدة والهضم ===
+            { id: 301, name: 'كونترولوك 40 مجم (Controloc 40mg)', category: 'stomach', price: 130, image: mainPillBox, rating: 4.9 },
+            { id: 302, name: 'أوميز 20 مجم كبسولات (Omez 20mg)', category: 'stomach', price: 45, image: mainPillBox, rating: 4.8 },
+            { id: 303, name: 'جافيسكون شراب للحموضة (Gaviscon Syrup)', category: 'stomach', price: 90, image: mainSyrupBox, rating: 4.9 },
+            { id: 304, name: 'موبيتيل 15 مجم أقراص (Mobitil 15mg)', category: 'stomach', price: 40, image: mainPillBox, rating: 4.7 },
+
+            // === 7. عناية الأسنان ===
+            { id: 401, name: 'معجون أسنان سنسوداين واقي المينا (Sensodyne)', category: 'oralcare', price: 85, image: mainToothpaste, rating: 4.9 },
+            { id: 402, name: 'معجون أسنان بارودونتكس للثة (Parodontax)', category: 'oralcare', price: 90, image: mainToothpaste, rating: 4.8 },
+            { id: 403, name: 'مضمضة أورال بي بالنعناع (Oral-B Mouthwash)', category: 'oralcare', price: 75, image: mainToothpaste, rating: 4.8 },
+
+            // === 8. المضادات الحيوية ===
             { id: 501, name: 'أوجمنتين 1جم أقراص (Augmentin 1g)', category: 'antibiotics', price: 115, image: mainPillBox, rating: 5.0 },
             { id: 502, name: 'ميجاموكس 1جم (Megamox 1g)', category: 'antibiotics', price: 95, image: mainPillBox, rating: 4.9 },
             { id: 503, name: 'كلاسيد 500 مجم (Klacit 500mg)', category: 'antibiotics', price: 145, image: mainPillBox, rating: 4.9 },
