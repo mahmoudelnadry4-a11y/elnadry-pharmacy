@@ -211,85 +211,60 @@
     </div>
 
     <script>
-        // صور حقيقية للماركات والمنتجات المحددة
-        const imgCerelacWheat = 'https://m.media-amazon.com/images/I/71Y89iBwzLL._AC_SL1500_.jpg';
-        const imgCerelacRice = 'https://m.media-amazon.com/images/I/71ZpS+3pIcL._AC_SL1500_.jpg';
-        const imgCerelacMilk = 'https://m.media-amazon.com/images/I/81xUv2eDOnL._AC_SL1500_.jpg';
-        const imgCerelacApple = 'https://m.media-amazon.com/images/I/71h3K7O9yDL._AC_SL1500_.jpg';
-        const imgCerelacDates = 'https://m.media-amazon.com/images/I/71mJ0eO1EGL._AC_SL1500_.jpg';
-        const imgCerelacHoney = 'https://m.media-amazon.com/images/I/71X8kM2tWNL._AC_SL1500_.jpg';
-        const imgCerelacFruits = 'https://m.media-amazon.com/images/I/81Wn2A6h3XL._AC_SL1500_.jpg';
-        const imgCerelacPouch = 'https://m.media-amazon.com/images/I/71vR4sUfJ4L._AC_SL1500_.jpg';
-
-        const imgStarville = 'https://m.media-amazon.com/images/I/61b7U71S0hL._AC_SL1000_.jpg';
-        const imgNiveaPearl = 'https://m.media-amazon.com/images/I/51r2P5sB4xL._AC_SL1000_.jpg';
-        const imgNiveaMen = 'https://m.media-amazon.com/images/I/51gM63+C8SL._AC_SL1000_.jpg';
-        const imgBeesline = 'https://m.media-amazon.com/images/I/61bIsfS7RcL._AC_SL1000_.jpg';
-        const imgDove = 'https://m.media-amazon.com/images/I/61qJ+69N9PL._AC_SL1000_.jpg';
-        const imgAxe = 'https://m.media-amazon.com/images/I/61M6a-W1tEL._AC_SL1000_.jpg';
-        const imgVichyDeo = 'https://m.media-amazon.com/images/I/51I7sWfK5BL._AC_SL1000_.jpg';
-
-        const imgPampers = 'https://m.media-amazon.com/images/I/71tQ9L3H-iL._AC_SL1500_.jpg';
-        const imgPampersPants = 'https://m.media-amazon.com/images/I/71yJq-6Z-fL._AC_SL1500_.jpg';
-        const imgBebelac = 'https://m.media-amazon.com/images/I/71yE+bXqffL._AC_SL1500_.jpg';
-        const imgHeroBaby = 'https://m.media-amazon.com/images/I/71I3u7fI3bL._AC_SL1500_.jpg';
-        const imgNan = 'https://m.media-amazon.com/images/I/71mJ0eO1EGL._AC_SL1500_.jpg';
-
-        const imgLaRoche = 'https://m.media-amazon.com/images/I/51L92V+G0aL._AC_SL1000_.jpg';
-        const imgCeraVe = 'https://m.media-amazon.com/images/I/61y4P3mUVEL._AC_SL1000_.jpg';
-        const imgBioderma = 'https://m.media-amazon.com/images/I/51M3vQ9XoKL._AC_SL1000_.jpg';
-        const imgVichyWash = 'https://m.media-amazon.com/images/I/51+sVf3+tSL._AC_SL1000_.jpg';
-        const imgNeutrogena = 'https://m.media-amazon.com/images/I/61yD+6iO33L._AC_SL1000_.jpg';
-
-        const imgLimitless = 'https://m.media-amazon.com/images/I/61W3tY7s0GL._AC_SL1000_.jpg';
-        const imgCapixi = 'https://m.media-amazon.com/images/I/61A83N1aURL._AC_SL1000_.jpg';
-        const imgToothpaste = 'https://m.media-amazon.com/images/I/61W4zXb-6pL._AC_SL1000_.jpg';
-        const imgMedicine = 'https://cdn-icons-png.flaticon.com/512/2965/2965567.png';
+        // روابط صور مستقرة ومباشرة للمنتجات
+        const imgCerelac = 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=300&q=80';
+        const imgDeodorant = 'https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=300&q=80';
+        const imgPampers = 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=300&q=80';
+        const imgMilk = 'https://images.unsplash.com/photo-1550583724-b2692b85b150?w=300&q=80';
+        const imgVitamin = 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=300&q=80';
+        const imgSkincare = 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300&q=80';
+        const imgHair = 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=300&q=80';
+        const imgMedicine = 'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=300&q=80';
 
         const products = [
-            // === منتجات سيريلاك (20 نوعاً بالصور الحقيقية) ===
-            { id: 1001, name: 'سيريلاك قمح بدون حليب (125 جم)', category: 'cerelac', price: 48, image: imgCerelacWheat, rating: 4.8 },
-            { id: 1002, name: 'سيريلاك قمح بدون حليب (400 جم)', category: 'cerelac', price: 110, image: imgCerelacWheat, rating: 4.9 },
-            { id: 1003, name: 'سيريلاك أرز بدون حليب (125 جم)', category: 'cerelac', price: 48, image: imgCerelacRice, rating: 4.8 },
-            { id: 1004, name: 'سيريلاك قمح بالحليب (125 جم)', category: 'cerelac', price: 58, image: imgCerelacMilk, rating: 4.9 },
-            { id: 1005, name: 'سيريلاك قمح بالحليب (500 جم)', category: 'cerelac', price: 180, image: imgCerelacMilk, rating: 5.0 },
-            { id: 1006, name: 'سيريلاك قمح وتفاح بدون حليب (125 جم)', category: 'cerelac', price: 55, image: imgCerelacApple, rating: 4.8 },
-            { id: 1007, name: 'سيريلاك تفاح بدون حليب (125 جم)', category: 'cerelac', price: 48, image: imgCerelacApple, rating: 4.7 },
-            { id: 1008, name: 'سيريلاك قمح وحليب بالتمر (125 جم)', category: 'cerelac', price: 70, image: imgCerelacDates, rating: 4.9 },
-            { id: 1009, name: 'سيريلاك قمح وحليب بالتمر (500 جم)', category: 'cerelac', price: 200, image: imgCerelacDates, rating: 5.0 },
-            { id: 1010, name: 'سيريلاك قمح وحليب بالعسل (125 جم)', category: 'cerelac', price: 70, image: imgCerelacHoney, rating: 4.9 },
-            { id: 1011, name: 'سيريلاك قمح وحليب بالعسل (250 جم)', category: 'cerelac', price: 110, image: imgCerelacHoney, rating: 4.8 },
-            { id: 1012, name: 'سيريلاك 3 فواكه وقمح بالحليب (125 جم)', category: 'cerelac', price: 62, image: imgCerelacFruits, rating: 4.8 },
-            { id: 1013, name: 'سيريلاك 3 فواكه وقمح بالحليب (250 جم)', category: 'cerelac', price: 112, image: imgCerelacFruits, rating: 4.9 },
-            { id: 1014, name: 'سيريلاك 3 فواكه وقمح بالحليب (500 جم)', category: 'cerelac', price: 200, image: imgCerelacFruits, rating: 5.0 },
-            { id: 1015, name: 'سيريلاك قراصيا وقمح بدون حليب (125 جم)', category: 'cerelac', price: 70, image: imgCerelacApple, rating: 4.8 },
-            { id: 1016, name: 'سيريلاك فارمر سيليكشن - 5 حبوب (250 جم)', category: 'cerelac', price: 60, image: imgCerelacWheat, rating: 4.8 },
-            { id: 1017, name: 'سيريلاك حبوب متعددة Multigrain (200 جم)', category: 'cerelac', price: 190, image: imgCerelacWheat, rating: 4.9 },
-            { id: 1018, name: 'سيريلاك مهروس الفواكه (كيس 90 جم)', category: 'cerelac', price: 48, image: imgCerelacPouch, rating: 4.8 },
-            { id: 1019, name: 'سيريلاك مهروس تفاح ومانجو وجزر (كيس 90 جم)', category: 'cerelac', price: 32, image: imgCerelacPouch, rating: 4.7 },
-            { id: 1020, name: 'سيريلاك مهروس موز وتفاح (كيس 90 جم)', category: 'cerelac', price: 38, image: imgCerelacPouch, rating: 4.8 },
+            // === منتجات سيريلاك (20 نوعاً) ===
+            { id: 1001, name: 'سيريلاك قمح بدون حليب (125 جم)', category: 'cerelac', price: 48, image: imgCerelac, rating: 4.8 },
+            { id: 1002, name: 'سيريلاك قمح بدون حليب (400 جم)', category: 'cerelac', price: 110, image: imgCerelac, rating: 4.9 },
+            { id: 1003, name: 'سيريلاك أرز بدون حليب (125 جم)', category: 'cerelac', price: 48, image: imgCerelac, rating: 4.8 },
+            { id: 1004, name: 'سيريلاك قمح بالحليب (125 جم)', category: 'cerelac', price: 58, image: imgCerelac, rating: 4.9 },
+            { id: 1005, name: 'سيريلاك قمح بالحليب (500 جم)', category: 'cerelac', price: 180, image: imgCerelac, rating: 5.0 },
+            { id: 1006, name: 'سيريلاك قمح وتفاح بدون حليب (125 جم)', category: 'cerelac', price: 55, image: imgCerelac, rating: 4.8 },
+            { id: 1007, name: 'سيريلاك تفاح بدون حليب (125 جم)', category: 'cerelac', price: 48, image: imgCerelac, rating: 4.7 },
+            { id: 1008, name: 'سيريلاك قمح وحليب بالتمر (125 جم)', category: 'cerelac', price: 70, image: imgCerelac, rating: 4.9 },
+            { id: 1009, name: 'سيريلاك قمح وحليب بالتمر (500 جم)', category: 'cerelac', price: 200, image: imgCerelac, rating: 5.0 },
+            { id: 1010, name: 'سيريلاك قمح وحليب بالعسل (125 جم)', category: 'cerelac', price: 70, image: imgCerelac, rating: 4.9 },
+            { id: 1011, name: 'سيريلاك قمح وحليب بالعسل (250 جم)', category: 'cerelac', price: 110, image: imgCerelac, rating: 4.8 },
+            { id: 1012, name: 'سيريلاك 3 فواكه وقمح بالحليب (125 جم)', category: 'cerelac', price: 62, image: imgCerelac, rating: 4.8 },
+            { id: 1013, name: 'سيريلاك 3 فواكه وقمح بالحليب (250 جم)', category: 'cerelac', price: 112, image: imgCerelac, rating: 4.9 },
+            { id: 1014, name: 'سيريلاك 3 فواكه وقمح بالحليب (500 جم)', category: 'cerelac', price: 200, image: imgCerelac, rating: 5.0 },
+            { id: 1015, name: 'سيريلاك قراصيا وقمح بدون حليب (125 جم)', category: 'cerelac', price: 70, image: imgCerelac, rating: 4.8 },
+            { id: 1016, name: 'سيريلاك فارمر سيليكشن - 5 حبوب (250 جم)', category: 'cerelac', price: 60, image: imgCerelac, rating: 4.8 },
+            { id: 1017, name: 'سيريلاك حبوب متعددة Multigrain (200 جم)', category: 'cerelac', price: 190, image: imgCerelac, rating: 4.9 },
+            { id: 1018, name: 'سيريلاك مهروس الفواكه (كيس 90 جم)', category: 'cerelac', price: 48, image: imgCerelac, rating: 4.8 },
+            { id: 1019, name: 'سيريلاك مهروس تفاح ومانجو وجزر (كيس 90 جم)', category: 'cerelac', price: 32, image: imgCerelac, rating: 4.7 },
+            { id: 1020, name: 'سيريلاك مهروس موز وتفاح (كيس 90 جم)', category: 'cerelac', price: 38, image: imgCerelac, rating: 4.8 },
 
-            // === مزيلات العرق (20 نوعاً بالصور الحقيقية) ===
-            { id: 1101, name: 'ستارفيل رول أون للتفتيح - نسيم منعش (60 مل)', category: 'deodorant', price: 125, image: imgStarville, rating: 4.9 },
-            { id: 1102, name: 'ستارفيل رول أون للتفتيح - برائحة العود (60 مل)', category: 'deodorant', price: 125, image: imgStarville, rating: 4.9 },
-            { id: 1103, name: 'ستارفيل ستيك للتفتيح - التوت الأحمر (60 جم)', category: 'deodorant', price: 335, image: imgStarville, rating: 5.0 },
-            { id: 1104, name: 'نيفيا رول أون اللؤلؤ والجمال للنساء (50 مل)', category: 'deodorant', price: 82, image: imgNiveaPearl, rating: 4.8 },
-            { id: 1105, name: 'نيفيا مين رول أون فريش أكتيف للرجال (50 مل)', category: 'deodorant', price: 82, image: imgNiveaMen, rating: 4.8 },
-            { id: 1106, name: 'نيفيا سبراي بلاك أند وايت إنفيزيبل (150 مل)', category: 'deodorant', price: 140, image: imgNiveaPearl, rating: 4.9 },
-            { id: 1107, name: 'بيزلين رول أون للتفتيح - العود العربي (50 مل)', category: 'deodorant', price: 265, image: imgBeesline, rating: 4.9 },
-            { id: 1108, name: 'فاكيشن رول أون للتفتيح - بينيا كولادا (50 مل)', category: 'deodorant', price: 142, image: imgStarville, rating: 4.8 },
-            { id: 1109, name: 'فاكيشن سبراي آيسي سيج / سويت سافرون (200 مل)', category: 'deodorant', price: 142, image: imgStarville, rating: 4.8 },
-            { id: 1110, name: 'كولاجرا رول أون للتفتيح - حلوى القطن (60 مل)', category: 'deodorant', price: 110, image: imgStarville, rating: 4.7 },
-            { id: 1111, name: 'شان رول أون مرطب بدون رائحة للبشرة الحساسة (60 مل)', category: 'deodorant', price: 215, image: imgStarville, rating: 4.9 },
-            { id: 1112, name: 'إنفينيتي رول أون برائحة التوت / العود (80 مل)', category: 'deodorant', price: 150, image: imgStarville, rating: 4.8 },
-            { id: 1113, name: 'فا رول أون إنفيزيبل باور (50 مل)', category: 'deodorant', price: 65, image: imgNiveaPearl, rating: 4.6 },
-            { id: 1114, name: 'دوف ستيك أوريجينال للنساء (50 جم)', category: 'deodorant', price: 210, image: imgDove, rating: 4.9 },
-            { id: 1115, name: 'دوف مين سبراي كول فريش للرجال (250 مل)', category: 'deodorant', price: 280, image: imgDove, rating: 4.9 },
-            { id: 1116, name: 'آكس سبراي غولد تمبتيشن / دارك تمبتيشن (150 مل)', category: 'deodorant', price: 195, image: imgAxe, rating: 4.8 },
-            { id: 1117, name: 'فيبكس كريم ماكس ديو كلاسيك / بلو أكتيف (25 مل)', category: 'deodorant', price: 75, image: imgStarville, rating: 4.7 },
-            { id: 1118, name: 'هش رول أون إنفيزيبل كير / وايت بيرل (50 مل)', category: 'deodorant', price: 85, image: imgStarville, rating: 4.7 },
-            { id: 1119, name: 'بوبانا رول أون للتفتيح بدون رائحة (60 مل)', category: 'deodorant', price: 58, image: imgStarville, rating: 4.6 },
-            { id: 1120, name: 'فيشي رول أون مضاد التعرق الطبي 48/72 ساعة (50 مل)', category: 'deodorant', price: 765, image: imgVichyDeo, rating: 5.0 },
+            // === مزيلات العرق (20 نوعاً) ===
+            { id: 1101, name: 'ستارفيل رول أون للتفتيح - نسيم منعش (60 مل)', category: 'deodorant', price: 125, image: imgDeodorant, rating: 4.9 },
+            { id: 1102, name: 'ستارفيل رول أون للتفتيح - برائحة العود (60 مل)', category: 'deodorant', price: 125, image: imgDeodorant, rating: 4.9 },
+            { id: 1103, name: 'ستارفيل ستيك للتفتيح - التوت الأحمر (60 جم)', category: 'deodorant', price: 335, image: imgDeodorant, rating: 5.0 },
+            { id: 1104, name: 'نيفيا رول أون اللؤلؤ والجمال للنساء (50 مل)', category: 'deodorant', price: 82, image: imgDeodorant, rating: 4.8 },
+            { id: 1105, name: 'نيفيا مين رول أون فريش أكتيف للرجال (50 مل)', category: 'deodorant', price: 82, image: imgDeodorant, rating: 4.8 },
+            { id: 1106, name: 'نيفيا سبراي بلاك أند وايت إنفيزيبل (150 مل)', category: 'deodorant', price: 140, image: imgDeodorant, rating: 4.9 },
+            { id: 1107, name: 'بيزلين رول أون للتفتيح - العود العربي (50 مل)', category: 'deodorant', price: 265, image: imgDeodorant, rating: 4.9 },
+            { id: 1108, name: 'فاكيشن رول أون للتفتيح - بينيا كولادا (50 مل)', category: 'deodorant', price: 142, image: imgDeodorant, rating: 4.8 },
+            { id: 1109, name: 'فاكيشن سبراي آيسي سيج / سويت سافرون (200 مل)', category: 'deodorant', price: 142, image: imgDeodorant, rating: 4.8 },
+            { id: 1110, name: 'كولاجرا رول أون للتفتيح - حلوى القطن (60 مل)', category: 'deodorant', price: 110, image: imgDeodorant, rating: 4.7 },
+            { id: 1111, name: 'شان رول أون مرطب بدون رائحة للبشرة الحساسة (60 مل)', category: 'deodorant', price: 215, image: imgDeodorant, rating: 4.9 },
+            { id: 1112, name: 'إنفينيتي رول أون برائحة التوت / العود (80 مل)', category: 'deodorant', price: 150, image: imgDeodorant, rating: 4.8 },
+            { id: 1113, name: 'فا رول أون إنفيزيبل باور (50 مل)', category: 'deodorant', price: 65, image: imgDeodorant, rating: 4.6 },
+            { id: 1114, name: 'دوف ستيك أوريجينال للنساء (50 جم)', category: 'deodorant', price: 210, image: imgDeodorant, rating: 4.9 },
+            { id: 1115, name: 'دوف مين سبراي كول فريش للرجال (250 مل)', category: 'deodorant', price: 280, image: imgDeodorant, rating: 4.9 },
+            { id: 1116, name: 'آكس سبراي غولد تمبتيشن / دارك تمبتيشن (150 مل)', category: 'deodorant', price: 195, image: imgDeodorant, rating: 4.8 },
+            { id: 1117, name: 'فيبكس كريم ماكس ديو كلاسيك / بلو أكتيف (25 مل)', category: 'deodorant', price: 75, image: imgDeodorant, rating: 4.7 },
+            { id: 1118, name: 'هش رول أون إنفيزيبل كير / وايت بيرل (50 مل)', category: 'deodorant', price: 85, image: imgDeodorant, rating: 4.7 },
+            { id: 1119, name: 'بوبانا رول أون للتفتيح بدون رائحة (60 مل)', category: 'deodorant', price: 58, image: imgDeodorant, rating: 4.6 },
+            { id: 1120, name: 'فيشي رول أون مضاد التعرق الطبي 48/72 ساعة (50 مل)', category: 'deodorant', price: 765, image: imgDeodorant, rating: 5.0 },
 
             // === 1. منتجات وحفاضات بامبرز (Pampers) ===
             { id: 901, name: 'بامبرز العناية الممتازة - مقاس 1 (60 حفاضة)', category: 'pampers', price: 375, image: imgPampers, rating: 5.0 },
@@ -298,83 +273,83 @@
             { id: 904, name: 'بامبرز العناية الممتازة - مقاس 4 (52 حفاضة)', category: 'pampers', price: 460, image: imgPampers, rating: 5.0 },
             { id: 905, name: 'بامبرز العناية الممتازة - مقاس 5 (44 حفاضة)', category: 'pampers', price: 475, image: imgPampers, rating: 4.9 },
             { id: 906, name: 'بامبرز العناية الممتازة - مقاس 6 (38 حفاضة)', category: 'pampers', price: 490, image: imgPampers, rating: 4.8 },
-            { id: 907, name: 'بامبرز كلوت العبوة الجامبو - مقاس 3 (56 حفاضة)', category: 'pampers', price: 335, image: imgPampersPants, rating: 4.8 },
-            { id: 908, name: 'بامبرز كلوت العبوة الجامبو - مقاس 4 (52 حفاضة)', category: 'pampers', price: 365, image: imgPampersPants, rating: 4.9 },
-            { id: 909, name: 'بامبرز كلوت العبوة الجامبو - مقاس 5 (44 حفاضة)', category: 'pampers', price: 385, image: imgPampersPants, rating: 4.8 },
-            { id: 910, name: 'بامبرز كلوت العبوة الجامبو - مقاس 6 (36 حفاضة)', category: 'pampers', price: 410, image: imgPampersPants, rating: 4.8 },
+            { id: 907, name: 'بامبرز كلوت العبوة الجامبو - مقاس 3 (56 حفاضة)', category: 'pampers', price: 335, image: imgPampers, rating: 4.8 },
+            { id: 908, name: 'بامبرز كلوت العبوة الجامبو - مقاس 4 (52 حفاضة)', category: 'pampers', price: 365, image: imgPampers, rating: 4.9 },
+            { id: 909, name: 'بامبرز كلوت العبوة الجامبو - مقاس 5 (44 حفاضة)', category: 'pampers', price: 385, image: imgPampers, rating: 4.8 },
+            { id: 910, name: 'بامبرز كلوت العبوة الجامبو - مقاس 6 (36 حفاضة)', category: 'pampers', price: 410, image: imgPampers, rating: 4.8 },
             { id: 911, name: 'مناديل بامبرز المبللة للأطفال - 56 منديل', category: 'pampers', price: 85, image: imgPampers, rating: 4.9 },
 
             // === 2. ألبان الأطفال ===
-            { id: 701, name: 'بيبيلاك 1 (Bebelac 1) - 400 جم', category: 'baby-milk', price: 363, image: imgBebelac, rating: 4.9 },
-            { id: 702, name: 'بيبيلاك 2 (Bebelac 2) - 400 جم', category: 'baby-milk', price: 363, image: imgBebelac, rating: 4.9 },
-            { id: 703, name: 'بيبيلاك 3 - بيبي جونيور (400 جم)', category: 'baby-milk', price: 363, image: imgBebelac, rating: 4.8 },
-            { id: 704, name: 'بيبيلاك 3 - بيبي جونيور (900 جم)', category: 'baby-milk', price: 800, image: imgBebelac, rating: 4.9 },
-            { id: 705, name: 'بيبيلاك LF (خالي من اللاكتوز) - 400 جم', category: 'baby-milk', price: 399, image: imgBebelac, rating: 4.9 },
-            { id: 706, name: 'بيبيلاك AR (ضد الارتجاع) - 400 جم', category: 'baby-milk', price: 441, image: imgBebelac, rating: 5.0 },
-            { id: 707, name: 'بيبيلاك EC (للماغص والغازات) - 400 جم', category: 'baby-milk', price: 394, image: imgBebelac, rating: 4.8 },
-            { id: 708, name: 'بيبيلاك Premature (للمبتسرين) - 400 جم', category: 'baby-milk', price: 415, image: imgBebelac, rating: 4.8 },
-            { id: 709, name: 'هيرو بيبي 1 / 2 / 3 (Hero Baby) - 400 جم', category: 'baby-milk', price: 281, image: imgHeroBaby, rating: 4.8 },
-            { id: 710, name: 'هيرو بيبي نيوتراديفنس بلس 1 / 2 / 3 - 400 جم', category: 'baby-milk', price: 384, image: imgHeroBaby, rating: 4.9 },
-            { id: 711, name: 'هيرو بيبي نيوتراسينس 1 / 2 / 3 - 400 جم', category: 'baby-milk', price: 430, image: imgHeroBaby, rating: 5.0 },
-            { id: 712, name: 'هيرو بيبي LF (خالي من اللاكتوز) - 400 جم', category: 'baby-milk', price: 395, image: imgHeroBaby, rating: 4.8 },
-            { id: 713, name: 'هيرو بيبي AR (للارتجاع) - 400 جم', category: 'baby-milk', price: 430, image: imgHeroBaby, rating: 4.9 },
-            { id: 714, name: 'نان 1 / نان 2 / نان 3 (NAN Optipro) - 400 جم', category: 'baby-milk', price: 385, image: imgNan, rating: 4.9 },
-            { id: 715, name: 'نان 1 / نان 2 / نان 3 (عبوة كبيرة 800 جم)', category: 'baby-milk', price: 680, image: imgNan, rating: 5.0 },
-            { id: 716, name: 'نان كومفورت (NAN Comfort) للتقلصات - 380 جم', category: 'baby-milk', price: 415, image: imgNan, rating: 4.9 },
-            { id: 717, name: 'نان LF (خالي من اللاكتوز) - 400 جم', category: 'baby-milk', price: 405, image: imgNan, rating: 4.9 },
-            { id: 718, name: 'نان بري (NAN Pre) للمبتسرين - 400 جم', category: 'baby-milk', price: 410, image: imgNan, rating: 4.8 },
+            { id: 701, name: 'بيبيلاك 1 (Bebelac 1) - 400 جم', category: 'baby-milk', price: 363, image: imgMilk, rating: 4.9 },
+            { id: 702, name: 'بيبيلاك 2 (Bebelac 2) - 400 جم', category: 'baby-milk', price: 363, image: imgMilk, rating: 4.9 },
+            { id: 703, name: 'بيبيلاك 3 - بيبي جونيور (400 جم)', category: 'baby-milk', price: 363, image: imgMilk, rating: 4.8 },
+            { id: 704, name: 'بيبيلاك 3 - بيبي جونيور (900 جم)', category: 'baby-milk', price: 800, image: imgMilk, rating: 4.9 },
+            { id: 705, name: 'بيبيلاك LF (خالي من اللاكتوز) - 400 جم', category: 'baby-milk', price: 399, image: imgMilk, rating: 4.9 },
+            { id: 706, name: 'بيبيلاك AR (ضد الارتجاع) - 400 جم', category: 'baby-milk', price: 441, image: imgMilk, rating: 5.0 },
+            { id: 707, name: 'بيبيلاك EC (للماغص والغازات) - 400 جم', category: 'baby-milk', price: 394, image: imgMilk, rating: 4.8 },
+            { id: 708, name: 'بيبيلاك Premature (للمبتسرين) - 400 جم', category: 'baby-milk', price: 415, image: imgMilk, rating: 4.8 },
+            { id: 709, name: 'هيرو بيبي 1 / 2 / 3 (Hero Baby) - 400 جم', category: 'baby-milk', price: 281, image: imgMilk, rating: 4.8 },
+            { id: 710, name: 'هيرو بيبي نيوتراديفنس بلس 1 / 2 / 3 - 400 جم', category: 'baby-milk', price: 384, image: imgMilk, rating: 4.9 },
+            { id: 711, name: 'هيرو بيبي نيوتراسينس 1 / 2 / 3 - 400 جم', category: 'baby-milk', price: 430, image: imgMilk, rating: 5.0 },
+            { id: 712, name: 'هيرو بيبي LF (خالي من اللاكتوز) - 400 جم', category: 'baby-milk', price: 395, image: imgMilk, rating: 4.8 },
+            { id: 713, name: 'هيرو بيبي AR (للارتجاع) - 400 جم', category: 'baby-milk', price: 430, image: imgMilk, rating: 4.9 },
+            { id: 714, name: 'نان 1 / نان 2 / نان 3 (NAN Optipro) - 400 جم', category: 'baby-milk', price: 385, image: imgMilk, rating: 4.9 },
+            { id: 715, name: 'نان 1 / نان 2 / نان 3 (عبوة كبيرة 800 جم)', category: 'baby-milk', price: 680, image: imgMilk, rating: 5.0 },
+            { id: 716, name: 'نان كومفورت (NAN Comfort) للتقلصات - 380 جم', category: 'baby-milk', price: 415, image: imgMilk, rating: 4.9 },
+            { id: 717, name: 'نان LF (خالي من اللاكتوز) - 400 جم', category: 'baby-milk', price: 405, image: imgMilk, rating: 4.9 },
+            { id: 718, name: 'نان بري (NAN Pre) للمبتسرين - 400 جم', category: 'baby-milk', price: 410, image: imgMilk, rating: 4.8 },
 
             // === 3. فيتامينات ليمتليس (Limitless) ===
-            { id: 801, name: 'ليمتلس أوميجا 3 (Limitless Omega 3) - 2000 مجم', category: 'limitless', price: 250, image: imgLimitless, rating: 4.9 },
-            { id: 802, name: 'ليمتلس أوميجا 3 كارديو (Limitless Omega 3 Cardio)', category: 'limitless', price: 280, image: imgLimitless, rating: 4.9 },
-            { id: 803, name: 'ليمتلس سي-زنك الأصلي (Limitless C-Zinc)', category: 'limitless', price: 120, image: imgLimitless, rating: 4.8 },
-            { id: 804, name: 'ليمتلس سي-زنك بلس (Limitless C-Zinc Plus)', category: 'limitless', price: 140, image: imgLimitless, rating: 4.9 },
-            { id: 805, name: 'ليمتلس هيدريت (Limitless Hydrate)', category: 'limitless', price: 95, image: imgLimitless, rating: 4.7 },
-            { id: 806, name: 'ليمتلس أشواجاندا 600 مجم (Limitless Ashwagandha)', category: 'limitless', price: 310, image: imgLimitless, rating: 4.9 },
-            { id: 807, name: 'ليمتلس أوسوفورتين 2000/5000 (Limitless Ossofortin)', category: 'limitless', price: 160, image: imgLimitless, rating: 4.9 },
-            { id: 808, name: 'ليمتلس أوسوفورتين ك2 أقرص على اللسان', category: 'limitless', price: 190, image: imgLimitless, rating: 4.8 },
-            { id: 809, name: 'ليمتلس أوسوفورتين د3 ليبو (Ossofortin D3 Liposomal)', category: 'limitless', price: 210, image: imgLimitless, rating: 4.9 },
-            { id: 810, name: 'ليمتلس أوستيودينس (Limitless Osteodense)', category: 'limitless', price: 220, image: imgLimitless, rating: 4.8 },
-            { id: 811, name: 'ليمتلس المغنيسيوم / ثريونات (Limitless Magnesium)', category: 'limitless', price: 260, image: imgLimitless, rating: 4.9 },
-            { id: 812, name: 'ليمتلس زنك (Limitless Zinc)', category: 'limitless', price: 110, image: imgLimitless, rating: 4.8 },
-            { id: 813, name: 'ليمتلس مان ماكس (Limitless Man Max)', category: 'limitless', price: 270, image: imgLimitless, rating: 4.9 },
-            { id: 814, name: 'ليمتلس وومان ماكس (Limitless Woman Max)', category: 'limitless', price: 270, image: imgLimitless, rating: 5.0 },
-            { id: 815, name: 'ليمتلس بريناتال أوريجينال (Limitless Prenatal Original)', category: 'limitless', price: 240, image: imgLimitless, rating: 4.8 },
-            { id: 816, name: 'ليمتلس بريناتال ماكس (Limitless Prenatal Max)', category: 'limitless', price: 290, image: imgLimitless, rating: 4.9 },
-            { id: 817, name: 'ليمتلس ميثيل فوليت (Limitless Methylfolate)', category: 'limitless', price: 180, image: imgLimitless, rating: 4.8 },
-            { id: 818, name: 'ليمتلس بيبي دروبس / نقط فيتامين د (Baby D Drops)', category: 'limitless', price: 115, image: imgLimitless, rating: 4.9 },
-            { id: 819, name: 'ليمتلس كيدز شراب (Limitless Kids Syrup)', category: 'limitless', price: 130, image: imgLimitless, rating: 4.8 },
-            { id: 820, name: 'ليمتلس كيدز مالتي جاميز (Limitless Kids Multi Gummies)', category: 'limitless', price: 175, image: imgLimitless, rating: 4.9 },
-            { id: 821, name: 'ليمتلس جلو هير (Limitless Glow Hair)', category: 'limitless', price: 280, image: imgLimitless, rating: 4.9 },
+            { id: 801, name: 'ليمتلس أوميجا 3 (Limitless Omega 3) - 2000 مجم', category: 'limitless', price: 250, image: imgVitamin, rating: 4.9 },
+            { id: 802, name: 'ليمتلس أوميجا 3 كارديو (Limitless Omega 3 Cardio)', category: 'limitless', price: 280, image: imgVitamin, rating: 4.9 },
+            { id: 803, name: 'ليمتلس سي-زنك الأصلي (Limitless C-Zinc)', category: 'limitless', price: 120, image: imgVitamin, rating: 4.8 },
+            { id: 804, name: 'ليمتلس سي-زنك بلس (Limitless C-Zinc Plus)', category: 'limitless', price: 140, image: imgVitamin, rating: 4.9 },
+            { id: 805, name: 'ليمتلس هيدريت (Limitless Hydrate)', category: 'limitless', price: 95, image: imgVitamin, rating: 4.7 },
+            { id: 806, name: 'ليمتلس أشواجاندا 600 مجم (Limitless Ashwagandha)', category: 'limitless', price: 310, image: imgVitamin, rating: 4.9 },
+            { id: 807, name: 'ليمتلس أوسوفورتين 2000/5000 (Limitless Ossofortin)', category: 'limitless', price: 160, image: imgVitamin, rating: 4.9 },
+            { id: 808, name: 'ليمتلس أوسوفورتين ك2 أقرص على اللسان', category: 'limitless', price: 190, image: imgVitamin, rating: 4.8 },
+            { id: 809, name: 'ليمتلس أوسوفورتين د3 ليبو (Ossofortin D3 Liposomal)', category: 'limitless', price: 210, image: imgVitamin, rating: 4.9 },
+            { id: 810, name: 'ليمتلس أوستيودينس (Limitless Osteodense)', category: 'limitless', price: 220, image: imgVitamin, rating: 4.8 },
+            { id: 811, name: 'ليمتلس المغنيسيوم / ثريونات (Limitless Magnesium)', category: 'limitless', price: 260, image: imgVitamin, rating: 4.9 },
+            { id: 812, name: 'ليمتلس زنك (Limitless Zinc)', category: 'limitless', price: 110, image: imgVitamin, rating: 4.8 },
+            { id: 813, name: 'ليمتلس مان ماكس (Limitless Man Max)', category: 'limitless', price: 270, image: imgVitamin, rating: 4.9 },
+            { id: 814, name: 'ليمتلس وومان ماكس (Limitless Woman Max)', category: 'limitless', price: 270, image: imgVitamin, rating: 5.0 },
+            { id: 815, name: 'ليمتلس بريناتال أوريجينال (Limitless Prenatal Original)', category: 'limitless', price: 240, image: imgVitamin, rating: 4.8 },
+            { id: 816, name: 'ليمتلس بريناتال ماكس (Limitless Prenatal Max)', category: 'limitless', price: 290, image: imgVitamin, rating: 4.9 },
+            { id: 817, name: 'ليمتلس ميثيل فوليت (Limitless Methylfolate)', category: 'limitless', price: 180, image: imgVitamin, rating: 4.8 },
+            { id: 818, name: 'ليمتلس بيبي دروبس / نقط فيتامين د (Baby D Drops)', category: 'limitless', price: 115, image: imgVitamin, rating: 4.9 },
+            { id: 819, name: 'ليمتلس كيدز شراب (Limitless Kids Syrup)', category: 'limitless', price: 130, image: imgVitamin, rating: 4.8 },
+            { id: 820, name: 'ليمتلس كيدز مالتي جاميز (Limitless Kids Multi Gummies)', category: 'limitless', price: 175, image: imgVitamin, rating: 4.9 },
+            { id: 821, name: 'ليمتلس جلو هير (Limitless Glow Hair)', category: 'limitless', price: 280, image: imgVitamin, rating: 4.9 },
 
             // === 4. غسولات البشرة العشرين (Skin Wash & Skincare) ===
-            { id: 101, name: 'غسول لاروش بوزيه إيفاكلار جل (La Roche-Posay Effaclar)', category: 'skincare', price: 450, image: imgLaRoche, rating: 4.9 },
-            { id: 102, name: 'غسول سيرافي للبشرة العادية والجافة (CeraVe Hydrating Cleanser)', category: 'skincare', price: 380, image: imgCeraVe, rating: 4.9 },
-            { id: 103, name: 'غسول سيرافي للبشرة الدهنية (CeraVe Foaming Facial Cleanser)', category: 'skincare', price: 390, image: imgCeraVe, rating: 5.0 },
-            { id: 104, name: 'غسول بيوديرما سيبيوم جل (Bioderma Sebium Gel)', category: 'skincare', price: 420, image: imgBioderma, rating: 4.8 },
-            { id: 105, name: 'غسول فيشي نورماديرم الجل (Vichy Normaderm Cleansing Gel)', category: 'skincare', price: 430, image: imgVichyWash, rating: 4.8 },
-            { id: 106, name: 'غسول أفين كلينانس جل (Avene Cleanance Cleansing Gel)', category: 'skincare', price: 410, image: imgLaRoche, rating: 4.9 },
-            { id: 107, name: 'غسول يورياج هيساك جل (Uriage Hyséac Cleansing Gel)', category: 'skincare', price: 395, image: imgLaRoche, rating: 4.8 },
-            { id: 108, name: 'غسول نيوتروجينا هيدرو بوست جل (Neutrogena Hydro Boost)', category: 'skincare', price: 210, image: imgNeutrogena, rating: 4.7 },
-            { id: 109, name: 'غسول نيوتروجينا فيزيبلي كلير لحب الشباب (Neutrogena)', category: 'skincare', price: 195, image: imgNeutrogena, rating: 4.7 },
-            { id: 110, name: 'غسول بيزلين للتفتيح (Beesline Whitening Facial Wash)', category: 'skincare', price: 260, image: imgBeesline, rating: 4.8 },
-            { id: 111, name: 'غسول شان جل للبشرة الدهنية (Shan Gel Cleanser)', category: 'skincare', price: 170, image: imgLaRoche, rating: 4.8 },
-            { id: 112, name: 'غسول ستارفيل جل للبشرة المختلطة والدهنية (Starville Gel)', category: 'skincare', price: 120, image: imgStarville, rating: 4.8 },
-            { id: 113, name: 'غسول بوبانا بالفحم للبشرة الدهنية (Bobana Charcoal Wash)', category: 'skincare', price: 75, image: imgLaRoche, rating: 4.6 },
-            { id: 114, name: 'غسول ايفا بي white للتفتيح (Eva B-White Facial Wash)', category: 'skincare', price: 65, image: imgLaRoche, rating: 4.5 },
-            { id: 115, name: 'غسول غارنييه بالليمون للتفتيح (Garnier Fast Fairness Wash)', category: 'skincare', price: 85, image: imgLaRoche, rating: 4.7 },
-            { id: 116, name: 'غسول سيبيكلار جل من أس في آر (SVR Sebiaclear Gel)', category: 'skincare', price: 380, image: imgLaRoche, rating: 4.9 },
-            { id: 117, name: 'غسول سينوبار جل لحب الشباب (Synobar Facial Cleanser)', category: 'skincare', price: 135, image: imgLaRoche, rating: 4.7 },
-            { id: 118, name: 'غسول ناتو جولد للبشرة (Nato Gold Facial Wash)', category: 'skincare', price: 150, image: imgLaRoche, rating: 4.6 },
-            { id: 119, name: 'غسول كلين آند كلير لإزالة الرؤوس السوداء (Clean & Clear)', category: 'skincare', price: 110, image: imgLaRoche, rating: 4.6 },
-            { id: 120, name: 'غسول بانوكسيل بنزويل بيروكسيد (PanOxyl Acne Foaming Wash)', category: 'skincare', price: 490, image: imgLaRoche, rating: 5.0 },
+            { id: 101, name: 'غسول لاروش بوزيه إيفاكلار جل (La Roche-Posay Effaclar)', category: 'skincare', price: 450, image: imgSkincare, rating: 4.9 },
+            { id: 102, name: 'غسول سيرافي للبشرة العادية والجافة (CeraVe Hydrating Cleanser)', category: 'skincare', price: 380, image: imgSkincare, rating: 4.9 },
+            { id: 103, name: 'غسول سيرافي للبشرة الدهنية (CeraVe Foaming Facial Cleanser)', category: 'skincare', price: 390, image: imgSkincare, rating: 5.0 },
+            { id: 104, name: 'غسول بيوديرما سيبيوم جل (Bioderma Sebium Gel)', category: 'skincare', price: 420, image: imgSkincare, rating: 4.8 },
+            { id: 105, name: 'غسول فيشي نورماديرم الجل (Vichy Normaderm Cleansing Gel)', category: 'skincare', price: 430, image: imgSkincare, rating: 4.8 },
+            { id: 106, name: 'غسول أفين كلينانس جل (Avene Cleanance Cleansing Gel)', category: 'skincare', price: 410, image: imgSkincare, rating: 4.9 },
+            { id: 107, name: 'غسول يورياج هيساك جل (Uriage Hyséac Cleansing Gel)', category: 'skincare', price: 395, image: imgSkincare, rating: 4.8 },
+            { id: 108, name: 'غسول نيوتروجينا هيدرو بوست جل (Neutrogena Hydro Boost)', category: 'skincare', price: 210, image: imgSkincare, rating: 4.7 },
+            { id: 109, name: 'غسول نيوتروجينا فيزيبلي كلير لحب الشباب (Neutrogena)', category: 'skincare', price: 195, image: imgSkincare, rating: 4.7 },
+            { id: 110, name: 'غسول بيزلين للتفتيح (Beesline Whitening Facial Wash)', category: 'skincare', price: 260, image: imgSkincare, rating: 4.8 },
+            { id: 111, name: 'غسول شان جل للبشرة الدهنية (Shan Gel Cleanser)', category: 'skincare', price: 170, image: imgSkincare, rating: 4.8 },
+            { id: 112, name: 'غسول ستارفيل جل للبشرة المختلطة والدهنية (Starville Gel)', category: 'skincare', price: 120, image: imgSkincare, rating: 4.8 },
+            { id: 113, name: 'غسول بوبانا بالفحم للبشرة الدهنية (Bobana Charcoal Wash)', category: 'skincare', price: 75, image: imgSkincare, rating: 4.6 },
+            { id: 114, name: 'غسول ايفا بي white للتفتيح (Eva B-White Facial Wash)', category: 'skincare', price: 65, image: imgSkincare, rating: 4.5 },
+            { id: 115, name: 'غسول غارنييه بالليمون للتفتيح (Garnier Fast Fairness Wash)', category: 'skincare', price: 85, image: imgSkincare, rating: 4.7 },
+            { id: 116, name: 'غسول سيبيكلار جل من أس في آر (SVR Sebiaclear Gel)', category: 'skincare', price: 380, image: imgSkincare, rating: 4.9 },
+            { id: 117, name: 'غسول سينوبار جل لحب الشباب (Synobar Facial Cleanser)', category: 'skincare', price: 135, image: imgSkincare, rating: 4.7 },
+            { id: 118, name: 'غسول ناتو جولد للبشرة (Nato Gold Facial Wash)', category: 'skincare', price: 150, image: imgSkincare, rating: 4.6 },
+            { id: 119, name: 'غسول كلين آند كلير لإزالة الرؤوس السوداء (Clean & Clear)', category: 'skincare', price: 110, image: imgSkincare, rating: 4.6 },
+            { id: 120, name: 'غسول بانوكسيل بنزويل بيروكسيد (PanOxyl Acne Foaming Wash)', category: 'skincare', price: 490, image: imgSkincare, rating: 5.0 },
 
             // === 5. كابكسي وكلاري ===
-            { id: 201, name: 'شامبو كابكسي لمنع تساقط الشعر (Capixi Shampoo)', category: 'haircare', price: 180, image: imgCapixi, rating: 4.8 },
-            { id: 202, name: 'سيروم كابكسي لتحفيز نمو الشعر (Capixi Hair Serum)', category: 'haircare', price: 250, image: imgCapixi, rating: 4.9 },
-            { id: 203, name: 'أمبولات كابكسي المكثفة للشعر (Capixi Ampoules)', category: 'haircare', price: 320, image: imgCapixi, rating: 4.9 },
-            { id: 204, name: 'كريم كلاري لتفتيح البشرة (Clari Whitening Cream)', category: 'haircare', price: 160, image: imgCapixi, rating: 4.7 },
-            { id: 205, name: 'سيروم كلاري لفيتامين سي (Clari Vitamin C Serum)', category: 'haircare', price: 210, image: imgCapixi, rating: 4.8 },
+            { id: 201, name: 'شامبو كابكسي لمنع تساقط الشعر (Capixi Shampoo)', category: 'haircare', price: 180, image: imgHair, rating: 4.8 },
+            { id: 202, name: 'سيروم كابكسي لتحفيز نمو الشعر (Capixi Hair Serum)', category: 'haircare', price: 250, image: imgHair, rating: 4.9 },
+            { id: 203, name: 'أمبولات كابكسي المكثفة للشعر (Capixi Ampoules)', category: 'haircare', price: 320, image: imgHair, rating: 4.9 },
+            { id: 204, name: 'كريم كلاري لتفتيح البشرة (Clari Whitening Cream)', category: 'haircare', price: 160, image: imgSkincare, rating: 4.7 },
+            { id: 205, name: 'سيروم كلاري لفيتامين سي (Clari Vitamin C Serum)', category: 'haircare', price: 210, image: imgSkincare, rating: 4.8 },
 
             // === 6. أدوية المعدة والهضم ===
             { id: 301, name: 'كونترولوك 40 مجم (Controloc 40mg)', category: 'stomach', price: 130, image: imgMedicine, rating: 4.9 },
@@ -383,9 +358,9 @@
             { id: 304, name: 'موبيتيل 15 مجم أقراص (Mobitil 15mg)', category: 'stomach', price: 40, image: imgMedicine, rating: 4.7 },
 
             // === 7. عناية الأسنان ===
-            { id: 401, name: 'معجون أسنان سنسوداين واقي المينا (Sensodyne)', category: 'oralcare', price: 85, image: imgToothpaste, rating: 4.9 },
-            { id: 402, name: 'معجون أسنان بارودونتكس للثة (Parodontax)', category: 'oralcare', price: 90, image: imgToothpaste, rating: 4.8 },
-            { id: 403, name: 'مضمضة أورال بي بالنعناع (Oral-B Mouthwash)', category: 'oralcare', price: 75, image: imgToothpaste, rating: 4.8 },
+            { id: 401, name: 'معجون أسنان سنسوداين واقي المينا (Sensodyne)', category: 'oralcare', price: 85, image: imgSkincare, rating: 4.9 },
+            { id: 402, name: 'معجون أسنان بارودونتكس للثة (Parodontax)', category: 'oralcare', price: 90, image: imgSkincare, rating: 4.8 },
+            { id: 403, name: 'مضمضة أورال بي بالنعناع (Oral-B Mouthwash)', category: 'oralcare', price: 75, image: imgSkincare, rating: 4.8 },
 
             // === 8. المضادات الحيوية ===
             { id: 501, name: 'أوجمنتين 1جم أقراص (Augmentin 1g)', category: 'antibiotics', price: 115, image: imgMedicine, rating: 5.0 },
@@ -433,8 +408,8 @@
                                 <span>${p.rating}</span>
                             </div>
                         </div>
-                        <div class="h-32 flex items-center justify-center mb-3 bg-gray-50 rounded-xl p-2">
-                            <img src="${p.image}" alt="${p.name}" class="h-28 max-w-full object-contain" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/2965/2965567.png';">
+                        <div class="h-28 flex items-center justify-center mb-3 bg-gray-50 rounded-xl p-2">
+                            <img src="${p.image}" alt="${p.name}" class="h-20 object-contain" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/2965/2965567.png';">
                         </div>
                         <h4 class="font-bold text-gray-800 text-sm mb-2 line-clamp-2">${p.name}</h4>
                     </div>
