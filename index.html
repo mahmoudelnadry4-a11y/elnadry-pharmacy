@@ -56,7 +56,7 @@
             </a>
             <div class="hidden md:flex flex-1 max-w-xl mx-4">
                 <div class="relative w-full">
-                    <input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="ابحث عن بامبرز، الفيتامينات، غسول، سيريلاك، مزيلات العرق، ألبان الأطفال، الأدوية..." class="w-full bg-gray-100 border border-gray-200 rounded-full py-2.5 pr-10 pl-4 text-sm focus:outline-none focus:border-pharmacy-500 focus:bg-white transition">
+                    <input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="ابحث عن بامبرز، الفيتامينات، غسول، سيريلاك، مزيلات العرق، ألبان الأطفال، أدوية المعدة..." class="w-full bg-gray-100 border border-gray-200 rounded-full py-2.5 pr-10 pl-4 text-sm focus:outline-none focus:border-pharmacy-500 focus:bg-white transition">
                     <i class="fas fa-search absolute right-3.5 top-3.5 text-gray-400"></i>
                 </div>
             </div>
@@ -83,7 +83,7 @@
                 <button onclick="filterCategory('haircare')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">كابكسي وكلاري</button>
                 <button onclick="filterCategory('skincare')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">غسولات البشرة (20 نوع)</button>
                 <button onclick="filterCategory('oralcare')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">عناية الأسنان</button>
-                <button onclick="filterCategory('stomach')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">أدوية المعدة</button>
+                <button onclick="filterCategory('stomach')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">أدوية المعدة (30 نوع)</button>
                 <button onclick="filterCategory('antibiotics')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">المضادات الحيوية</button>
             </div>
         </nav>
@@ -94,7 +94,7 @@
             <div class="max-w-xl z-10 text-center md:text-right">
                 <span class="bg-pharmacy-500/40 text-pharmacy-100 text-xs px-3 py-1 rounded-full font-bold inline-block mb-3">صيدليتك الشاملة 24 ساعة</span>
                 <h2 class="text-3xl md:text-4xl font-black mb-4 leading-tight">جميع الأدوية، سيريلاك، مزيلات العرق، بامبرز، والفيتامينات</h2>
-                <p class="text-pharmacy-100 text-sm md:text-base mb-6 leading-relaxed">نوفر كافة الأدوية العلاجية، منتجات سيريلاك للأطفال، مزيلات العرق الطبية والتجارية، حفاضات بامبرز، ألبان الأطفال، المضادات الحيوية، وغسولات البشرة بأسعار ممتازة وتوصيل سريع.</p>
+                <p class="text-pharmacy-100 text-sm md:text-base mb-6 leading-relaxed">نوفر كافة الأدوية العلاجية، منتجات سيريلاك للأطفال، مزيلات العرق الطبية والتجارية، حفاضات بامبرز، ألبان الأطفال، المضادات الحيوية، وأدوية المعدة والقولون المصرية بأسعار ممتازة وتوصيل سريع.</p>
                 <div class="flex flex-wrap items-center justify-center md:justify-start gap-3">
                     <a href="#products" class="bg-white text-pharmacy-800 hover:bg-pharmacy-50 font-bold px-6 py-3 rounded-xl shadow transition text-sm">تسوق المنتجات الآن</a>
                     <button onclick="openPrescriptionModal()" class="bg-amber-500 hover:bg-amber-600 text-white font-bold px-6 py-3 rounded-xl shadow transition text-sm flex items-center gap-2">
@@ -351,11 +351,37 @@
             { id: 204, name: 'كريم كلاري لتفتيح البشرة (Clari Whitening Cream)', category: 'haircare', price: 160, image: imgSkincare, rating: 4.7 },
             { id: 205, name: 'سيروم كلاري لفيتامين سي (Clari Vitamin C Serum)', category: 'haircare', price: 210, image: imgSkincare, rating: 4.8 },
 
-            // === 6. أدوية المعدة والهضم ===
-            { id: 301, name: 'كونترولوك 40 مجم (Controloc 40mg)', category: 'stomach', price: 130, image: imgMedicine, rating: 4.9 },
-            { id: 302, name: 'أوميز 20 مجم كبسولات (Omez 20mg)', category: 'stomach', price: 45, image: imgMedicine, rating: 4.8 },
-            { id: 303, name: 'جافيسكون شراب للحموضة (Gaviscon Syrup)', category: 'stomach', price: 90, image: imgMedicine, rating: 4.9 },
-            { id: 304, name: 'موبيتيل 15 مجم أقراص (Mobitil 15mg)', category: 'stomach', price: 40, image: imgMedicine, rating: 4.7 },
+            // === 6. أدوية المعدة والهضم والقولون المصرية (30 نوعاً كاملاً) ===
+            { id: 301, name: 'كونترولوك 40 مجم (Controloc 40mg)', category: 'stomach', price: 188, image: imgMedicine, rating: 4.9 },
+            { id: 302, name: 'بانطولوك 40 مجم (Pantoloc 40mg)', category: 'stomach', price: 102, image: imgMedicine, rating: 4.8 },
+            { id: 303, name: 'نكسيوم 40 مجم (Nexium 40mg)', category: 'stomach', price: 488, image: imgMedicine, rating: 5.0 },
+            { id: 304, name: 'زوركال 40 مجم (Zurcal 40mg)', category: 'stomach', price: 192, image: imgMedicine, rating: 4.8 },
+            { id: 305, name: 'أوميز 20 مجم كبسولات (Omez 20mg)', category: 'stomach', price: 45, image: imgMedicine, rating: 4.8 },
+            { id: 306, name: 'انتودين 40 مجم (Antodine 40mg)', category: 'stomach', price: 93, image: imgMedicine, rating: 4.8 },
+            { id: 307, name: 'داونوبرازول 40 مجم (Downoprazol 40mg)', category: 'stomach', price: 95, image: imgMedicine, rating: 4.7 },
+            { id: 308, name: 'دوكسيرازول 60 مجم (Doxirazole 60mg)', category: 'stomach', price: 101, image: imgMedicine, rating: 4.8 },
+            { id: 309, name: 'تريتو الس 40 مجم (Trito-Ulce 40mg)', category: 'stomach', price: 80, image: imgMedicine, rating: 4.7 },
+            { id: 310, name: 'ايزوجاست 40 مجم (Ezogast 40mg)', category: 'stomach', price: 160, image: imgMedicine, rating: 4.8 },
+            { id: 311, name: 'سكورش 40 مجم (Scorch 40mg)', category: 'stomach', price: 189, image: imgMedicine, rating: 4.9 },
+            { id: 312, name: 'بيبرا 20 مجم (Bebra 20mg)', category: 'stomach', price: 206, image: imgMedicine, rating: 4.8 },
+            { id: 313, name: 'جافيسكون دابل أكشن (Gaviscon Double Action)', category: 'stomach', price: 144, image: imgMedicine, rating: 4.9 },
+            { id: 314, name: 'مالوكس أكياس (Maalox Sachets)', category: 'stomach', price: 120, image: imgMedicine, rating: 4.8 },
+            { id: 315, name: 'فوار فواكه سريع للحموضة (Fawar Fruit)', category: 'stomach', price: 24, image: imgMedicine, rating: 4.7 },
+            { id: 316, name: 'جاناتون 50 مجم (Ganaton 50mg)', category: 'stomach', price: 90, image: imgMedicine, rating: 4.9 },
+            { id: 317, name: 'جاست ريج 200 مجم (Gast-Reg 200mg)', category: 'stomach', price: 84, image: imgMedicine, rating: 4.9 },
+            { id: 318, name: 'سباسموديجستين أقراص (Spasmo-Digestin)', category: 'stomach', price: 78, image: imgMedicine, rating: 4.8 },
+            { id: 319, name: 'دايجينورم شراب مهضم (Digenorm Syrup)', category: 'stomach', price: 55, image: imgMedicine, rating: 4.8 },
+            { id: 320, name: 'كولوفيرين د (Coloverin - D)', category: 'stomach', price: 105, image: imgMedicine, rating: 4.9 },
+            { id: 321, name: 'كولونا أقراص (Colona)', category: 'stomach', price: 42, image: imgMedicine, rating: 4.8 },
+            { id: 322, name: 'ليبراكس أقراص (Librax)', category: 'stomach', price: 11, image: imgMedicine, rating: 4.7 },
+            { id: 323, name: 'بوسكوبان 10 مجم (Buscopan 10mg)', category: 'stomach', price: 56, image: imgMedicine, rating: 4.9 },
+            { id: 324, name: 'أوكاربون أقراص الفحم (Eucarbon)', category: 'stomach', price: 135, image: imgMedicine, rating: 4.9 },
+            { id: 325, name: 'نيوكاربون كبسولات (Marnys Neocarbon)', category: 'stomach', price: 200, image: imgMedicine, rating: 4.9 },
+            { id: 326, name: 'موكوستا 100 مجم (Mucosta 100mg)', category: 'stomach', price: 114, image: imgMedicine, rating: 4.9 },
+            { id: 327, name: 'انتينال 200 مجم مطهر معوي (Antinal)', category: 'stomach', price: 52, image: imgMedicine, rating: 4.9 },
+            { id: 328, name: 'فلاجيل 500 مجم (Flagyl 500mg)', category: 'stomach', price: 34, image: imgMedicine, rating: 4.8 },
+            { id: 329, name: 'انتروجيرمينا أمبولات (Enterogermina)', category: 'stomach', price: 220, image: imgMedicine, rating: 5.0 },
+            { id: 330, name: 'دوفلاك شراب ملين (Duphalac Syrup)', category: 'stomach', price: 143, image: imgMedicine, rating: 4.9 },
 
             // === 7. عناية الأسنان ===
             { id: 401, name: 'معجون أسنان سنسوداين واقي المينا (Sensodyne)', category: 'oralcare', price: 85, image: imgSkincare, rating: 4.9 },
