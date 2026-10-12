@@ -56,7 +56,7 @@
             </a>
             <div class="hidden md:flex flex-1 max-w-xl mx-4">
                 <div class="relative w-full">
-                    <input type="text" id="searchInput" placeholder="ابحث عن الفيتامينات، أدوية المعدة، ألبان الأطفال، المضادات الحيوية..." class="w-full bg-gray-100 border border-gray-200 rounded-full py-2.5 pr-10 pl-4 text-sm focus:outline-none focus:border-pharmacy-500 focus:bg-white transition">
+                    <input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="ابحث عن بامبرز، الفيتامينات، ألبان الأطفال، المضادات الحيوية..." class="w-full bg-gray-100 border border-gray-200 rounded-full py-2.5 pr-10 pl-4 text-sm focus:outline-none focus:border-pharmacy-500 focus:bg-white transition">
                     <i class="fas fa-search absolute right-3.5 top-3.5 text-gray-400"></i>
                 </div>
             </div>
@@ -74,27 +74,21 @@
         </div>
         <nav class="bg-gray-100 border-t border-gray-200 px-4 py-2 overflow-x-auto">
             <div class="container mx-auto flex items-center gap-6 text-sm whitespace-nowrap">
-                <a href="#products" onclick="filterCategory('all')" class="category-btn text-pharmacy-700 font-bold hover:text-pharmacy-900 pb-1 border-b-2 border-pharmacy-600">الكل</a>
-                <a href="#products" onclick="filterCategory('baby-milk')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">ألبان الأطفال (بيبيلاك، هيرو، نان)</a>
-                <a href="#products" onclick="filterCategory('limitless')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">فيتامينات ليمتليس</a>
-                <a href="#products" onclick="filterCategory('haircare')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">منتجات كابكسي وكلاري</a>
-                <a href="#products" onclick="filterCategory('skincare')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">غسولات البشرة (20 نوع)</a>
-                <a href="#products" onclick="filterCategory('oralcare')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">عناية الأسنان</a>
-                <a href="#products" onclick="filterCategory('stomach')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">أدوية المعدة والهضم</a>
-                <a href="#products" onclick="filterCategory('antibiotics')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">المضادات الحيوية</a>
-                <a href="#products" onclick="filterCategory('tablets')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">أقراص وكسپولات عامة</a>
-                <a href="#products" onclick="filterCategory('injections')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">الحقن والأمبولات</a>
-                <a href="#products" onclick="filterCategory('sachets')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">الأكياس والفوارات</a>
-                <a href="#products" onclick="filterCategory('painkillers')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">مسكنات وعلاجات</a>
+                <button onclick="filterCategory('all')" class="category-btn text-pharmacy-700 font-bold hover:text-pharmacy-900 pb-1 border-b-2 border-pharmacy-600">الكل</button>
+                <button onclick="filterCategory('pampers')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">حفاضات بامبرز (Pampers)</button>
+                <button onclick="filterCategory('baby-milk')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">ألبان الأطفال (بيبيلاك، هيرو، نان)</button>
+                <button onclick="filterCategory('limitless')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">فيتامينات ليمتليس</button>
+                <button onclick="filterCategory('antibiotics')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">المضادات الحيوية</button>
             </div>
         </nav>
     </header>
+
     <section class="container mx-auto px-4 my-6">
         <div class="bg-gradient-to-r from-pharmacy-800 to-pharmacy-600 rounded-3xl text-white p-6 md:p-12 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
             <div class="max-w-xl z-10 text-center md:text-right">
                 <span class="bg-pharmacy-500/40 text-pharmacy-100 text-xs px-3 py-1 rounded-full font-bold inline-block mb-3">صيدليتك الشاملة 24 ساعة</span>
-                <h2 class="text-3xl md:text-4xl font-black mb-4 leading-tight">جميع الأدوية، الفيتامينات، ألبان الأطفال وغسولات البشرة</h2>
-                <p class="text-pharmacy-100 text-sm md:text-base mb-6 leading-relaxed">نوفر كافة الأدوية العلاجية، ألبان بيبيلاك وهيرو بيبي ونان، المضادات الحيوية، منتجات ليمتليس، كابكسي وكلاري بأسعار ممتازة وتوصيل سريع.</p>
+                <h2 class="text-3xl md:text-4xl font-black mb-4 leading-tight">جميع الأدوية، حفاضات بامبرز، الفيتامينات، وألبان الأطفال</h2>
+                <p class="text-pharmacy-100 text-sm md:text-base mb-6 leading-relaxed">نوفر كافة الأدوية العلاجية، منتجات وحفاضات بامبرز بجميع المقاسات، ألبان الأطفال، ومنتجات ليمتليس بأسعار ممتازة وتوصيل سريع.</p>
                 <div class="flex flex-wrap items-center justify-center md:justify-start gap-3">
                     <a href="#products" class="bg-white text-pharmacy-800 hover:bg-pharmacy-50 font-bold px-6 py-3 rounded-xl shadow transition text-sm">تسوق المنتجات الآن</a>
                     <button onclick="openPrescriptionModal()" class="bg-amber-500 hover:bg-amber-600 text-white font-bold px-6 py-3 rounded-xl shadow transition text-sm flex items-center gap-2">
@@ -109,6 +103,7 @@
             </div>
         </div>
     </section>
+
     <section id="products" class="container mx-auto px-4 mb-16">
         <div class="flex items-center justify-between mb-6">
             <h3 class="text-xl font-black text-gray-800 flex items-center gap-2">
@@ -118,6 +113,7 @@
         </div>
         <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
     </section>
+
     <footer class="bg-pharmacy-900 text-white pt-12 pb-6 border-t border-pharmacy-800">
         <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div>
@@ -152,6 +148,8 @@
         </div>
         <div class="container mx-auto px-4 pt-4 border-t border-pharmacy-800 text-center text-xs text-pharmacy-200">جميع الحقوق محفوظة © 2026 صيدلية النادري.</div>
     </footer>
+
+    <!-- Cart Drawer -->
     <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden hidden">
         <div class="absolute inset-0 bg-black/50 transition-opacity" onclick="toggleCart()"></div>
         <div class="absolute inset-y-0 left-0 max-w-full flex pl-10">
@@ -172,6 +170,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Prescription Modal -->
     <div id="prescriptionModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
         <div class="absolute inset-0 bg-black/50" onclick="closePrescriptionModal()"></div>
         <div class="bg-white rounded-2xl max-w-md w-full p-6 relative z-10 shadow-2xl">
@@ -187,6 +187,8 @@
             </form>
         </div>
     </div>
+
+    <!-- Checkout Modal -->
     <div id="checkoutModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
         <div class="absolute inset-0 bg-black/50" onclick="closeCheckoutModal()"></div>
         <div class="bg-white rounded-2xl max-w-md w-full p-6 relative z-10 shadow-2xl">
@@ -202,15 +204,27 @@
             </form>
         </div>
     </div>
+
     <script>
-        // روابط أيقونات طبية وصيدلانية صحيحة ومباشرة 100% لتظهر الصور بدون مشاكل
-        const mainPillBox = 'https://cdn-icons-png.flaticon.com/512/2965/2965567.png'; // أقراص وأدوية
-        const mainSyrupBox = 'https://cdn-icons-png.flaticon.com/512/883/883360.png'; // شراب أدوية وعلاجات
-        const mainSkincare = 'https://cdn-icons-png.flaticon.com/512/3132/3132739.png'; // عناية بالبشرة وغسولات
-        const mainInjection = 'https://cdn-icons-png.flaticon.com/512/883/883332.png'; // حقن وأمبولات
-        const mainToothpaste = 'https://cdn-icons-png.flaticon.com/512/2965/2965318.png'; // عناية بالأسنان
+        const mainPillBox = 'https://cdn-icons-png.flaticon.com/512/2965/2965567.png';
+        const mainSyrupBox = 'https://cdn-icons-png.flaticon.com/512/883/883360.png';
+        const mainSkincare = 'https://cdn-icons-png.flaticon.com/512/3132/3132739.png';
+        const mainInjection = 'https://cdn-icons-png.flaticon.com/512/883/883332.png';
 
         const products = [
+            // ==================== حفاضات ومنتجات بامبرز (Pampers) ====================
+            { id: 901, name: 'بامبرز العناية الممتازة (Premium Care) - مقاس 1 (حديثي الولادة 60 حفاضة)', category: 'pampers', price: 375, image: mainSyrupBox, rating: 5.0 },
+            { id: 902, name: 'بامبرز العناية الممتازة (Premium Care) - مقاس 2 (64 حفاضة)', category: 'pampers', price: 390, image: mainSyrupBox, rating: 4.9 },
+            { id: 903, name: 'بامبرز العناية الممتازة (Premium Care) - مقاس 3 (58 حفاضة)', category: 'pampers', price: 430, image: mainSyrupBox, rating: 4.9 },
+            { id: 904, name: 'بامبرز العناية الممتازة (Premium Care) - مقاس 4 (52 حفاضة)', category: 'pampers', price: 460, image: mainSyrupBox, rating: 5.0 },
+            { id: 905, name: 'بامبرز العناية الممتازة (Premium Care) - مقاس 5 (44 حفاضة)', category: 'pampers', price: 475, image: mainSyrupBox, rating: 4.9 },
+            { id: 906, name: 'بامبرز العناية الممتازة (Premium Care) - مقاس 6 (38 حفاضة)', category: 'pampers', price: 490, image: mainSyrupBox, rating: 4.8 },
+            { id: 907, name: 'بامبرز كلوت العبوة الجامبو - مقاس 3 (56 حفاضة)', category: 'pampers', price: 335, image: mainSyrupBox, rating: 4.8 },
+            { id: 908, name: 'بامبرز كلوت العبوة الجامبو - مقاس 4 (52 حفاضة)', category: 'pampers', price: 365, image: mainSyrupBox, rating: 4.9 },
+            { id: 909, name: 'بامبرز كلوت العبوة الجامبو - مقاس 5 (44 حفاضة)', category: 'pampers', price: 385, image: mainSyrupBox, rating: 4.8 },
+            { id: 910, name: 'بامبرز كلوت العبوة الجامبو - مقاس 6 (36 حفاضة)', category: 'pampers', price: 410, image: mainSyrupBox, rating: 4.8 },
+            { id: 911, name: 'مناديل بامبرز المبللة للأطفال (Pampers Wipes) - 56 منديل', category: 'pampers', price: 85, image: mainSkincare, rating: 4.9 },
+
             // ==================== ألبان الأطفال (بيبيلاك، هيرو بيبي، نان) ====================
             { id: 701, name: 'بيبيلاك 1 (Bebelac 1) - 400 جم', category: 'baby-milk', price: 363, image: mainSyrupBox, rating: 4.9 },
             { id: 702, name: 'بيبيلاك 2 (Bebelac 2) - 400 جم', category: 'baby-milk', price: 363, image: mainSyrupBox, rating: 4.9 },
@@ -220,73 +234,35 @@
             { id: 706, name: 'بيبيلاك AR (ضد الارتجاع) - 400 جم', category: 'baby-milk', price: 441, image: mainSyrupBox, rating: 5.0 },
             { id: 707, name: 'بيبيلاك EC (للماغص والغازات) - 400 جم', category: 'baby-milk', price: 394, image: mainSyrupBox, rating: 4.8 },
             { id: 708, name: 'بيبيلاك Premature (للمبتسرين) - 400 جم', category: 'baby-milk', price: 415, image: mainSyrupBox, rating: 4.8 },
-
             { id: 709, name: 'هيرو بيبي 1 / 2 / 3 (Hero Baby) - 400 جم', category: 'baby-milk', price: 281, image: mainSyrupBox, rating: 4.8 },
             { id: 710, name: 'هيرو بيبي نيوتراديفنس بلس 1 / 2 / 3 - 400 جم', category: 'baby-milk', price: 384, image: mainSyrupBox, rating: 4.9 },
             { id: 711, name: 'هيرو بيبي نيوتراسينس 1 / 2 / 3 - 400 جم', category: 'baby-milk', price: 430, image: mainSyrupBox, rating: 5.0 },
             { id: 712, name: 'هيرو بيبي LF (خالي من اللاكتوز) - 400 جم', category: 'baby-milk', price: 395, image: mainSyrupBox, rating: 4.8 },
             { id: 713, name: 'هيرو بيبي AR (للارتجاع) - 400 جم', category: 'baby-milk', price: 430, image: mainSyrupBox, rating: 4.9 },
-
             { id: 714, name: 'نان 1 / نان 2 / نان 3 (NAN Optipro) - 400 جم', category: 'baby-milk', price: 385, image: mainSyrupBox, rating: 4.9 },
             { id: 715, name: 'نان 1 / نان 2 / نان 3 (عبوة كبيرة 800 جم)', category: 'baby-milk', price: 680, image: mainSyrupBox, rating: 5.0 },
             { id: 716, name: 'نان كومفورت (NAN Comfort) للتقلصات - 380 جم', category: 'baby-milk', price: 415, image: mainSyrupBox, rating: 4.9 },
             { id: 717, name: 'نان LF (خالي من اللاكتوز) - 400 جم', category: 'baby-milk', price: 405, image: mainSyrupBox, rating: 4.9 },
             { id: 718, name: 'نان بري (NAN Pre) للمبتسرين - 400 جم', category: 'baby-milk', price: 410, image: mainSyrupBox, rating: 4.8 },
 
-            // ==================== فيتامينات ليمتليس (Limitless Vitamins - المضافة حديثاً) ====================
-            // 1. أوميجا 3 والمناعة والاسترخاء
+            // ==================== فيتامينات ليمتليس (Limitless) ====================
             { id: 801, name: 'ليمتلس أوميجا 3 (Limitless Omega 3) - 2000 مجم', category: 'limitless', price: 250, image: mainPillBox, rating: 4.9 },
             { id: 802, name: 'ليمتلس أوميجا 3 كارديو (Limitless Omega 3 Cardio)', category: 'limitless', price: 280, image: mainPillBox, rating: 4.9 },
             { id: 803, name: 'ليمتلس سي-زنك الأصلي (Limitless C-Zinc)', category: 'limitless', price: 120, image: mainPillBox, rating: 4.8 },
             { id: 804, name: 'ليمتلس سي-زنك بلس (Limitless C-Zinc Plus)', category: 'limitless', price: 140, image: mainPillBox, rating: 4.9 },
             { id: 805, name: 'ليمتلس هيدريت (Limitless Hydrate)', category: 'limitless', price: 95, image: mainSyrupBox, rating: 4.7 },
             { id: 806, name: 'ليمتلس أشواجاندا 600 مجم (Limitless Ashwagandha)', category: 'limitless', price: 310, image: mainPillBox, rating: 4.9 },
-
-            // 2. فيتامين د والمعادن
             { id: 807, name: 'ليمتلس أوسوفورتين 2000/5000 (Limitless Ossofortin)', category: 'limitless', price: 160, image: mainPillBox, rating: 4.9 },
-            { id: 808, name: 'ليمتلس أوسوفورتين ك2 أقرص على اللسان (Limitless Ossofortin K2)', category: 'limitless', price: 190, image: mainPillBox, rating: 4.8 },
-            { id: 809, name: 'ليمتلس أوسوفورتين د3 ليبو (Limitless Ossofortin D3 Liposomal)', category: 'limitless', price: 210, image: mainPillBox, rating: 4.9 },
+            { id: 808, name: 'ليمتلس أوسوفورتين ك2 (Limitless Ossofortin K2)', category: 'limitless', price: 190, image: mainPillBox, rating: 4.8 },
+            { id: 809, name: 'ليمتلس أوسوفورتين د3 ليبو (Limitless Ossofortin D3)', category: 'limitless', price: 210, image: mainPillBox, rating: 4.9 },
             { id: 810, name: 'ليمتلس أوستيودينس (Limitless Osteodense)', category: 'limitless', price: 220, image: mainPillBox, rating: 4.8 },
-            { id: 811, name: 'ليمتلس المغنيسيوم / ثريونات (Limitless Magnesium Threonate)', category: 'limitless', price: 260, image: mainPillBox, rating: 4.9 },
+            { id: 811, name: 'ليمتلس المغنيسيوم ثريونات (Limitless Magnesium)', category: 'limitless', price: 260, image: mainPillBox, rating: 4.9 },
             { id: 812, name: 'ليمتلس زنك (Limitless Zinc)', category: 'limitless', price: 110, image: mainPillBox, rating: 4.8 },
-
-            // 3. صحة الرجل والمرأة والحوامل
             { id: 813, name: 'ليمتلس مان ماكس (Limitless Man Max)', category: 'limitless', price: 270, image: mainPillBox, rating: 4.9 },
             { id: 814, name: 'ليمتلس وومان ماكس (Limitless Woman Max)', category: 'limitless', price: 270, image: mainPillBox, rating: 5.0 },
             { id: 815, name: 'ليمتلس بريناتال أوريجينال (Limitless Prenatal Original)', category: 'limitless', price: 240, image: mainPillBox, rating: 4.8 },
-            { id: 816, name: 'ليمتلس بريناتال ماكس (Limitless Prenatal Max)', category: 'limitless', price: 290, image: mainPillBox, rating: 4.9 },
-            { id: 817, name: 'ليمتلس ميثيل فوليت (Limitless Methylfolate)', category: 'limitless', price: 180, image: mainPillBox, rating: 4.8 },
 
-            // 4. الأطفال والرضع
-            { id: 818, name: 'ليمتلس بيبي دروبس / نقط فيتامين د (Limitless Baby D Drops)', category: 'limitless', price: 115, image: mainSyrupBox, rating: 4.9 },
-            { id: 819, name: 'ليمتلس كيدز شراب (Limitless Kids Syrup)', category: 'limitless', price: 130, image: mainSyrupBox, rating: 4.8 },
-            { id: 820, name: 'ليمتلس كيدز مالتي جاميز (Limitless Kids Multi Gummies)', category: 'limitless', price: 175, image: mainPillBox, rating: 4.9 },
-
-            // 5. الجمال والعناية بالشعر والبشرة
-            { id: 821, name: 'ليمتلس جلو هير (Limitless Glow Hair)', category: 'limitless', price: 280, image: mainSkincare, rating: 4.9 },
-            { id: 822, name: 'ليمتلس برو أجينج (Limitless Pro Aging)', category: 'limitless', price: 320, image: mainSkincare, rating: 4.9 },
-            { id: 823, name: 'ليمتلس هيدريت جلو (Limitless Hydrate Glow)', category: 'limitless', price: 290, image: mainSkincare, rating: 4.8 },
-
-            // 6. الجهاز الهضمي والتحكم في الوزن والتحلية
-            { id: 824, name: 'ليمتلس بالانس سينبايوتك (Limitless Balance)', category: 'limitless', price: 240, image: mainPillBox, rating: 4.8 },
-            { id: 825, name: 'ليمتلس دايجست ناو (Limitless Digest Now)', category: 'limitless', price: 195, image: mainPillBox, rating: 4.8 },
-            { id: 826, name: 'ليمتلس كرانبيري (Limitless Cranberry)', category: 'limitless', price: 210, image: mainPillBox, rating: 4.8 },
-            { id: 827, name: 'ليمتلس كروماكس كت (Limitless Chromax Cut)', category: 'limitless', price: 260, image: mainPillBox, rating: 4.9 },
-            { id: 828, name: 'ليمتلس تشاركول بلس (Limitless Charcoal Plus)', category: 'limitless', price: 145, image: mainPillBox, rating: 4.7 },
-            { id: 829, name: 'ليمتلس ستيفيا مُحلي طبيعي (Limitless Stevia)', category: 'limitless', price: 160, image: mainPillBox, rating: 4.9 },
-
-            // 7. النوم والاسترخاء
-            { id: 830, name: 'ليمتلس سليب ايد ديوال (Limitless Sleep Aid Dual)', category: 'limitless', price: 250, image: mainPillBox, rating: 4.9 },
-
-            // 8. المكملات الرياضية (ليمتلس ألفا - Limitless Alpha)
-            { id: 831, name: 'ليمتلس ألفا واي بروتين (Limitless Alpha Whey Protein)', category: 'limitless', price: 950, image: mainPillBox, rating: 4.9 },
-            { id: 832, name: 'ليمتلس ألفا كرياتين مونوهيدريت (Limitless Alpha Creatine Monohydrate)', category: 'limitless', price: 450, image: mainPillBox, rating: 5.0 },
-            { id: 833, name: 'ليمتلس ألفا بي سي دبل إيه (Limitless Alpha BCAA)', category: 'limitless', price: 380, image: mainPillBox, rating: 4.8 },
-            { id: 834, name: 'ليمتلس ألفا إي دبل إيه + إليكترولايتس (Limitless Alpha EAA)', category: 'limitless', price: 410, image: mainPillBox, rating: 4.9 },
-            { id: 835, name: 'ليمتلس ألفا إل-سيترولين (Limitless Alpha L-Citrulline)', category: 'limitless', price: 390, image: mainPillBox, rating: 4.8 },
-            { id: 836, name: 'ليمتلس باور ماكس (Limitless Power Max)', category: 'limitless', price: 430, image: mainPillBox, rating: 4.9 },
-
-            // ==================== المضادات الحيوية (المجموعة الكاملة) ====================
+            // ==================== المضادات الحيوية ====================
             { id: 501, name: 'أوجمنتين 1جم أقراص (Augmentin 1g)', category: 'antibiotics', price: 115, image: mainPillBox, rating: 5.0 },
             { id: 502, name: 'ميجاموكس 1جم (Megamox 1g)', category: 'antibiotics', price: 95, image: mainPillBox, rating: 4.9 },
             { id: 503, name: 'كلاسيد 500 مجم (Klacit 500mg)', category: 'antibiotics', price: 145, image: mainPillBox, rating: 4.9 },
@@ -329,189 +305,127 @@
             { id: 540, name: 'فانكوميسين 500 مجم (Vancomycin)', category: 'antibiotics', price: 150, image: mainInjection, rating: 4.9 },
             { id: 541, name: 'سيبرولين 500 مجم (Ciproline)', category: 'antibiotics', price: 58, image: mainPillBox, rating: 4.7 },
             { id: 542, name: 'تلفاست 180 مجم أقراص (Telfast) - مضاد للحساسية', category: 'antibiotics', price: 115, image: mainPillBox, rating: 4.9 },
-            { id: 543, name: 'فلاجيل 500 مجم أقراص (Flagyl 500mg)', category: 'antibiotics', price: 35, image: mainPillBox, rating: 4.8 },
-            { id: 544, name: 'فلاجيل شراب (Flagyl Syrup)', category: 'antibiotics', price: 25, image: mainSyrupBox, rating: 4.8 },
-            { id: 545, name: 'امريزول 500 مجم أقراص (Amrizole)', category: 'antibiotics', price: 32, image: mainPillBox, rating: 4.7 },
-            { id: 546, name: 'امريزول شراب (Amrizole Syrup)', category: 'antibiotics', price: 22, image: mainSyrupBox, rating: 4.7 },
-            { id: 547, name: 'نتاليد 500 مجم أقراص (Nalid)', category: 'antibiotics', price: 40, image: mainPillBox, rating: 4.7 },
-            { id: 548, name: 'ماكسيبم 1جم حقن (Maxipime)', category: 'antibiotics', price: 130, image: mainInjection, rating: 4.9 },
-            { id: 549, name: 'تيناسيلين 1.2 مليون (Penicillin G Benzathine)', category: 'antibiotics', price: 20, image: mainInjection, rating: 4.8 },
-            { id: 550, name: 'أوسباموكس 500 مجم كبسولات (Ospamox)', category: 'antibiotics', price: 60, image: mainPillBox, rating: 4.8 },
-
-            // ==================== أدوية المعدة والهضم (Stomach & Digestion) ====================
-            { id: 401, name: 'أنتيبيركس / أنتينال معلق (Antinal) للإسهال', category: 'stomach', price: 35, image: mainSyrupBox, rating: 4.9 },
-            { id: 402, name: 'كونترولوك 40 مجم (Controloc 40mg) لحموضة المعدة', category: 'stomach', price: 110, image: mainPillBox, rating: 5.0 },
-            { id: 403, name: 'اوميز 20 مجم كبسولات (Omez 20mg)', category: 'stomach', price: 45, image: mainPillBox, rating: 4.8 },
-            { id: 404, name: 'فاست كور / إيفبروسبان شراب للسعال والهضم', category: 'stomach', price: 48, image: mainSyrupBox, rating: 4.7 },
-            { id: 405, name: 'موتيلليوم أقراص (Motilium) للغثيان وعسر الهضم', category: 'stomach', price: 55, image: mainPillBox, rating: 4.9 },
-            { id: 406, name: 'إيبكوكلور / رانيتيدين لأرحام المعدة', category: 'stomach', price: 40, image: mainPillBox, rating: 4.8 },
-
-            // ==================== منتجات كابكسي وكلاري (Capixy & Clary) ====================
-            { id: 101, name: 'كابكسي سيروم للشعر (Capixy Hair Serum)', category: 'haircare', price: 295, image: mainSkincare, rating: 4.9 },
-            { id: 102, name: 'كابكسي سبراي لتقوية الشعر (Capixy Spray)', category: 'haircare', price: 260, image: mainSkincare, rating: 4.8 },
-            { id: 103, name: 'كابكسي شامبو طبي لتساقط الشعر (Capixy Shampoo)', category: 'haircare', price: 180, image: mainSkincare, rating: 4.9 },
-            { id: 104, name: 'كلاري شامبو للعناية بالشعر (Clary Shampoo)', category: 'haircare', price: 165, image: mainSkincare, rating: 4.8 },
-            { id: 105, name: 'كلاري بلسم مرطب للشعر (Clary Conditioner)', category: 'haircare', price: 155, image: mainSkincare, rating: 4.7 },
-
-            // ==================== معجون الأسنان سيجنال، سانسوداين وكويجرا ====================
-            { id: 106, name: 'معجون أسنان سيجنال كافيتي فايتر 120 مل', category: 'oralcare', price: 45, image: mainToothpaste, rating: 4.8 },
-            { id: 107, name: 'معجون أسنان سيجنال وايت ناو لتبييض الأسنان', category: 'oralcare', price: 75, image: mainToothpaste, rating: 4.9 },
-            { id: 108, name: 'معجون أسنان سانسوداين للأسنان الحساسة 75 مل', category: 'oralcare', price: 115, image: mainToothpaste, rating: 5.0 },
-            { id: 109, name: 'معجون أسنان سانسوداين رابيد ريليف', category: 'oralcare', price: 135, image: mainToothpaste, rating: 5.0 },
-            { id: 110, name: 'كويجرا سبراي أو أقراص (Quicra)', category: 'oralcare', price: 95, image: mainPillBox, rating: 4.8 },
-
-            // ==================== 20 غسول بشرة متنوع (Skincare Cleansers) ====================
-            { id: 201, name: 'غسول سيتافيل للبشرة الجافة والحساسة 230 مل', category: 'skincare', price: 450, image: mainSkincare, rating: 5.0 },
-            { id: 202, name: 'لاروش بوزيه إيفاكلار غسول للبشرة الدهنية 400 مل', category: 'skincare', price: 750, image: mainSkincare, rating: 5.0 },
-            { id: 203, name: 'ستارڤيل غسول جل للبشرة الدهنية والمختلطة 200 مل', category: 'skincare', price: 135, image: mainSkincare, rating: 4.9 },
-            { id: 204, name: 'سيوفي غسول للبشرة المعرضة للحبوب', category: 'skincare', price: 120, image: mainSkincare, rating: 4.8 },
-            { id: 205, name: 'بيوديرما سيبيوم غسول للبشرة الدهنية 200 مل', category: 'skincare', price: 620, image: mainSkincare, rating: 5.0 },
-            { id: 206, name: 'بيوديرما أاتوديرم غسول للبشرة الجافة', category: 'skincare', price: 640, image: mainSkincare, rating: 4.9 },
-            { id: 207, name: 'ايفلاين غسول مرطب للوجه', category: 'skincare', price: 110, image: mainSkincare, rating: 4.7 },
-            { id: 208, name: 'نيفيا غسول منعش للبشرة العادية', category: 'skincare', price: 95, image: mainSkincare, rating: 4.8 },
-            { id: 209, name: 'ڤازلين جل غسول مرطب', category: 'skincare', price: 130, image: mainSkincare, rating: 4.8 },
-            { id: 210, name: 'غسول كليراسيل المضاد للحبوب', category: 'skincare', price: 145, image: mainSkincare, rating: 4.7 },
-            { id: 211, name: 'غسول هيمالايا بالنيم لتنقية البشرة', category: 'skincare', price: 75, image: mainSkincare, rating: 4.8 },
-            { id: 212, name: 'غسول غارنييه بالحليب والعسل للبشرة الجافة', category: 'skincare', price: 105, image: mainSkincare, rating: 4.8 },
-            { id: 213, name: 'غسول غارنييه بالفحم لتنقية المسام', category: 'skincare', price: 115, image: mainSkincare, rating: 4.9 },
-            { id: 214, name: 'بانوكسيل غسول بنزويل بيروكسايد للحبوب 4%', category: 'skincare', price: 380, image: mainSkincare, rating: 5.0 },
-            { id: 215, name: 'سيرافي غسول مرطب للبشرة العادية إلى الجافة 236 مل', category: 'skincare', price: 490, image: mainSkincare, rating: 5.0 },
-            { id: 216, name: 'سيرافي غسول رغوي للبشرة العادية إلى الدهنية 236 مل', category: 'skincare', price: 490, image: mainSkincare, rating: 5.0 },
+            { id: 543, name: 'فلاجيل 500 مجم أقراص (Flagyl 500mg)', category: 'antibiotics', price: 35, image: mainPillBox, rating: 4.8 }
         ];
 
-        // باقي دوال المتجر (عرض المنتجات، السلة، البحث، إلخ) تعمل بشكل متكامل تلقائياً
-        let currentCategory = 'all';
         let cart = [];
 
-        function renderProducts() {
+        function renderProducts(items) {
             const grid = document.getElementById('productsGrid');
-            const searchVal = document.getElementById('searchInput').value.toLowerCase();
-            
-            let filtered = products.filter(p => {
-                const matchCat = currentCategory === 'all' || p.category === currentCategory;
-                const matchSearch = p.name.toLowerCase().includes(searchVal);
-                return matchCat && matchSearch;
-            });
+            grid.innerHTML = '';
+            document.getElementById('productCount').innerText = `عرض ${items.length} منتج`;
 
-            document.getElementById('productCount').innerText = `عرض ${filtered.length} منتج`;
-
-            if (filtered.length === 0) {
-                grid.innerHTML = `<div class="col-span-full text-center py-12 text-gray-400">لا توجد منتجات مطابقة للبحث</div>`;
+            if(items.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-8 text-gray-500">لا توجد منتجات تطابق البحث</div>`;
                 return;
             }
 
-            grid.innerHTML = filtered.map(p => `
-                <div class="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between">
-                    <div>
-                        <div class="h-36 flex items-center justify-center bg-gray-50 rounded-xl mb-3 relative">
-                            <img src="${p.image}" alt="${p.name}" class="h-20 object-contain">
-                            <span class="absolute top-2 left-2 bg-amber-50 text-amber-700 text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
-                                <i class="fas fa-star text-amber-400"></i> ${p.rating}
-                            </span>
+            items.forEach(p => {
+                grid.innerHTML += `
+                    <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-md transition">
+                        <div>
+                            <img src="${p.image}" alt="${p.name}" class="w-20 h-20 mx-auto mb-3 object-contain">
+                            <h4 class="font-bold text-sm text-gray-800 mb-1 h-10 overflow-hidden">${p.name}</h4>
+                            <div class="text-amber-500 text-xs mb-2">★ ${p.rating}</div>
                         </div>
-                        <h4 class="font-bold text-sm text-gray-800 mb-2 line-clamp-2">${p.name}</h4>
-                    </div>
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-pharmacy-700 font-black text-base">${p.price} ج.م</span>
+                        <div class="flex items-center justify-between mt-4 border-t pt-3 border-gray-50">
+                            <span class="font-black text-pharmacy-800 text-base">${p.price} ج.م</span>
+                            <button onclick="addToCart(${p.id})" class="bg-pharmacy-50 hover:bg-pharmacy-100 text-pharmacy-700 px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1">
+                                <i class="fas fa-plus"></i> إضافة
+                            </button>
                         </div>
-                        <button onclick="addToCart(${p.id})" class="w-full bg-pharmacy-50 hover:bg-pharmacy-600 hover:text-white text-pharmacy-700 font-bold py-2 rounded-xl text-xs transition border border-pharmacy-200 flex items-center justify-center gap-1.5">
-                            <i class="fas fa-cart-plus"></i> أضف للسلة
-                        </button>
                     </div>
-                </div>
-            `).join('');
+                `;
+            });
         }
 
         function filterCategory(cat) {
-            currentCategory = cat;
             document.querySelectorAll('.category-btn').forEach(btn => {
                 btn.classList.remove('text-pharmacy-700', 'border-pharmacy-600', 'font-bold');
                 btn.classList.add('text-gray-600', 'border-transparent', 'font-semibold');
             });
             event.target.classList.remove('text-gray-600', 'border-transparent', 'font-semibold');
             event.target.classList.add('text-pharmacy-700', 'border-pharmacy-600', 'font-bold');
-            renderProducts();
+
+            const filtered = cat === 'all' ? products : products.filter(p => p.category === cat);
+            renderProducts(filtered);
         }
 
-        document.getElementById('searchInput').addEventListener('input', renderProducts);
+        function searchProducts() {
+            const q = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = products.filter(p => p.name.toLowerCase().includes(q));
+            renderProducts(filtered);
+        }
 
         function addToCart(id) {
-            const product = products.find(p => p.id === id);
-            const existing = cart.find(item => item.id === id);
-            if (existing) {
-                existing.qty++;
-            } else {
-                cart.push({ ...product, qty: 1 });
-            }
-            updateCartUI();
-            toggleCart(true);
+            const prod = products.find(p => p.id === id);
+            const item = cart.find(c => c.id === id);
+            if(item) { item.qty++; } else { cart.push({...prod, qty: 1}); }
+            updateCart();
         }
 
-        function updateCartUI() {
-            const count = cart.reduce((sum, item) => sum + item.qty, 0);
-            document.getElementById('cartCount').innerText = count;
-            
+        function updateCart() {
             const container = document.getElementById('cartItemsContainer');
-            if (cart.length === 0) {
-                container.innerHTML = `<div class="text-center py-12 text-gray-400">سلة المشتريات فارغة</div>`;
-            } else {
-                container.innerHTML = cart.map(item => `
-                    <div class="flex items-center gap-3 py-2">
-                        <img src="${item.image}" class="w-12 h-12 object-contain bg-gray-50 rounded-lg p-1">
-                        <div class="flex-1">
-                            <h5 class="text-xs font-bold text-gray-800 line-clamp-1">${item.name}</h5>
+            container.innerHTML = '';
+            let subtotal = 0;
+            let totalQty = 0;
+
+            cart.forEach(item => {
+                subtotal += item.price * item.qty;
+                totalQty += item.qty;
+                container.innerHTML += `
+                    <div class="flex items-center justify-between pt-2">
+                        <div>
+                            <h5 class="text-xs font-bold text-gray-800">${item.name}</h5>
                             <span class="text-xs text-pharmacy-700 font-bold">${item.price} ج.م</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <button onclick="changeQty(${item.id}, -1)" class="w-6 h-6 bg-gray-100 rounded flex items-center justify-center text-xs font-bold">-</button>
+                            <button onclick="changeQty(${item.id}, -1)" class="w-6 h-6 bg-gray-100 rounded text-xs font-bold">-</button>
                             <span class="text-xs font-bold">${item.qty}</span>
-                            <button onclick="changeQty(${item.id}, 1)" class="w-6 h-6 bg-gray-100 rounded flex items-center justify-center text-xs font-bold">+</button>
+                            <button onclick="changeQty(${item.id}, 1)" class="w-6 h-6 bg-gray-100 rounded text-xs font-bold">+</button>
                         </div>
                     </div>
-                `).join('');
-            }
+                `;
+            });
 
-            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-            const shipping = subtotal > 400 || subtotal === 0 ? 0 : 25;
-            const total = subtotal + shipping;
-
+            document.getElementById('cartCount').innerText = totalQty;
             document.getElementById('cartSubtotal').innerText = subtotal.toFixed(2) + ' ج.م';
-            document.getElementById('cartShipping').innerText = shipping === 0 ? 'مجاني' : shipping.toFixed(2) + ' ج.م';
-            document.getElementById('cartTotal').innerText = total.toFixed(2) + ' ج.م';
-            document.getElementById('checkoutBtn').disabled = cart.length === 0;
+            const shipping = subtotal > 400 || subtotal === 0 ? 0 : 25;
+            document.getElementById('cartShipping').innerText = shipping === 0 ? 'مجاني' : shipping + ' ج.م';
+            document.getElementById('cartTotal').innerText = (subtotal + shipping).toFixed(2) + ' ج.م';
         }
 
-        function changeQty(id, delta) {
-            const item = cart.find(i => i.id === id);
-            if (item) {
-                item.qty += delta;
-                if (item.qty <= 0) {
-                    cart = cart.filter(i => i.id !== id);
-                }
-                updateCartUI();
+        function changeQty(id, change) {
+            const item = cart.find(c => c.id === id);
+            if(item) {
+                item.qty += change;
+                if(item.qty <= 0) cart = cart.filter(c => c.id !== id);
             }
+            updateCart();
         }
 
-        function toggleCart(forceOpen = false) {
-            const drawer = document.getElementById('cartDrawer');
-            if (forceOpen) {
-                drawer.classList.remove('hidden');
-            } else {
-                drawer.classList.toggle('hidden');
-            }
-        }
-
+        function toggleCart() { document.getElementById('cartDrawer').classList.toggle('hidden'); }
         function openPrescriptionModal() { document.getElementById('prescriptionModal').classList.remove('hidden'); }
         function closePrescriptionModal() { document.getElementById('prescriptionModal').classList.add('hidden'); }
-        function handlePrescriptionSubmit(e) { e.preventDefault(); alert('تم إرسال الروشتة بنجاح! سنتواصل معك قريباً.'); closePrescriptionModal(); }
-
-        function openCheckoutModal() { toggleCart(); document.getElementById('checkoutModal').classList.remove('hidden'); }
+        function openCheckoutModal() { document.getElementById('checkoutModal').classList.remove('hidden'); }
         function closeCheckoutModal() { document.getElementById('checkoutModal').classList.add('hidden'); }
-        function handleCheckoutSubmit(e) { e.preventDefault(); alert('تم تأكيد الطلب بنجاح! شكراً لتسوقك في صيدلية النادري.'); cart = []; updateCartUI(); closeCheckoutModal(); }
 
-        // تهيئة عرض المنتجات عند التحميل
-        renderProducts();
+        function handlePrescriptionSubmit(e) {
+            e.preventDefault();
+            alert('تم استلام الروشتة بنجاح، وسيتواصل معك الصيدلي فوراً.');
+            closePrescriptionModal();
+        }
+
+        function handleCheckoutSubmit(e) {
+            e.preventDefault();
+            alert('تم تأكيد طلبك بنجاح! شكراً لتسوقك من صيدلية النادري.');
+            cart = [];
+            updateCart();
+            closeCheckoutModal();
+            toggleCart();
+        }
+
+        renderProducts(products);
     </script>
 </body>
 </html>
