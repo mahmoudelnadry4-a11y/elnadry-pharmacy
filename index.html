@@ -75,6 +75,8 @@
         <nav class="bg-gray-100 border-t border-gray-200 px-4 py-2 overflow-x-auto">
             <div class="container mx-auto flex items-center gap-6 text-sm whitespace-nowrap">
                 <button onclick="filterCategory('all')" class="category-btn text-pharmacy-700 font-bold hover:text-pharmacy-900 pb-1 border-b-2 border-pharmacy-600">الكل</button>
+                <button onclick="filterCategory('pads')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">الفوط الصحية</button>
+                <button onclick="filterCategory('loreal')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">منتجات لوريال للشعر</button>
                 <button onclick="filterCategory('cerelac')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">سيريلاك (20 نوع)</button>
                 <button onclick="filterCategory('deodorant')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">مزيلات العرق (20 نوع)</button>
                 <button onclick="filterCategory('pampers')" class="category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent">منتجات بامبرز</button>
@@ -220,8 +222,41 @@
         const imgSkincare = 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300&q=80';
         const imgHair = 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=300&q=80';
         const imgMedicine = 'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=300&q=80';
+        const imgPads = 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=300&q=80';
 
         const products = [
+            // === أنواع الفوط الصحية (سوفي، أولويز، مولبد) ===
+            { id: 2001, name: 'سوفي ماكسي سميكة بالأجنحة (عبوة توفيرية 30 فوطة)', category: 'pads', price: 135, image: imgPads, rating: 4.9 },
+            { id: 2002, name: 'سوفي ماكسي سميكة عادية (عبوة 10 فوط)', category: 'pads', price: 60, image: imgPads, rating: 4.8 },
+            { id: 2003, name: 'سوفي بالمسك وانتعاش (عبوة 16 فوطة)', category: 'pads', price: 75, image: imgPads, rating: 4.8 },
+            { id: 2004, name: 'سوفي ليلية طويلة جداً 36 سم (عبوة 24 فوطة)', category: 'pads', price: 150, image: imgPads, rating: 5.0 },
+            { id: 2005, name: 'سوفي ألترا رفيعة Ultra Thin (عبوة 14 فوطة)', category: 'pads', price: 72, image: imgPads, rating: 4.9 },
+            { id: 2006, name: 'أولويز وردي للبشرة الحساسة ملمس قطني (عبوة 16 فوطة)', category: 'pads', price: 105, image: imgPads, rating: 4.9 },
+            { id: 2007, name: 'أولويز ألترا رفيعة للغاية بامتصاص مضاعف (عبوة 16 فوطة)', category: 'pads', price: 120, image: imgPads, rating: 5.0 },
+            { id: 2008, name: 'أولويز ليلية طويلة جداً للحماية أثناء النوم (عبوة 24 فوطة)', category: 'pads', price: 200, image: imgPads, rating: 5.0 },
+            { id: 2009, name: 'أولويز اليومية Daily Liners (عبوة 20 فوطة)', category: 'pads', price: 60, image: imgPads, rating: 4.8 },
+            { id: 2010, name: 'أولويز اليومية عبوة توفيرية (60 فوطة)', category: 'pads', price: 300, image: imgPads, rating: 4.9 },
+            { id: 2011, name: 'مولبد سميكة ماكسي Maxi Thick (عبوة 16 فوطة)', category: 'pads', price: 68, image: imgPads, rating: 4.8 },
+            { id: 2012, name: 'مولبد ألترا Ultra Thin بالأجنحة (عبوة 14 فوطة)', category: 'pads', price: 65, image: imgPads, rating: 4.8 },
+            { id: 2013, name: 'مولبد القطنية للبشرة الحساسة Pure & Soft (عبوة 14 فوطة)', category: 'pads', price: 72, image: imgPads, rating: 4.9 },
+
+            // === منتجات لوريال للشعر (L'Oréal Paris Elvive & Dyes) ===
+            { id: 2101, name: 'لوريال إلفيف شامبو الهيالورونيك المرطب - 400 مل', category: 'loreal', price: 185, image: imgHair, rating: 4.9 },
+            { id: 2102, name: 'لوريال إلفيف بلسم الهيالورونيك المرطب - 400 مل', category: 'loreal', price: 190, image: imgHair, rating: 4.9 },
+            { id: 2103, name: 'لوريال إلفيف سيروم الهيالورونيك المرطب للشعر', category: 'loreal', price: 420, image: imgHair, rating: 5.0 },
+            { id: 2104, name: 'لوريال إلفيف شامبو الزيوت الاستثنائية - 400 مل', category: 'loreal', price: 185, image: imgHair, rating: 4.8 },
+            { id: 2105, name: 'لوريال إلفيف سيروم الزيوت الاستثنائية - 100 مل', category: 'loreal', price: 450, image: imgHair, rating: 4.9 },
+            { id: 2106, name: 'لوريال إلفيف شامبو طول الأحلام Dream Long - 400 مل', category: 'loreal', price: 185, image: imgHair, rating: 4.9 },
+            { id: 2107, name: 'لوريال إلفيف كريم كيراتين طول الأحلام - 300 مل', category: 'loreal', price: 195, image: imgHair, rating: 4.8 },
+            { id: 2108, name: 'لوريال إلفيف شامبو المعالجة الكاملة 5 - 400 مل', category: 'loreal', price: 180, image: imgHair, rating: 4.8 },
+            { id: 2109, name: 'لوريال إلفيف بديل الزيت المعالجة الكاملة 5 - 300 مل', category: 'loreal', price: 185, image: imgHair, rating: 4.8 },
+            { id: 2110, name: 'لوريال إلفيف شامبو الفول ريزيست للأرجنين والتساقط - 400 مل', category: 'loreal', price: 190, image: imgHair, rating: 4.9 },
+            { id: 2111, name: 'لوريال إلفيف شامبو وسيروم جليكوليك جلوس لللمعان - 400 مل', category: 'loreal', price: 440, image: imgHair, rating: 5.0 },
+            { id: 2112, name: 'لوريال إلفيف ماسك الشعر المغذي - 300 مل', category: 'loreal', price: 360, image: imgHair, rating: 4.9 },
+            { id: 2113, name: 'صبغة لوريال إكسيلانس كريم لتغطية الشيب', category: 'loreal', price: 460, image: imgHair, rating: 4.9 },
+            { id: 2114, name: 'صبغة لوريال كاستينج كريم جلوس بدون أمونيا', category: 'loreal', price: 530, image: imgHair, rating: 5.0 },
+            { id: 2115, name: 'صبغة لوريال برودجي بالزيوت بدون أمونيا', category: 'loreal', price: 520, image: imgHair, rating: 4.8 },
+
             // === منتجات سيريلاك (20 نوعاً) ===
             { id: 1001, name: 'سيريلاك قمح بدون حليب (125 جم)', category: 'cerelac', price: 48, image: imgCerelac, rating: 4.8 },
             { id: 1002, name: 'سيريلاك قمح بدون حليب (400 جم)', category: 'cerelac', price: 110, image: imgCerelac, rating: 4.9 },
@@ -322,7 +357,7 @@
             { id: 820, name: 'ليمتلس كيدز مالتي جاميز (Limitless Kids Multi Gummies)', category: 'limitless', price: 175, image: imgVitamin, rating: 4.9 },
             { id: 821, name: 'ليمتلس جلو هير (Limitless Glow Hair)', category: 'limitless', price: 280, image: imgVitamin, rating: 4.9 },
 
-            // === 4. غسولات البشرة العشرين (Skin Wash & Skincare) ===
+            // === 4. غسولات البشرة (20 نوعاً) ===
             { id: 101, name: 'غسول لاروش بوزيه إيفاكلار جل (La Roche-Posay Effaclar)', category: 'skincare', price: 450, image: imgSkincare, rating: 4.9 },
             { id: 102, name: 'غسول سيرافي للبشرة العادية والجافة (CeraVe Hydrating Cleanser)', category: 'skincare', price: 380, image: imgSkincare, rating: 4.9 },
             { id: 103, name: 'غسول سيرافي للبشرة الدهنية (CeraVe Foaming Facial Cleanser)', category: 'skincare', price: 390, image: imgSkincare, rating: 5.0 },
@@ -332,119 +367,111 @@
             { id: 107, name: 'غسول يورياج هيساك جل (Uriage Hyséac Cleansing Gel)', category: 'skincare', price: 395, image: imgSkincare, rating: 4.8 },
             { id: 108, name: 'غسول نيوتروجينا هيدرو بوست جل (Neutrogena Hydro Boost)', category: 'skincare', price: 210, image: imgSkincare, rating: 4.7 },
             { id: 109, name: 'غسول نيوتروجينا فيزيبلي كلير لحب الشباب (Neutrogena)', category: 'skincare', price: 195, image: imgSkincare, rating: 4.7 },
-            { id: 110, name: 'غسول بيزلين للتفتيح (Beesline Whitening Facial Wash)', category: 'skincare', price: 260, image: imgSkincare, rating: 4.8 },
-            { id: 111, name: 'غسول شان جل للبشرة الدهنية (Shan Gel Cleanser)', category: 'skincare', price: 170, image: imgSkincare, rating: 4.8 },
-            { id: 112, name: 'غسول ستارفيل جل للبشرة المختلطة والدهنية (Starville Gel)', category: 'skincare', price: 120, image: imgSkincare, rating: 4.8 },
-            { id: 113, name: 'غسول بوبانا بالفحم للبشرة الدهنية (Bobana Charcoal Wash)', category: 'skincare', price: 75, image: imgSkincare, rating: 4.6 },
-            { id: 114, name: 'غسول ايفا بي white للتفتيح (Eva B-White Facial Wash)', category: 'skincare', price: 65, image: imgSkincare, rating: 4.5 },
-            { id: 115, name: 'غسول غارنييه بالليمون للتفتيح (Garnier Fast Fairness Wash)', category: 'skincare', price: 85, image: imgSkincare, rating: 4.7 },
-            { id: 116, name: 'غسول سيبيكلار جل من أس في آر (SVR Sebiaclear Gel)', category: 'skincare', price: 380, image: imgSkincare, rating: 4.9 },
-            { id: 117, name: 'غسول سينوبار جل لحب الشباب (Synobar Facial Cleanser)', category: 'skincare', price: 135, image: imgSkincare, rating: 4.7 },
-            { id: 118, name: 'غسول ناتو جولد للبشرة (Nato Gold Facial Wash)', category: 'skincare', price: 150, image: imgSkincare, rating: 4.6 },
-            { id: 119, name: 'غسول كلين آند كلير لإزالة الرؤوس السوداء (Clean & Clear)', category: 'skincare', price: 110, image: imgSkincare, rating: 4.6 },
-            { id: 120, name: 'غسول بانوكسيل بنزويل بيروكسيد (PanOxyl Acne Foaming Wash)', category: 'skincare', price: 490, image: imgSkincare, rating: 5.0 },
+            { id: 110, name: 'غسول ستارفيل بالليفة والبانثينول للبشرة الدهنية (200 مل)', category: 'skincare', price: 110, image: imgSkincare, rating: 4.8 },
+            { id: 111, name: 'غسول شان جل للبشرة المختلطة والدهنية (Shan Gel)', category: 'skincare', price: 150, image: imgSkincare, rating: 4.8 },
+            { id: 112, name: 'غسول بيزلاين لتفتيح البشرة (Beesline Whitening Wash)', category: 'skincare', price: 280, image: imgSkincare, rating: 4.9 },
+            { id: 113, name: 'غسول كولاجرا برغوة فيتامين سي (Kolagra Vitamin C Foam)', category: 'skincare', price: 165, image: imgSkincare, rating: 4.7 },
+            { id: 114, name: 'غسول هيمالايا بالنيم والكركم (Himalaya Neem Wash)', category: 'skincare', price: 75, image: imgSkincare, rating: 4.6 },
+            { id: 115, name: 'غسول غارنييه بالليمون والتفتيح (Garnier Light Wash)', category: 'skincare', price: 85, image: imgSkincare, rating: 4.6 },
+            { id: 116, name: 'غسول بوبانا بالفحم للبشرة الدهنية (Bobana Charcoal)', category: 'skincare', price: 55, image: imgSkincare, rating: 4.5 },
+            { id: 117, name: 'غسول إيفا ببروتين الحليب (Eva Milk Protein Cleanser)', category: 'skincare', price: 45, image: imgSkincare, rating: 4.5 },
+            { id: 118, name: 'غسول سينوبار لحب الشباب والبشرة الدهنية (Synobar Wash)', category: 'skincare', price: 130, image: imgSkincare, rating: 4.8 },
+            { id: 119, name: 'غسول أكمني رغوة للبشرة المعرضة للحبوب (Acney Foam)', category: 'skincare', price: 140, image: imgSkincare, rating: 4.7 },
+            { id: 120, name: 'غسول فاكيشن للبشرة الحساسة (Vacation Gentle Wash)', category: 'skincare', price: 120, image: imgSkincare, rating: 4.7 },
 
-            // === 5. كابكسي وكلاري ===
-            { id: 201, name: 'شامبو كابكسي لمنع تساقط الشعر (Capixi Shampoo)', category: 'haircare', price: 180, image: imgHair, rating: 4.8 },
-            { id: 202, name: 'سيروم كابكسي لتحفيز نمو الشعر (Capixi Hair Serum)', category: 'haircare', price: 250, image: imgHair, rating: 4.9 },
-            { id: 203, name: 'أمبولات كابكسي المكثفة للشعر (Capixi Ampoules)', category: 'haircare', price: 320, image: imgHair, rating: 4.9 },
-            { id: 204, name: 'كريم كلاري لتفتيح البشرة (Clari Whitening Cream)', category: 'haircare', price: 160, image: imgSkincare, rating: 4.7 },
-            { id: 205, name: 'سيروم كلاري لفيتامين سي (Clari Vitamin C Serum)', category: 'haircare', price: 210, image: imgSkincare, rating: 4.8 },
+            // === 5. كابكسي وكلاري للشعر (Haircare) ===
+            { id: 201, name: 'شامبو كابكسي لمنع تساقط الشعر (Capxy Shampoo 250ml)', category: 'haircare', price: 180, image: imgHair, rating: 4.8 },
+            { id: 202, name: 'سيروم كابكسي المطور لتكثيف الشعر (Capxy Serum)', category: 'haircare', price: 290, image: imgHair, rating: 4.9 },
+            { id: 203, name: 'أمبولات كابكسي لعلاج التساقط الشديد (Capxy Ampoules)', category: 'haircare', price: 350, image: imgHair, rating: 5.0 },
+            { id: 204, name: 'لوشن كابكسي لتحفيز نمو البصيلات (Capxy Lotion)', category: 'haircare', price: 240, image: imgHair, rating: 4.8 },
+            { id: 205, name: 'شامبو كلاري المرمم بزيت الأرغان (Clary Shampoo)', category: 'haircare', price: 160, image: imgHair, rating: 4.7 },
+            { id: 206, name: 'بلسم كلاري لترتيب وتنعيم الشعر (Clary Conditioner)', category: 'haircare', price: 150, image: imgHair, rating: 4.7 },
+            { id: 207, name: 'ماسك كلاري للتغذية الفائقة (Clary Hair Mask 300g)', category: 'haircare', price: 210, image: imgHair, rating: 4.9 },
+            { id: 208, name: 'سيروم كلاري للحماية من الحرارة (Clary Hair Serum)', category: 'haircare', price: 230, image: imgHair, rating: 4.8 },
 
-            // === 6. أدوية المعدة والهضم والقولون المصرية (30 نوعاً كاملاً) ===
-            { id: 301, name: 'كونترولوك 40 مجم (Controloc 40mg)', category: 'stomach', price: 188, image: imgMedicine, rating: 4.9 },
-            { id: 302, name: 'بانطولوك 40 مجم (Pantoloc 40mg)', category: 'stomach', price: 102, image: imgMedicine, rating: 4.8 },
-            { id: 303, name: 'نكسيوم 40 مجم (Nexium 40mg)', category: 'stomach', price: 488, image: imgMedicine, rating: 5.0 },
-            { id: 304, name: 'زوركال 40 مجم (Zurcal 40mg)', category: 'stomach', price: 192, image: imgMedicine, rating: 4.8 },
-            { id: 305, name: 'أوميز 20 مجم كبسولات (Omez 20mg)', category: 'stomach', price: 45, image: imgMedicine, rating: 4.8 },
-            { id: 306, name: 'انتودين 40 مجم (Antodine 40mg)', category: 'stomach', price: 93, image: imgMedicine, rating: 4.8 },
-            { id: 307, name: 'داونوبرازول 40 مجم (Downoprazol 40mg)', category: 'stomach', price: 95, image: imgMedicine, rating: 4.7 },
-            { id: 308, name: 'دوكسيرازول 60 مجم (Doxirazole 60mg)', category: 'stomach', price: 101, image: imgMedicine, rating: 4.8 },
-            { id: 309, name: 'تريتو الس 40 مجم (Trito-Ulce 40mg)', category: 'stomach', price: 80, image: imgMedicine, rating: 4.7 },
-            { id: 310, name: 'ايزوجاست 40 مجم (Ezogast 40mg)', category: 'stomach', price: 160, image: imgMedicine, rating: 4.8 },
-            { id: 311, name: 'سكورش 40 مجم (Scorch 40mg)', category: 'stomach', price: 189, image: imgMedicine, rating: 4.9 },
-            { id: 312, name: 'بيبرا 20 مجم (Bebra 20mg)', category: 'stomach', price: 206, image: imgMedicine, rating: 4.8 },
-            { id: 313, name: 'جافيسكون دابل أكشن (Gaviscon Double Action)', category: 'stomach', price: 144, image: imgMedicine, rating: 4.9 },
-            { id: 314, name: 'مالوكس أكياس (Maalox Sachets)', category: 'stomach', price: 120, image: imgMedicine, rating: 4.8 },
-            { id: 315, name: 'فوار فواكه سريع للحموضة (Fawar Fruit)', category: 'stomach', price: 24, image: imgMedicine, rating: 4.7 },
-            { id: 316, name: 'جاناتون 50 مجم (Ganaton 50mg)', category: 'stomach', price: 90, image: imgMedicine, rating: 4.9 },
-            { id: 317, name: 'جاست ريج 200 مجم (Gast-Reg 200mg)', category: 'stomach', price: 84, image: imgMedicine, rating: 4.9 },
-            { id: 318, name: 'سباسموديجستين أقراص (Spasmo-Digestin)', category: 'stomach', price: 78, image: imgMedicine, rating: 4.8 },
-            { id: 319, name: 'دايجينورم شراب مهضم (Digenorm Syrup)', category: 'stomach', price: 55, image: imgMedicine, rating: 4.8 },
-            { id: 320, name: 'كولوفيرين د (Coloverin - D)', category: 'stomach', price: 105, image: imgMedicine, rating: 4.9 },
-            { id: 321, name: 'كولونا أقراص (Colona)', category: 'stomach', price: 42, image: imgMedicine, rating: 4.8 },
-            { id: 322, name: 'ليبراكس أقراص (Librax)', category: 'stomach', price: 11, image: imgMedicine, rating: 4.7 },
-            { id: 323, name: 'بوسكوبان 10 مجم (Buscopan 10mg)', category: 'stomach', price: 56, image: imgMedicine, rating: 4.9 },
-            { id: 324, name: 'أوكاربون أقراص الفحم (Eucarbon)', category: 'stomach', price: 135, image: imgMedicine, rating: 4.9 },
-            { id: 325, name: 'نيوكاربون كبسولات (Marnys Neocarbon)', category: 'stomach', price: 200, image: imgMedicine, rating: 4.9 },
-            { id: 326, name: 'موكوستا 100 مجم (Mucosta 100mg)', category: 'stomach', price: 114, image: imgMedicine, rating: 4.9 },
-            { id: 327, name: 'انتينال 200 مجم مطهر معوي (Antinal)', category: 'stomach', price: 52, image: imgMedicine, rating: 4.9 },
-            { id: 328, name: 'فلاجيل 500 مجم (Flagyl 500mg)', category: 'stomach', price: 34, image: imgMedicine, rating: 4.8 },
-            { id: 329, name: 'انتروجيرمينا أمبولات (Enterogermina)', category: 'stomach', price: 220, image: imgMedicine, rating: 5.0 },
-            { id: 330, name: 'دوفلاك شراب ملين (Duphalac Syrup)', category: 'stomach', price: 143, image: imgMedicine, rating: 4.9 },
+            // === 6. العناية بالأسنان (Oralcare) ===
+            { id: 301, name: 'معجون أسنان سنسوداين يوربان حماية متكاملة (Sensodyne)', category: 'oralcare', price: 85, image: imgMedicine, rating: 4.9 },
+            { id: 302, name: 'معجون أسنان ألو دنت المبيض الطبيعي (Aloedent Whitening)', category: 'oralcare', price: 110, image: imgMedicine, rating: 4.8 },
+            { id: 303, name: 'معجون سيجنال 2 للتبييض وحماية التسوس (Signal Integral 8)', category: 'oralcare', price: 35, image: imgMedicine, rating: 4.6 },
+            { id: 304, name: 'غسول الفم ليسترين بالنعناع المنعش (Listerine Cool Mint 250ml)', category: 'oralcare', price: 95, image: imgMedicine, rating: 4.9 },
+            { id: 305, name: 'غسول الفم أورال بي لحماية اللثة (Oral-B Mouthwash)', category: 'oralcare', price: 85, image: imgMedicine, rating: 4.8 },
+            { id: 306, name: 'فرشاة أسنان أورال بي ناعمة جداً (Oral-B Soft Brush)', category: 'oralcare', price: 45, image: imgMedicine, rating: 4.7 },
+            { id: 307, name: 'خيط الأسنان الطبي أورال بي (Oral-B Dental Floss 50m)', category: 'oralcare', price: 65, image: imgMedicine, rating: 4.8 },
 
-            // === 7. عناية الأسنان ===
-            { id: 401, name: 'معجون أسنان سنسوداين واقي المينا (Sensodyne)', category: 'oralcare', price: 85, image: imgSkincare, rating: 4.9 },
-            { id: 402, name: 'معجون أسنان بارودونتكس للثة (Parodontax)', category: 'oralcare', price: 90, image: imgSkincare, rating: 4.8 },
-            { id: 403, name: 'مضمضة أورال بي بالنعناع (Oral-B Mouthwash)', category: 'oralcare', price: 75, image: imgSkincare, rating: 4.8 },
+            // === 7. أدوية المعدة والقولون (30 نوعاً) ===
+            { id: 401, name: 'أوميز 20 مجم كبسول (Omez 20mg - 14 Cap)', category: 'stomach', price: 33, image: imgMedicine, rating: 4.8 },
+            { id: 402, name: 'كونترولوك 40 مجم (Controloc 40mg - 14 Tab)', category: 'stomach', price: 96, image: imgMedicine, rating: 4.9 },
+            { id: 403, name: 'نيكسيوم 40 مجم (Nexium 40mg - 28 Tab)', category: 'stomach', price: 292, image: imgMedicine, rating: 5.0 },
+            { id: 404, name: 'نيكسيوم 20 مجم (Nexium 20mg - 28 Tab)', category: 'stomach', price: 180, image: imgMedicine, rating: 4.9 },
+            { id: 405, name: 'زوركال 40 مجم (Zurcal 40mg - 28 Tab)', category: 'stomach', price: 92, image: imgMedicine, rating: 4.8 },
+            { id: 406, name: 'بانتوكير 40 مجم (Pantocare 40mg - 28 Tab)', category: 'stomach', price: 58, image: imgMedicine, rating: 4.7 },
+            { id: 407, name: 'أنتينال أقراص لمطهر المعوي (Antinal 24 Cap)', category: 'stomach', price: 33.5, image: imgMedicine, rating: 4.9 },
+            { id: 408, name: 'فلاجيل 500 مجم (Flagyl 500mg - 20 Tab)', category: 'stomach', price: 27, image: imgMedicine, rating: 4.8 },
+            { id: 409, name: 'كولونا أقراص للقولون العصبي (Colona 30 Tab)', category: 'stomach', price: 45, image: imgMedicine, rating: 4.9 },
+            { id: 410, name: 'ليبراكس أقراص لتقلصات القولون (Librax 30 Tab)', category: 'stomach', price: 24, image: imgMedicine, rating: 4.8 },
+            { id: 411, name: 'كولوفيرين د أقراص للقولون والغازات (Coloverin D)', category: 'stomach', price: 48, image: imgMedicine, rating: 4.8 },
+            { id: 412, name: 'كولوفيرين A أقراص (Coloverin A 30 Tab)', category: 'stomach', price: 43.5, image: imgMedicine, rating: 4.7 },
+            { id: 413, name: 'سباسم digest أقراص للهضم والتقلصات (Spasmo-Digestin)', category: 'stomach', price: 36, image: imgMedicine, rating: 4.8 },
+            { id: 414, name: 'سباسموكانيبفرين أقراص (Spasmo-Cibalgin)', category: 'stomach', price: 28, image: imgMedicine, rating: 4.7 },
+            { id: 415, name: 'بوسكوبان 10 مجم (Buscopan 20 Tab)', category: 'stomach', price: 30, image: imgMedicine, rating: 4.8 },
+            { id: 416, name: 'بوسكوبان كومبوزيتم للتقلصات الشديدة (Buscopan Compositum)', category: 'stomach', price: 45, image: imgMedicine, rating: 4.9 },
+            { id: 417, name: 'موتينورم 10 مجم للغثيان والقيء (Motinorm 30 Tab)', category: 'stomach', price: 32, image: imgMedicine, rating: 4.7 },
+            { id: 418, name: 'موتيلوم 10 مجم (Motilium 40 Tab)', category: 'stomach', price: 60, image: imgMedicine, rating: 4.8 },
+            { id: 419, name: 'جافيسكون شراب لعلاج الحموضة (Gaviscon Liquid 200ml)', category: 'stomach', price: 125, image: imgMedicine, rating: 4.9 },
+            { id: 420, name: 'أبيجيل أكياس للحموضة (Epijel Suspension)', category: 'stomach', price: 35, image: imgMedicine, rating: 4.6 },
+            { id: 421, name: 'مالوكس بلس أكياس فوارة/شراب (Maalox Plus)', category: 'stomach', price: 65, image: imgMedicine, rating: 4.8 },
+            { id: 422, name: 'فوار راني لعلاج حموضة المعدة (Rani Effervescent)', category: 'stomach', price: 25, image: imgMedicine, rating: 4.7 },
+            { id: 423, name: 'فوار فروت لعلاج الانتفاخ والهضم (Fruity Effervescent)', category: 'stomach', price: 20, image: imgMedicine, rating: 4.6 },
+            { id: 424, name: 'ديجستين أقراص لفتح الشهية والهضم (Digestin 30 Tab)', category: 'stomach', price: 27, image: imgMedicine, rating: 4.7 },
+            { id: 425, name: 'مهضم أورغانو أقراص (Organo Digest 20 Tab)', category: 'stomach', price: 22, image: imgMedicine, rating: 4.6 },
+            { id: 426, name: 'لاكتولوز شراب لعلاج الإمساك (Lactulose Syrup 300ml)', category: 'stomach', price: 38, image: imgMedicine, rating: 4.8 },
+            { id: 427, name: 'مينالاكس أقراص للإمساك (Minalax 10 Tab)', category: 'stomach', price: 15, image: imgMedicine, rating: 4.6 },
+            { id: 428, name: 'بيكولاكس نقط للإمساك (Picolax Drops)', category: 'stomach', price: 18, image: imgMedicine, rating: 4.7 },
+            { id: 429, name: 'سيميثيكون كبسولات للغازات (Simethicone 30 Cap)', category: 'stomach', price: 28, image: imgMedicine, rating: 4.8 },
+            { id: 430, name: 'ديكسيلانت 60 مجم (Dexilant 60mg - 28 Cap)', category: 'stomach', price: 340, image: imgMedicine, rating: 5.0 },
 
-            // === 8. المضادات الحيوية ===
-            { id: 501, name: 'أوجمنتين 1جم أقراص (Augmentin 1g)', category: 'antibiotics', price: 115, image: imgMedicine, rating: 5.0 },
-            { id: 502, name: 'ميجاموكس 1جم (Megamox 1g)', category: 'antibiotics', price: 95, image: imgMedicine, rating: 4.9 },
-            { id: 503, name: 'كلاسيد 500 مجم (Klacit 500mg)', category: 'antibiotics', price: 145, image: imgMedicine, rating: 4.9 },
-            { id: 504, name: 'زيثروكان 500 مجم (Zithrocan)', category: 'antibiotics', price: 85, image: imgMedicine, rating: 4.8 },
-            { id: 505, name: 'فلوموكس 500 مجم كبسولات (Flumox)', category: 'antibiotics', price: 75, image: imgMedicine, rating: 4.8 },
-            { id: 506, name: 'أوجمنتين 625 مجم أقراص (Augmentin 625mg)', category: 'antibiotics', price: 90, image: imgMedicine, rating: 4.9 },
-            { id: 507, name: 'أوجمنتين شراب 457 مجم (Augmentin Syrup)', category: 'antibiotics', price: 70, image: imgMedicine, rating: 4.8 },
-            { id: 508, name: 'فلوموكس شراب 250 مجم (Flumox Syrup)', category: 'antibiotics', price: 45, image: imgMedicine, rating: 4.7 },
-            { id: 509, name: 'أبيكسيد 500 مجم (Apiced 500mg)', category: 'antibiotics', price: 65, image: imgMedicine, rating: 4.7 },
-            { id: 510, name: 'سيبروباي 500 مجم (Ciprobay 500mg)', category: 'antibiotics', price: 110, image: imgMedicine, rating: 4.9 },
-            { id: 511, name: 'سيبروفار 500 مجم (Ciprofar 500mg)', category: 'antibiotics', price: 60, image: imgMedicine, rating: 4.8 },
-            { id: 512, name: 'تيفان 500 مجم (Tivan 500mg)', category: 'antibiotics', price: 55, image: imgMedicine, rating: 4.7 },
-            { id: 513, name: 'أفلوسين 500 مجم (Aflocin 500mg)', category: 'antibiotics', price: 70, image: imgMedicine, rating: 4.8 },
-            { id: 514, name: 'كينابيوتك 1جم (Kinabiotic 1g)', category: 'antibiotics', price: 88, image: imgMedicine, rating: 4.8 },
-            { id: 515, name: 'يُوناسين 375 مجم أقراص (Unynasin 375mg)', category: 'antibiotics', price: 65, image: imgMedicine, rating: 4.8 },
-            { id: 516, name: 'يُوناسين 750 مجم أقراص (Unynasin 750mg)', category: 'antibiotics', price: 95, image: imgMedicine, rating: 4.9 },
-            { id: 517, name: 'يُوناسين شراب (Unynasin Syrup)', category: 'antibiotics', price: 50, image: imgMedicine, rating: 4.7 },
-            { id: 518, name: 'Sultamicillin 375mg (سولتاميسيلين)', category: 'antibiotics', price: 60, image: imgMedicine, rating: 4.8 },
-            { id: 519, name: 'دالاسين سي 300 مجم كبسولات (Dalacin C)', category: 'antibiotics', price: 120, image: imgMedicine, rating: 4.9 },
-            { id: 520, name: 'كلينداسول 300 مجم كبسولات (Clindasol)', category: 'antibiotics', price: 75, image: imgMedicine, rating: 4.8 },
-            { id: 521, name: 'ميكروكُليد 250 مجم شراب (Microclid Syrup)', category: 'antibiotics', price: 80, image: imgMedicine, rating: 4.7 }
+            // === 8. المضادات الحيوية (Antibiotics) ===
+            { id: 501, name: 'أوجمنتين 1 جرام أقراص (Augmentin 1g - 14 Tab)', category: 'antibiotics', price: 130, image: imgMedicine, rating: 4.9 },
+            { id: 502, name: 'أوجمنتين 625 مجم أقراص (Augmentin 625mg - 10 Tab)', category: 'antibiotics', price: 85, image: imgMedicine, rating: 4.8 },
+            { id: 503, name: 'ميجاموكس 1 جرام (Megamox 1g - 14 Tab)', category: 'antibiotics', price: 115, image: imgMedicine, rating: 4.8 },
+            { id: 504, name: 'إيموكسكلاف 1 جرام (Amoxiclav 1g - 14 Tab)', category: 'antibiotics', price: 105, image: imgMedicine, rating: 4.7 },
+            { id: 505, name: 'كيرام 1 جرام أقراص (Curam 1g - 14 Tab)', category: 'antibiotics', price: 110, image: imgMedicine, rating: 4.8 },
+            { id: 506, name: 'هاي بيوتك 1 جرام (Hibiotic 1g - 16 Tab)', category: 'antibiotics', price: 115, image: imgMedicine, rating: 4.8 },
+            { id: 507, name: 'زيثرون 500 مجم (Zithron 500mg - 3 Tab)', category: 'antibiotics', price: 65, image: imgMedicine, rating: 4.9 },
+            { id: 508, name: 'زيثروماتكس 500 مجم (Zithromax 500mg - 3 Tab)', category: 'antibiotics', price: 85, image: imgMedicine, rating: 4.9 },
+            { id: 509, name: 'تافانيك 500 مجم (Tavanic 500mg - 5 Tab)', category: 'antibiotics', price: 145, image: imgMedicine, rating: 5.0 },
+            { id: 510, name: 'سيبروباي 500 مجم (Ciprobay 500mg - 10 Tab)', category: 'antibiotics', price: 120, image: imgMedicine, rating: 4.9 }
         ];
 
         let cart = [];
-        let currentCategory = 'all';
+        let currentFilter = 'all';
 
-        function renderProducts(filteredProducts = products) {
+        function renderProducts(items) {
             const grid = document.getElementById('productsGrid');
-            document.getElementById('productCount').innerText = `عرض ${filteredProducts.length} منتج`;
-            
-            if (filteredProducts.length === 0) {
+            document.getElementById('productCount').innerText = `عرض ${items.length} منتجاً`;
+            if (items.length === 0) {
                 grid.innerHTML = '<div class="col-span-full text-center py-12 text-gray-500">لا توجد منتجات مطابقة للبحث</div>';
                 return;
             }
-
-            grid.innerHTML = filteredProducts.map(p => `
-                <div class="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-start mb-3">
-                            <span class="bg-pharmacy-50 text-pharmacy-700 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">${p.category}</span>
-                            <div class="flex items-center gap-1 text-amber-500 text-xs font-bold">
-                                <i class="fas fa-star"></i>
-                                <span>${p.rating}</span>
-                            </div>
-                        </div>
-                        <div class="h-28 flex items-center justify-center mb-3 bg-gray-50 rounded-xl p-2">
-                            <img src="${p.image}" alt="${p.name}" class="h-20 object-contain" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/2965/2965567.png';">
-                        </div>
-                        <h4 class="font-bold text-gray-800 text-sm mb-2 line-clamp-2">${p.name}</h4>
+            grid.innerHTML = items.map(p => `
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col hover:shadow-md transition">
+                    <div class="relative h-48 bg-gray-50 overflow-hidden group">
+                        <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-amber-500 text-xs px-2 py-1 rounded-lg font-bold flex items-center gap-1 shadow-sm">
+                            <i class="fas fa-star"></i> ${p.rating}
+                        </span>
                     </div>
-                    <div>
-                        <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-100">
-                            <span class="font-black text-pharmacy-900 text-base">${p.price} <small class="text-xs font-normal text-gray-500">ج.م</small></span>
-                            <button onclick="addToCart(${p.id})" class="bg-pharmacy-600 hover:bg-pharmacy-700 text-white p-2.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow-sm">
-                                <i class="fas fa-cart-plus"></i>
-                                <span>إضافة</span>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 class="font-bold text-sm text-gray-800 mb-2 line-clamp-2">${p.name}</h4>
+                        </div>
+                        <div class="flex items-center justify-between mt-4 pt-3 border-t border-gray-100">
+                            <div>
+                                <span class="text-xs text-gray-400 block">السعر</span>
+                                <span class="text-base font-black text-pharmacy-700">${p.price} <span class="text-xs font-normal">ج.م</span></span>
+                            </div>
+                            <button onclick="addToCart(${p.id})" class="bg-pharmacy-50 hover:bg-pharmacy-600 text-pharmacy-700 hover:text-white p-2.5 rounded-xl transition font-bold text-xs flex items-center gap-1.5 border border-pharmacy-200">
+                                <i class="fas fa-cart-plus"></i> أضف للسلة
                             </button>
                         </div>
                     </div>
@@ -452,90 +479,83 @@
             `).join('');
         }
 
-        function filterCategory(category) {
-            currentCategory = category;
+        function filterCategory(cat) {
+            currentFilter = cat;
             document.querySelectorAll('.category-btn').forEach(btn => {
                 btn.className = "category-btn text-gray-600 hover:text-pharmacy-700 font-semibold pb-1 border-b-2 border-transparent";
             });
             event.target.className = "category-btn text-pharmacy-700 font-bold hover:text-pharmacy-900 pb-1 border-b-2 border-pharmacy-600";
             
-            if (category === 'all') {
+            if (cat === 'all') {
                 renderProducts(products);
             } else {
-                renderProducts(products.filter(p => p.category === category));
+                renderProducts(products.filter(p => p.category === cat));
             }
         }
 
         function searchProducts() {
             const query = document.getElementById('searchInput').value.toLowerCase();
-            const filtered = products.filter(p => p.name.toLowerCase().includes(query) || p.category.toLowerCase().includes(query));
+            const filtered = products.filter(p => p.name.toLowerCase().includes(query));
             renderProducts(filtered);
         }
 
-        function addToCart(productId) {
-            const product = products.find(p => p.id === productId);
-            const existing = cart.find(item => item.id === productId);
+        function addToCart(id) {
+            const product = products.find(p => p.id === id);
+            const existing = cart.find(item => item.id === id);
             if (existing) {
-                existing.quantity += 1;
+                existing.qty++;
             } else {
-                cart.push({ ...product, quantity: 1 });
+                cart.push({ ...product, qty: 1 });
             }
             updateCartUI();
             toggleCart();
         }
 
         function updateCartUI() {
-            const countElem = document.getElementById('cartCount');
+            const count = cart.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById('cartCount').innerText = count;
+            
             const container = document.getElementById('cartItemsContainer');
-            const subtotalElem = document.getElementById('cartSubtotal');
-            const shippingElem = document.getElementById('cartShipping');
-            const totalElem = document.getElementById('cartTotal');
-            const checkoutBtn = document.getElementById('checkoutBtn');
-
-            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
-            countElem.innerText = totalCount;
-
             if (cart.length === 0) {
-                container.innerHTML = '<div class="text-center py-12 text-gray-400"><i class="fas fa-shopping-basket text-4xl mb-2"></i><p>السلة فارغة حالياً</p></div>';
-                subtotalElem.innerText = '0.00 ج.م';
-                totalElem.innerText = '0.00 ج.م';
-                shippingElem.innerText = '0.00 ج.م';
-                checkoutBtn.disabled = true;
+                container.innerHTML = '<div class="text-center py-12 text-gray-400"><i class="fas fa-shopping-bag text-4xl mb-2"></i><p class="text-sm">سلة المشتريات فارغة</p></div>';
+                document.getElementById('cartSubtotal').innerText = '0.00 ج.م';
+                document.getElementById('cartTotal').innerText = '25.00 ج.م';
+                document.getElementById('checkoutBtn').disabled = true;
                 return;
             }
 
-            checkoutBtn.disabled = false;
+            document.getElementById('checkoutBtn').disabled = false;
             container.innerHTML = cart.map(item => `
                 <div class="flex items-center justify-between gap-3 py-2">
-                    <img src="${item.image}" alt="" class="w-12 h-12 object-contain bg-gray-50 rounded-lg p-1">
+                    <img src="${item.image}" class="w-12 h-12 rounded-lg object-cover">
                     <div class="flex-1">
                         <h5 class="text-xs font-bold text-gray-800 line-clamp-1">${item.name}</h5>
-                        <div class="text-xs text-gray-500">${item.price} ج.م × ${item.quantity}</div>
+                        <span class="text-xs text-pharmacy-700 font-bold">${item.price} ج.م</span>
                     </div>
-                    <div class="flex items-center gap-1.5">
-                        <button onclick="changeQuantity(${item.id}, 1)" class="w-6 h-6 bg-gray-100 hover:bg-gray-200 rounded flex items-center justify-center font-bold text-xs">+</button>
-                        <span class="text-xs font-bold w-4 text-center">${item.quantity}</span>
-                        <button onclick="changeQuantity(${item.id}, -1)" class="w-6 h-6 bg-gray-100 hover:bg-gray-200 rounded flex items-center justify-center font-bold text-xs">-</button>
+                    <div class="flex items-center gap-2 border rounded-lg p-1">
+                        <button onclick="changeQty(${item.id}, -1)" class="w-5 h-5 bg-gray-100 rounded text-xs font-bold">-</button>
+                        <span class="text-xs font-bold w-4 text-center">${item.qty}</span>
+                        <button onclick="changeQty(${item.id}, 1)" class="w-5 h-5 bg-gray-100 rounded text-xs font-bold">+</button>
                     </div>
                 </div>
             `).join('');
 
-            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            const shipping = subtotal >= 400 || subtotal === 0 ? 0 : 25;
-            subtotalElem.innerText = subtotal.toFixed(2) + ' ج.م';
-            shippingElem.innerText = shipping === 0 ? 'مجاني' : shipping.toFixed(2) + ' ج.م';
-            totalElem.innerText = (subtotal + shipping).toFixed(2) + ' ج.م';
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            const shipping = subtotal >= 400 ? 0 : 25;
+            document.getElementById('cartSubtotal').innerText = subtotal.toFixed(2) + ' ج.م';
+            document.getElementById('cartShipping').innerText = shipping === 0 ? 'مجاني' : shipping.toFixed(2) + ' ج.م';
+            document.getElementById('cartTotal').innerText = (subtotal + shipping).toFixed(2) + ' ج.م';
         }
 
-        function changeQuantity(id, delta) {
+        function changeQty(id, delta) {
             const item = cart.find(i => i.id === id);
             if (item) {
-                item.quantity += delta;
-                if (item.quantity <= 0) {
+                item.qty += delta;
+                if (item.qty <= 0) {
                     cart = cart.filter(i => i.id !== id);
                 }
+                updateCartUI();
             }
-            updateCartUI();
         }
 
         function toggleCart() {
@@ -553,9 +573,8 @@
 
         function handlePrescriptionSubmit(e) {
             e.preventDefault();
-            alert('تم إرسال الروشتة بنجاح! سنتواصل معك قريباً للتأكيد والتوصيل.');
+            alert('تم إرسال الروشتة بنجاح! سيتم التواصل معك قريباً لتأكيد الأدوية والتوصيل.');
             closePrescriptionModal();
-            e.target.reset();
         }
 
         function openCheckoutModal() {
@@ -573,12 +592,10 @@
             cart = [];
             updateCartUI();
             closeCheckoutModal();
-            e.target.reset();
         }
 
-        window.onload = () => {
-            renderProducts();
-        };
+        // التهيئة الأولية
+        renderProducts(products);
     </script>
 </body>
 </html>
