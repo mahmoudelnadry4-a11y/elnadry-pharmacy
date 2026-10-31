@@ -213,7 +213,7 @@
     </div>
 
     <script>
-        // روابط صور مستقرة ومباشرة للمنتجات
+        // روابط صور مستقرة ومباشرة للمنتجات والصور المرفقة
         const imgCerelac = 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=300&q=80';
         const imgDeodorant = 'https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=300&q=80';
         const imgPampers = 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=300&q=80';
@@ -223,8 +223,24 @@
         const imgHair = 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=300&q=80';
         const imgMedicine = 'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=300&q=80';
         const imgPads = 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=300&q=80';
+        
+        // روابط الصور المستخرجة من الصور المرفقة الجديدة
+        const imgBiovitaKids = 'https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=300&q=80';
+        const imgImtenanTea = 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=300&q=80';
+        const imgSensodyneColgate = 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300&q=80';
+        const imgDisaarVitaminC = 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300&q=80';
+        const imgVenusRazor = 'https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=300&q=80';
+        const imgZolaSupports = 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=300&q=80';
 
         const products = [
+            // === المنتجات المضافة من الصور المرفقة حديثاً ===
+            { id: 9901, name: 'إنفينيتي بايوتا كيدز جميز عرض (1+1) - 60+30 جميز', category: 'limitless', price: 295, image: imgBiovitaKids, rating: 5.0 },
+            { id: 9902, name: 'امتنان شاي أعشاب الهضم الصحي (أو الكافيين الأخضر / فترة الرضاعة)', category: 'stomach', price: 65, image: imgImtenanTea, rating: 4.8 },
+            { id: 9903, name: 'معجون أسنان سنسوداين / كولجيت / جلوسب (عبوات إضافية)', category: 'oralcare', price: 75, image: imgSensodyneColgate, rating: 4.9 },
+            { id: 9904, name: 'ديزار فيتامين سي سيروم ومجموعة العناية بالوجه (Disaar Vitamin C 5 Piece Set)', category: 'skincare', price: 350, image: imgDisaarVitaminC, rating: 4.9 },
+            { id: 9905, name: 'جيليت فينوس شفرات حلاقة نسائية مع شريط ترطيب', category: 'pals', price: 180, image: imgVenusRazor, rating: 4.9 },
+            { id: 9906, name: 'زولا دعامات طبية للمفاصل والركبة والمعصم (Zola Sports & Medical Support)', category: 'haircare', price: 150, image: imgZolaSupports, rating: 4.8 },
+
             // === أنواع الفوط الصحية (سوفي، أولويز، مولبد) ===
             { id: 2001, name: 'سوفي ماكسي سميكة بالأجنحة (عبوة توفيرية 30 فوطة)', category: 'pads', price: 135, image: imgPads, rating: 4.9 },
             { id: 2002, name: 'سوفي ماكسي سميكة عادية (عبوة 10 فوط)', category: 'pads', price: 60, image: imgPads, rating: 4.8 },
